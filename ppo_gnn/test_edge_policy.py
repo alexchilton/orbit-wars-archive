@@ -155,9 +155,10 @@ def test_evaluate_action():
             action_edges[b, a] = random.randint(0, K - 31)  # valid range
             action_fractions[b, a] = random.randint(0, NUM_FRACTIONS - 1)
 
-    log_prob, entropy, value = model.evaluate_action(
+    log_prob, sel_entropy, frac_entropy, value = model.evaluate_action(
         edge_feats, edge_mask, action_edges, action_fractions, action_counts,
     )
+    entropy = sel_entropy + frac_entropy
 
     print(f"  Log prob shape: {log_prob.shape}, values: {log_prob.tolist()}")
     print(f"  Entropy shape: {entropy.shape}, values: {[f'{e:.3f}' for e in entropy.tolist()]}")
@@ -182,12 +183,13 @@ def test_gradient_flow():
     action_fractions = torch.randint(0, NUM_FRACTIONS, (B, MAX_ACTIONS))
     action_counts = torch.tensor([2, 3, 1, 3])
 
-    log_prob, entropy, value = model.evaluate_action(
+    log_prob, sel_entropy, frac_entropy, value = model.evaluate_action(
         edge_feats, edge_mask, action_edges, action_fractions, action_counts,
     )
+    entropy = sel_entropy + frac_entropy
 
     # PPO-style loss
-    loss = -log_prob.mean() + 0.5 * (value - 1.0).pow(2).mean() - 0.05 * entropy.mean()
+    loss = -log_prob.mean() + 0.5 * (value - 1.0).pow(2).mean() - 0.01 * sel_entropy.mean() - 0.05 * frac_entropy.mean()
     loss.backward()
 
     has_grad = sum(1 for p in model.parameters() if p.grad is not None)

@@ -130,6 +130,7 @@ def ppo_update(
     clip_epsilon: float = 0.2,
     value_coef: float = 0.5,
     entropy_coef: float = 0.015,
+    entropy_frac_coef: float = 0.05,
     kl_coef: float = 0.1,
     gamma: float = 0.997,
     gae_lambda: float = 0.95,
@@ -194,13 +195,14 @@ def ppo_update(
         for start in range(0, T, mini_batch_size):
             idx = perm[start:start + mini_batch_size]
 
-            log_prob, entropy, value = model.evaluate_action(
+            log_prob, sel_entropy, frac_entropy, value = model.evaluate_action(
                 ef_all[idx], em_all[idx], ae_all[idx], af_all[idx], ac_all[idx],
             )
 
             # Guard: clamp log_prob to prevent -inf → NaN in ratio/kl
             log_prob = log_prob.clamp(min=-20.0)
-            entropy = torch.nan_to_num(entropy, nan=0.0)
+            sel_entropy = torch.nan_to_num(sel_entropy, nan=0.0)
+            frac_entropy = torch.nan_to_num(frac_entropy, nan=0.0)
 
             ratio = torch.exp(log_prob - old_lp[idx].clamp(min=-20.0))
             adv = advantages[idx]
@@ -208,10 +210,15 @@ def ppo_update(
             surr2 = torch.clamp(ratio, 1 - clip_epsilon, 1 + clip_epsilon) * adv
             policy_loss = -torch.min(surr1, surr2).mean()
             value_loss = F.mse_loss(value, returns[idx])
-            entropy_loss = -entropy.mean()
+            # Per-head entropy: selection can be sharp, fractions must stay diverse
+            sel_entropy_loss = -sel_entropy.mean()
+            frac_entropy_loss = -frac_entropy.mean()
+            entropy = sel_entropy + frac_entropy  # for logging
             kl_approx = (old_lp[idx].clamp(min=-20.0) - log_prob).mean()
             loss = (policy_loss + value_coef * value_loss
-                    + entropy_coef * entropy_loss + kl_coef * kl_approx)
+                    + entropy_coef * sel_entropy_loss
+                    + entropy_frac_coef * frac_entropy_loss
+                    + kl_coef * kl_approx)
 
             if torch.isnan(loss) or torch.isinf(loss):
                 optimizer.zero_grad()
@@ -238,7 +245,7 @@ def ppo_update(
 
             stats["policy_loss"] += policy_loss.item()
             stats["value_loss"] += value_loss.item()
-            stats["entropy"] += -entropy_loss.item()
+            stats["entropy"] += entropy.mean().item()
             stats["clip_frac"] += clip_frac
             stats["kl"] += kl_approx.item()
             n_updates += 1
@@ -248,7 +255,7 @@ def ppo_update(
 
     # Explained variance: how well the critic predicts returns
     with torch.no_grad():
-        _, _, v_pred = model.evaluate_action(
+        _, _, _, v_pred = model.evaluate_action(
             ef_all, em_all, ae_all, af_all, ac_all,
         )
         var_ret = returns.var()
@@ -904,7 +911,8 @@ def main():
     parser.add_argument("--cache-dir", default="ppo_gnn/cache")
     parser.add_argument("--num-episodes", type=int, default=50000)
     parser.add_argument("--episodes-per-update", type=int, default=8)
-    parser.add_argument("--lr", type=float, default=3e-5)
+    parser.add_argument("--lr", type=float, default=3e-4)
+    parser.add_argument("--value-lr", type=float, default=3e-5)
     parser.add_argument("--d-model", type=int, default=128)
     parser.add_argument("--n-heads", type=int, default=4)
     parser.add_argument("--n-layers", type=int, default=3)
@@ -912,12 +920,15 @@ def main():
     parser.add_argument("--step-penalty", type=float, default=0.002)
     parser.add_argument("--idle-penalty", type=float, default=0.02)
     parser.add_argument("--win-bonus", type=float, default=10.0)
-    parser.add_argument("--entropy-coef", type=float, default=0.015)
+    parser.add_argument("--entropy-coef", type=float, default=0.01)
+    parser.add_argument("--entropy-frac-coef", type=float, default=0.05)
     parser.add_argument("--clip-epsilon", type=float, default=0.2)
     parser.add_argument("--value-coef", type=float, default=0.5)
     parser.add_argument("--gamma", type=float, default=0.997)
     parser.add_argument("--gae-lambda", type=float, default=0.95)
-    parser.add_argument("--ppo-epochs", type=int, default=4)
+    parser.add_argument("--ppo-epochs", type=int, default=10)
+    parser.add_argument("--reset-value-head", action="store_true",
+                        help="Re-initialize value head weights to force relearning")
     parser.add_argument("--mini-batch-size", type=int, default=64)
     parser.add_argument("--eval-every", type=int, default=200)
     parser.add_argument("--pid-lr", action="store_true")
@@ -969,7 +980,32 @@ def main():
     print(f"EdgePolicy PPO: d={d_model}, heads={args.n_heads}, layers={args.n_layers}")
     print(f"Parameters: {params['total']:,}  (loaded from {args.checkpoint})")
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
+    # Reset value head if requested (forces critic to relearn → larger advantages)
+    if args.reset_value_head:
+        for m in [model.value_head]:
+            for layer in m:
+                if hasattr(layer, 'reset_parameters'):
+                    layer.reset_parameters()
+        # Also reset critic backbone if separate
+        if model.separate_critic:
+            for m in [model.critic_encoder] + list(model.critic_transformer):
+                for layer in m.modules():
+                    if hasattr(layer, 'reset_parameters'):
+                        layer.reset_parameters()
+        print("Value head + critic backbone re-initialized")
+
+    # Separate optimizers: faster policy LR, slower value LR
+    value_params = set()
+    for m in [model.value_head]:
+        value_params.update(m.parameters())
+    if model.separate_critic:
+        for m in [model.critic_encoder] + list(model.critic_transformer):
+            value_params.update(m.parameters())
+    policy_params = [p for p in model.parameters() if p not in value_params]
+    optimizer = torch.optim.Adam([
+        {"params": policy_params, "lr": args.lr},
+        {"params": list(value_params), "lr": args.value_lr},
+    ])
     pid = KLPIDController(target_kl=args.target_kl) if args.pid_lr else None
 
     # Opponent pool
@@ -995,7 +1031,7 @@ def main():
 
     log(f"PPO EdgePolicy training — {args.mode} mode")
     log(f"Episodes: {args.num_episodes}, episodes_per_update: {args.episodes_per_update}")
-    log(f"LR: {args.lr}, entropy_coef: {args.entropy_coef}, device: {args.device}")
+    log(f"LR: {args.lr} (value: {args.value_lr}), entropy_coef: {args.entropy_coef}, device: {args.device}")
 
     # Snapshot for self-play
     self_play_agent = make_edge_self_play_agent(
@@ -1101,6 +1137,7 @@ def main():
             clip_epsilon=args.clip_epsilon,
             value_coef=args.value_coef,
             entropy_coef=args.entropy_coef,
+            entropy_frac_coef=args.entropy_frac_coef,
             gamma=args.gamma,
             gae_lambda=args.gae_lambda,
             device=update_device,

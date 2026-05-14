@@ -810,7 +810,7 @@ class EdgePolicy(nn.Module):
         action_edges: torch.Tensor,
         action_fractions: torch.Tensor,
         action_counts: torch.Tensor,
-    ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """Evaluate log-prob and entropy for batched actions.
 
         Uses split architecture: binary noop decision + edge-only softmax.
@@ -824,7 +824,8 @@ class EdgePolicy(nn.Module):
 
         Returns:
             log_prob: (B,) — total log probability
-            entropy: (B,) — total entropy
+            sel_entropy: (B,) — noop + edge selection entropy
+            frac_entropy: (B,) — fraction head entropy
             value: (B,) — state value
         """
         B, K, _ = edge_features.shape
@@ -834,7 +835,8 @@ class EdgePolicy(nn.Module):
         # noop_logit: (B, 1), edge_logits: (B, K), frac_logits: (B, K, NUM_FRACTIONS)
 
         total_log_prob = torch.zeros(B, device=dev)
-        total_entropy = torch.zeros(B, device=dev)
+        sel_entropy = torch.zeros(B, device=dev)
+        frac_entropy = torch.zeros(B, device=dev)
 
         # Step 1: Binary noop log-prob (positive logit = noop)
         is_noop = (action_counts == 0).float()  # (B,)
@@ -848,7 +850,7 @@ class EdgePolicy(nn.Module):
         noop_prob = torch.sigmoid(noop_logit_flat)
         noop_ent = -(noop_prob * F.logsigmoid(noop_logit_flat) +
                       (1 - noop_prob) * F.logsigmoid(-noop_logit_flat))
-        total_entropy = total_entropy + noop_ent
+        sel_entropy = sel_entropy + noop_ent
 
         # Step 2: Edge selection + fraction log-probs (only for non-noop samples)
         has_any_action = (action_counts > 0).float()  # (B,)
@@ -878,7 +880,7 @@ class EdgePolicy(nn.Module):
             ent = edge_dist.entropy()
 
             total_log_prob = total_log_prob + lp * has_action
-            total_entropy = total_entropy + ent * has_action
+            sel_entropy = sel_entropy + ent * has_action
 
             # Fraction log-prob
             chosen_frac_logits = frac_logits[
@@ -894,7 +896,7 @@ class EdgePolicy(nn.Module):
             f_ent = f_dist.entropy()
 
             total_log_prob = total_log_prob + f_lp * has_action
-            total_entropy = total_entropy + f_ent * has_action
+            frac_entropy = frac_entropy + f_ent * has_action
 
             # Update remaining mask
             if action_idx < self.max_actions - 1:
@@ -902,7 +904,7 @@ class EdgePolicy(nn.Module):
                     if has_action[b] > 0.5 and edge_chosen[b] >= 0:
                         remaining_mask[b, edge_chosen[b].clamp(0, K-1)] = 0.0
 
-        return total_log_prob, total_entropy, value.squeeze(-1)
+        return total_log_prob, sel_entropy, frac_entropy, value.squeeze(-1)
 
     def count_parameters(self) -> dict:
         """Count parameters by component."""
