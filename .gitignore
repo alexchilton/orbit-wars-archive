@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pt
+*.pkl
+*.log
+ppo_gnn/cache/
+kaggle_replays/
+kaggle_logs/
+.idea/
+*.egg-info/
