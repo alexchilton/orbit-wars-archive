@@ -1,0 +1,3692 @@
+[
+  {
+    "episode_id": 75718274,
+    "step": 24,
+    "num_players": 4,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 4,
+      "prod_share": 0.0625,
+      "ship_share": 0.12373737373737374,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0625,
+    "historical_delta": 0.02083333333333333,
+    "counterfactual_delta": 0.02083333333333333
+  },
+  {
+    "episode_id": 75718274,
+    "step": 34,
+    "num_players": 4,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 4,
+      "prod_share": 0.08695652173913043,
+      "ship_share": 0.058161350844277676,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.03571428571428571,
+    "start_prod_share": 0.08695652173913043,
+    "historical_delta": -0.08695652173913043,
+    "counterfactual_delta": -0.05124223602484472
+  },
+  {
+    "episode_id": 75718274,
+    "step": 44,
+    "num_players": 4,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 4,
+      "prod_share": 0.03571428571428571,
+      "ship_share": 0.07228915662650602,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.03076923076923077,
+    "start_prod_share": 0.03571428571428571,
+    "historical_delta": -0.03571428571428571,
+    "counterfactual_delta": -0.004945054945054941
+  },
+  {
+    "episode_id": 75718274,
+    "step": 54,
+    "num_players": 4,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 64,
+    "num_players": 4,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 74,
+    "num_players": 4,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 84,
+    "num_players": 4,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 94,
+    "num_players": 4,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 104,
+    "num_players": 4,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 114,
+    "num_players": 4,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 124,
+    "num_players": 4,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 134,
+    "num_players": 4,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 144,
+    "num_players": 4,
+    "state_features": {
+      "step": 144,
+      "step_frac": 0.288,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 154,
+    "num_players": 4,
+    "state_features": {
+      "step": 154,
+      "step_frac": 0.308,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 164,
+    "num_players": 4,
+    "state_features": {
+      "step": 164,
+      "step_frac": 0.328,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718274,
+    "step": 174,
+    "num_players": 4,
+    "state_features": {
+      "step": 174,
+      "step_frac": 0.348,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718626,
+    "step": 24,
+    "num_players": 2,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 2,
+      "prod_share": 0.4166666666666667,
+      "ship_share": 0.5238095238095238,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.019153225806451624,
+    "start_prod_share": 0.4166666666666667,
+    "historical_delta": -0.010416666666666685,
+    "counterfactual_delta": -0.02956989247311831
+  },
+  {
+    "episode_id": 75718626,
+    "step": 34,
+    "num_players": 2,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 2,
+      "prod_share": 0.5294117647058824,
+      "ship_share": 0.5423728813559322,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.03928571428571431,
+    "start_prod_share": 0.5294117647058824,
+    "historical_delta": -0.11869747899159666,
+    "counterfactual_delta": -0.07941176470588235
+  },
+  {
+    "episode_id": 75718626,
+    "step": 44,
+    "num_players": 2,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 2,
+      "prod_share": 0.46511627906976744,
+      "ship_share": 0.5097560975609756,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.02777777777777779,
+    "start_prod_share": 0.46511627906976744,
+    "historical_delta": -0.062338501291989645,
+    "counterfactual_delta": -0.034560723514211855
+  },
+  {
+    "episode_id": 75718626,
+    "step": 54,
+    "num_players": 2,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 2,
+      "prod_share": 0.391304347826087,
+      "ship_share": 0.5155807365439093,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.02375044310528185,
+    "start_prod_share": 0.391304347826087,
+    "historical_delta": 0.028050490883590462,
+    "counterfactual_delta": 0.004300047778308613
+  },
+  {
+    "episode_id": 75718626,
+    "step": 64,
+    "num_players": 2,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 2,
+      "prod_share": 0.46511627906976744,
+      "ship_share": 0.3757421543681086,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.02105263157894738,
+    "start_prod_share": 0.46511627906976744,
+    "historical_delta": -0.10722154222766217,
+    "counterfactual_delta": -0.08616891064871479
+  },
+  {
+    "episode_id": 75718626,
+    "step": 74,
+    "num_players": 2,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 2,
+      "prod_share": 0.40860215053763443,
+      "ship_share": 0.3986562150055991,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.0376254180602007,
+    "start_prod_share": 0.40860215053763443,
+    "historical_delta": 0.01531089294062643,
+    "counterfactual_delta": 0.05293631100082713
+  },
+  {
+    "episode_id": 75718626,
+    "step": 84,
+    "num_players": 2,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 2,
+      "prod_share": 0.3956043956043956,
+      "ship_share": 0.3428252372975991,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.021739130434782594,
+    "start_prod_share": 0.3956043956043956,
+    "historical_delta": -0.08038700430004775,
+    "counterfactual_delta": -0.058647873865265154
+  },
+  {
+    "episode_id": 75718983,
+    "step": 24,
+    "num_players": 4,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 4,
+      "prod_share": 0.2916666666666667,
+      "ship_share": 0.26548672566371684,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.13440860215053763,
+    "start_prod_share": 0.2916666666666667,
+    "historical_delta": -0.2594086021505376,
+    "counterfactual_delta": -0.12500000000000003
+  },
+  {
+    "episode_id": 75718983,
+    "step": 34,
+    "num_players": 4,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.2671232876712329,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.030303030303030304,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.030303030303030304,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 44,
+    "num_players": 4,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 4,
+      "prod_share": 0.03225806451612903,
+      "ship_share": 0.1375,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.03225806451612903,
+    "historical_delta": -0.03225806451612903,
+    "counterfactual_delta": -0.03225806451612903
+  },
+  {
+    "episode_id": 75718983,
+    "step": 54,
+    "num_players": 4,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 4,
+      "prod_share": 0.02857142857142857,
+      "ship_share": 0.0728476821192053,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.02857142857142857,
+    "historical_delta": -0.0029304029304029304,
+    "counterfactual_delta": -0.0029304029304029304
+  },
+  {
+    "episode_id": 75718983,
+    "step": 64,
+    "num_players": 4,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 4,
+      "prod_share": 0.02631578947368421,
+      "ship_share": 0.030712530712530713,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.02631578947368421,
+    "historical_delta": -0.02631578947368421,
+    "counterfactual_delta": -0.02631578947368421
+  },
+  {
+    "episode_id": 75718983,
+    "step": 74,
+    "num_players": 4,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.009633911368015413,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 84,
+    "num_players": 4,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 94,
+    "num_players": 4,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 104,
+    "num_players": 4,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 114,
+    "num_players": 4,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 124,
+    "num_players": 4,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 134,
+    "num_players": 4,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 144,
+    "num_players": 4,
+    "state_features": {
+      "step": 144,
+      "step_frac": 0.288,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 154,
+    "num_players": 4,
+    "state_features": {
+      "step": 154,
+      "step_frac": 0.308,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718983,
+    "step": 164,
+    "num_players": 4,
+    "state_features": {
+      "step": 164,
+      "step_frac": 0.328,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 24,
+    "num_players": 4,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 4,
+      "prod_share": 0.1875,
+      "ship_share": 0.3112244897959184,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.07462686567164178,
+    "start_prod_share": 0.1875,
+    "historical_delta": 0.021455223880597007,
+    "counterfactual_delta": -0.05317164179104478
+  },
+  {
+    "episode_id": 75718991,
+    "step": 34,
+    "num_players": 4,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 4,
+      "prod_share": 0.2153846153846154,
+      "ship_share": 0.21978021978021978,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.014492753623188387,
+    "start_prod_share": 0.2153846153846154,
+    "historical_delta": -0.012486064659977703,
+    "counterfactual_delta": 0.0020066889632106844
+  },
+  {
+    "episode_id": 75718991,
+    "step": 44,
+    "num_players": 4,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 4,
+      "prod_share": 0.20588235294117646,
+      "ship_share": 0.3016022620169651,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.20588235294117646,
+    "historical_delta": -0.06889605157131345,
+    "counterfactual_delta": -0.06889605157131345
+  },
+  {
+    "episode_id": 75718991,
+    "step": 54,
+    "num_players": 4,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 4,
+      "prod_share": 0.1267605633802817,
+      "ship_share": 0.26919431279620853,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.1267605633802817,
+    "historical_delta": 0.008374571754853455,
+    "counterfactual_delta": 0.008374571754853455
+  },
+  {
+    "episode_id": 75718991,
+    "step": 64,
+    "num_players": 4,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 4,
+      "prod_share": 0.13513513513513514,
+      "ship_share": 0.16753536857781087,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.09513513513513513,
+    "start_prod_share": 0.13513513513513514,
+    "historical_delta": -0.09513513513513513,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 74,
+    "num_players": 4,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 4,
+      "prod_share": 0.08108108108108109,
+      "ship_share": 0.1464354527938343,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.08108108108108109,
+    "historical_delta": -0.08108108108108109,
+    "counterfactual_delta": -0.08108108108108109
+  },
+  {
+    "episode_id": 75718991,
+    "step": 84,
+    "num_players": 4,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 4,
+      "prod_share": 0.02666666666666667,
+      "ship_share": 0.08065339458907606,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.02666666666666667,
+    "historical_delta": -0.02666666666666667,
+    "counterfactual_delta": -0.02666666666666667
+  },
+  {
+    "episode_id": 75718991,
+    "step": 94,
+    "num_players": 4,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.028964862298195632,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 104,
+    "num_players": 4,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 114,
+    "num_players": 4,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 124,
+    "num_players": 4,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 134,
+    "num_players": 4,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 144,
+    "num_players": 4,
+    "state_features": {
+      "step": 144,
+      "step_frac": 0.288,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 154,
+    "num_players": 4,
+    "state_features": {
+      "step": 154,
+      "step_frac": 0.308,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 164,
+    "num_players": 4,
+    "state_features": {
+      "step": 164,
+      "step_frac": 0.328,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75718991,
+    "step": 174,
+    "num_players": 4,
+    "state_features": {
+      "step": 174,
+      "step_frac": 0.348,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719147,
+    "step": 24,
+    "num_players": 4,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 4,
+      "prod_share": 0.28,
+      "ship_share": 0.21367521367521367,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.28,
+    "historical_delta": -0.0643137254901961,
+    "counterfactual_delta": -0.0643137254901961
+  },
+  {
+    "episode_id": 75719147,
+    "step": 34,
+    "num_players": 4,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 4,
+      "prod_share": 0.2916666666666667,
+      "ship_share": 0.20240963855421687,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.2916666666666667,
+    "historical_delta": -0.14460784313725492,
+    "counterfactual_delta": -0.14460784313725492
+  },
+  {
+    "episode_id": 75719147,
+    "step": 44,
+    "num_players": 4,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 4,
+      "prod_share": 0.23214285714285715,
+      "ship_share": 0.18952618453865336,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.009962640099626385,
+    "start_prod_share": 0.23214285714285715,
+    "historical_delta": -0.04036203522504894,
+    "counterfactual_delta": -0.05032467532467533
+  },
+  {
+    "episode_id": 75719147,
+    "step": 54,
+    "num_players": 4,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 4,
+      "prod_share": 0.22535211267605634,
+      "ship_share": 0.12330009066183137,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.038961038961038946,
+    "start_prod_share": 0.22535211267605634,
+    "historical_delta": -0.0824949698189135,
+    "counterfactual_delta": -0.12145600877995244
+  },
+  {
+    "episode_id": 75719147,
+    "step": 64,
+    "num_players": 4,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 4,
+      "prod_share": 0.14864864864864866,
+      "ship_share": 0.14772036474164132,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.02405063291139241,
+    "start_prod_share": 0.14864864864864866,
+    "historical_delta": -0.04864864864864865,
+    "counterfactual_delta": -0.07269928156004106
+  },
+  {
+    "episode_id": 75719147,
+    "step": 74,
+    "num_players": 4,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 4,
+      "prod_share": 0.11392405063291139,
+      "ship_share": 0.15669014084507044,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.05,
+    "start_prod_share": 0.11392405063291139,
+    "historical_delta": -0.06392405063291139,
+    "counterfactual_delta": -0.11392405063291139
+  },
+  {
+    "episode_id": 75719147,
+    "step": 84,
+    "num_players": 4,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 4,
+      "prod_share": 0.038461538461538464,
+      "ship_share": 0.10512820512820513,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.038461538461538464,
+    "historical_delta": 0.036538461538461534,
+    "counterfactual_delta": 0.036538461538461534
+  },
+  {
+    "episode_id": 75719147,
+    "step": 94,
+    "num_players": 4,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 4,
+      "prod_share": 0.05,
+      "ship_share": 0.05944900918318028,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.05,
+    "historical_delta": -0.05,
+    "counterfactual_delta": -0.05
+  },
+  {
+    "episode_id": 75719147,
+    "step": 104,
+    "num_players": 4,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.01961796592669076,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719147,
+    "step": 114,
+    "num_players": 4,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0049261083743842365,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719147,
+    "step": 124,
+    "num_players": 4,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719147,
+    "step": 134,
+    "num_players": 4,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719147,
+    "step": 144,
+    "num_players": 4,
+    "state_features": {
+      "step": 144,
+      "step_frac": 0.288,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719147,
+    "step": 154,
+    "num_players": 4,
+    "state_features": {
+      "step": 154,
+      "step_frac": 0.308,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719147,
+    "step": 164,
+    "num_players": 4,
+    "state_features": {
+      "step": 164,
+      "step_frac": 0.328,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719147,
+    "step": 174,
+    "num_players": 4,
+    "state_features": {
+      "step": 174,
+      "step_frac": 0.348,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.0,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719638,
+    "step": 24,
+    "num_players": 2,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 2,
+      "prod_share": 0.5,
+      "ship_share": 0.5146579804560261,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.0435374149659864,
+    "start_prod_share": 0.5,
+    "historical_delta": 0.010204081632653073,
+    "counterfactual_delta": -0.033333333333333326
+  },
+  {
+    "episode_id": 75719638,
+    "step": 34,
+    "num_players": 2,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 2,
+      "prod_share": 0.5384615384615384,
+      "ship_share": 0.4381338742393509,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.5384615384615384,
+    "historical_delta": -0.009890109890109855,
+    "counterfactual_delta": -0.009890109890109855
+  },
+  {
+    "episode_id": 75719638,
+    "step": 44,
+    "num_players": 2,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 2,
+      "prod_share": 0.5714285714285714,
+      "ship_share": 0.4805352798053528,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": -0.0023228803716608404,
+    "start_prod_share": 0.5714285714285714,
+    "historical_delta": -0.16666666666666663,
+    "counterfactual_delta": -0.16898954703832747
+  },
+  {
+    "episode_id": 75719638,
+    "step": 54,
+    "num_players": 2,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 2,
+      "prod_share": 0.4473684210526316,
+      "ship_share": 0.5377503852080123,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.0357142857142857,
+    "start_prod_share": 0.4473684210526316,
+    "historical_delta": -0.006892230576441116,
+    "counterfactual_delta": -0.042606516290726815
+  },
+  {
+    "episode_id": 75719638,
+    "step": 64,
+    "num_players": 2,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 2,
+      "prod_share": 0.4523809523809524,
+      "ship_share": 0.5081967213114754,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.06497948016415872,
+    "start_prod_share": 0.4523809523809524,
+    "historical_delta": -0.04061624649859946,
+    "counterfactual_delta": 0.02436323366555926
+  },
+  {
+    "episode_id": 75719638,
+    "step": 74,
+    "num_players": 2,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 2,
+      "prod_share": 0.38823529411764707,
+      "ship_share": 0.4759124087591241,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.14457831325301201,
+    "start_prod_share": 0.38823529411764707,
+    "historical_delta": -0.12317505315379162,
+    "counterfactual_delta": 0.02140326009922039
+  },
+  {
+    "episode_id": 75719638,
+    "step": 84,
+    "num_players": 2,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 2,
+      "prod_share": 0.3493975903614458,
+      "ship_share": 0.40914351851851855,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.08505450372920252,
+    "start_prod_share": 0.3493975903614458,
+    "historical_delta": -0.28987378083763626,
+    "counterfactual_delta": -0.20481927710843376
+  },
+  {
+    "episode_id": 75719804,
+    "step": 24,
+    "num_players": 4,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 4,
+      "prod_share": 0.29411764705882354,
+      "ship_share": 0.27751196172248804,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.29411764705882354,
+    "historical_delta": -0.02941176470588236,
+    "counterfactual_delta": -0.02941176470588236
+  },
+  {
+    "episode_id": 75719804,
+    "step": 34,
+    "num_players": 4,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 4,
+      "prod_share": 0.34615384615384615,
+      "ship_share": 0.19817073170731708,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": -0.018902439024390233,
+    "start_prod_share": 0.34615384615384615,
+    "historical_delta": -0.1022514071294559,
+    "counterfactual_delta": -0.12115384615384614
+  },
+  {
+    "episode_id": 75719804,
+    "step": 44,
+    "num_players": 4,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 4,
+      "prod_share": 0.2647058823529412,
+      "ship_share": 0.27580071174377224,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.2647058823529412,
+    "historical_delta": -0.026610644257703098,
+    "counterfactual_delta": -0.026610644257703098
+  },
+  {
+    "episode_id": 75719804,
+    "step": 54,
+    "num_players": 4,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 4,
+      "prod_share": 0.23809523809523808,
+      "ship_share": 0.2853628536285363,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.23809523809523808,
+    "historical_delta": -0.005537098560354364,
+    "counterfactual_delta": -0.005537098560354364
+  },
+  {
+    "episode_id": 75719804,
+    "step": 64,
+    "num_players": 4,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 4,
+      "prod_share": 0.23809523809523808,
+      "ship_share": 0.2868605817452357,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.23809523809523808,
+    "historical_delta": -0.010822510822510817,
+    "counterfactual_delta": -0.010822510822510817
+  },
+  {
+    "episode_id": 75719804,
+    "step": 74,
+    "num_players": 4,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 4,
+      "prod_share": 0.23255813953488372,
+      "ship_share": 0.2861378799110452,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.23255813953488372,
+    "historical_delta": -0.010335917312661508,
+    "counterfactual_delta": -0.010335917312661508
+  },
+  {
+    "episode_id": 75719804,
+    "step": 84,
+    "num_players": 4,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 4,
+      "prod_share": 0.22727272727272727,
+      "ship_share": 0.3709923664122137,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.08510638297872342,
+    "start_prod_share": 0.22727272727272727,
+    "historical_delta": -0.07833655705996131,
+    "counterfactual_delta": 0.006769825918762101
+  },
+  {
+    "episode_id": 75719804,
+    "step": 94,
+    "num_players": 4,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 4,
+      "prod_share": 0.2608695652173913,
+      "ship_share": 0.35158680771624146,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.2608695652173913,
+    "historical_delta": -0.17576318223866788,
+    "counterfactual_delta": -0.17576318223866788
+  },
+  {
+    "episode_id": 75719804,
+    "step": 104,
+    "num_players": 4,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 4,
+      "prod_share": 0.06382978723404255,
+      "ship_share": 0.27800269905533065,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.020833333333333332,
+    "start_prod_share": 0.06382978723404255,
+    "historical_delta": -0.04299645390070922,
+    "counterfactual_delta": -0.022163120567375884
+  },
+  {
+    "episode_id": 75719804,
+    "step": 114,
+    "num_players": 4,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 4,
+      "prod_share": 0.06382978723404255,
+      "ship_share": 0.1898965307364577,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.06382978723404255,
+    "historical_delta": -0.04299645390070922,
+    "counterfactual_delta": -0.04299645390070922
+  },
+  {
+    "episode_id": 75719804,
+    "step": 124,
+    "num_players": 4,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 4,
+      "prod_share": 0.10416666666666667,
+      "ship_share": 0.10102843315184513,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.041666666666666664,
+    "start_prod_share": 0.10416666666666667,
+    "historical_delta": -0.10416666666666667,
+    "counterfactual_delta": -0.0625
+  },
+  {
+    "episode_id": 75719804,
+    "step": 134,
+    "num_players": 4,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 4,
+      "prod_share": 0.041666666666666664,
+      "ship_share": 0.07978363759296822,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.041666666666666664,
+    "historical_delta": -0.041666666666666664,
+    "counterfactual_delta": -0.041666666666666664
+  },
+  {
+    "episode_id": 75719804,
+    "step": 144,
+    "num_players": 4,
+    "state_features": {
+      "step": 144,
+      "step_frac": 0.288,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.05190744215134459,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.02040816326530612,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.02040816326530612,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75719804,
+    "step": 154,
+    "num_players": 4,
+    "state_features": {
+      "step": 154,
+      "step_frac": 0.308,
+      "num_players": 4,
+      "prod_share": 0.020833333333333332,
+      "ship_share": 0.01835372636262514,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.01959183673469388,
+    "start_prod_share": 0.020833333333333332,
+    "historical_delta": 0.01916666666666667,
+    "counterfactual_delta": -0.00042517006802721136
+  },
+  {
+    "episode_id": 75719804,
+    "step": 164,
+    "num_players": 4,
+    "state_features": {
+      "step": 164,
+      "step_frac": 0.328,
+      "num_players": 4,
+      "prod_share": 0.02040816326530612,
+      "ship_share": 0.00664599025254763,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.02040816326530612,
+    "historical_delta": 0.01959183673469388,
+    "counterfactual_delta": 0.01959183673469388
+  },
+  {
+    "episode_id": 75719804,
+    "step": 174,
+    "num_players": 4,
+    "state_features": {
+      "step": 174,
+      "step_frac": 0.348,
+      "num_players": 4,
+      "prod_share": 0.04,
+      "ship_share": 0.008636875704093128,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.04,
+    "historical_delta": -0.04,
+    "counterfactual_delta": -0.04
+  },
+  {
+    "episode_id": 75719901,
+    "step": 24,
+    "num_players": 4,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 4,
+      "prod_share": 0.23076923076923078,
+      "ship_share": 0.2676518883415435,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.23076923076923078,
+    "historical_delta": -0.04326923076923078,
+    "counterfactual_delta": -0.04326923076923078
+  },
+  {
+    "episode_id": 75719901,
+    "step": 34,
+    "num_players": 4,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 4,
+      "prod_share": 0.20454545454545456,
+      "ship_share": 0.2602880658436214,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.0625,
+    "start_prod_share": 0.20454545454545456,
+    "historical_delta": 0.04545454545454544,
+    "counterfactual_delta": -0.017045454545454558
+  },
+  {
+    "episode_id": 75719901,
+    "step": 44,
+    "num_players": 4,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 4,
+      "prod_share": 0.20408163265306123,
+      "ship_share": 0.29086115992970124,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.06042884990253411,
+    "start_prod_share": 0.20408163265306123,
+    "historical_delta": 0.041532402434658056,
+    "counterfactual_delta": -0.018896447467876054
+  },
+  {
+    "episode_id": 75719901,
+    "step": 54,
+    "num_players": 4,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 4,
+      "prod_share": 0.25925925925925924,
+      "ship_share": 0.29970544918998526,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.25925925925925924,
+    "historical_delta": -0.0219711236660389,
+    "counterfactual_delta": -0.0219711236660389
+  },
+  {
+    "episode_id": 75719901,
+    "step": 64,
+    "num_players": 4,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 4,
+      "prod_share": 0.24561403508771928,
+      "ship_share": 0.315468940316687,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.024731182795698914,
+    "start_prod_share": 0.24561403508771928,
+    "historical_delta": 0.012450481041312966,
+    "counterfactual_delta": -0.012280701754385948
+  },
+  {
+    "episode_id": 75719901,
+    "step": 74,
+    "num_players": 4,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 4,
+      "prod_share": 0.23333333333333334,
+      "ship_share": 0.35304150085275726,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.033898305084745756,
+    "start_prod_share": 0.23333333333333334,
+    "historical_delta": -0.04689265536723164,
+    "counterfactual_delta": -0.012994350282485884
+  },
+  {
+    "episode_id": 75719901,
+    "step": 84,
+    "num_players": 4,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 4,
+      "prod_share": 0.2542372881355932,
+      "ship_share": 0.33891992551210426,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.01694915254237289,
+    "start_prod_share": 0.2542372881355932,
+    "historical_delta": -0.06779661016949151,
+    "counterfactual_delta": -0.0847457627118644
+  },
+  {
+    "episode_id": 75719901,
+    "step": 94,
+    "num_players": 4,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 4,
+      "prod_share": 0.1864406779661017,
+      "ship_share": 0.30292188431723316,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.0807909604519774,
+    "start_prod_share": 0.1864406779661017,
+    "historical_delta": 0.04689265536723164,
+    "counterfactual_delta": -0.033898305084745756
+  },
+  {
+    "episode_id": 75719901,
+    "step": 104,
+    "num_players": 4,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 4,
+      "prod_share": 0.1864406779661017,
+      "ship_share": 0.2179715302491103,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.05000000000000002,
+    "start_prod_share": 0.1864406779661017,
+    "historical_delta": -0.0364406779661017,
+    "counterfactual_delta": 0.013559322033898313
+  },
+  {
+    "episode_id": 75719901,
+    "step": 114,
+    "num_players": 4,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 4,
+      "prod_share": 0.2,
+      "ship_share": 0.19327073552425664,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.033333333333333326,
+    "start_prod_share": 0.2,
+    "historical_delta": -0.05000000000000002,
+    "counterfactual_delta": -0.01666666666666669
+  },
+  {
+    "episode_id": 75719901,
+    "step": 124,
+    "num_players": 4,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 4,
+      "prod_share": 0.18333333333333332,
+      "ship_share": 0.1641025641025641,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.18333333333333332,
+    "historical_delta": -0.005913978494623634,
+    "counterfactual_delta": -0.005913978494623634
+  },
+  {
+    "episode_id": 75719901,
+    "step": 134,
+    "num_players": 4,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 4,
+      "prod_share": 0.16393442622950818,
+      "ship_share": 0.15202853321444493,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.015625,
+    "start_prod_share": 0.16393442622950818,
+    "historical_delta": -0.0076844262295081844,
+    "counterfactual_delta": -0.023309426229508184
+  },
+  {
+    "episode_id": 75719901,
+    "step": 144,
+    "num_players": 4,
+    "state_features": {
+      "step": 144,
+      "step_frac": 0.288,
+      "num_players": 4,
+      "prod_share": 0.171875,
+      "ship_share": 0.16975187081528162,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.01771561771561772,
+    "start_prod_share": 0.171875,
+    "historical_delta": -0.02035984848484848,
+    "counterfactual_delta": -0.00264423076923076
+  },
+  {
+    "episode_id": 75719901,
+    "step": 154,
+    "num_players": 4,
+    "state_features": {
+      "step": 154,
+      "step_frac": 0.308,
+      "num_players": 4,
+      "prod_share": 0.140625,
+      "ship_share": 0.16591928251121077,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.140625,
+    "historical_delta": -0.02297794117647059,
+    "counterfactual_delta": -0.02297794117647059
+  },
+  {
+    "episode_id": 75719901,
+    "step": 164,
+    "num_players": 4,
+    "state_features": {
+      "step": 164,
+      "step_frac": 0.328,
+      "num_players": 4,
+      "prod_share": 0.13432835820895522,
+      "ship_share": 0.15216713439351418,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.13432835820895522,
+    "historical_delta": -0.001975417032484633,
+    "counterfactual_delta": -0.001975417032484633
+  },
+  {
+    "episode_id": 75719901,
+    "step": 174,
+    "num_players": 4,
+    "state_features": {
+      "step": 174,
+      "step_frac": 0.348,
+      "num_players": 4,
+      "prod_share": 0.11764705882352941,
+      "ship_share": 0.13068181818181818,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.11764705882352941,
+    "historical_delta": 0.00735294117647059,
+    "counterfactual_delta": 0.00735294117647059
+  },
+  {
+    "episode_id": 75720021,
+    "step": 24,
+    "num_players": 2,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 2,
+      "prod_share": 0.5,
+      "ship_share": 0.5135869565217391,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.5,
+    "historical_delta": -0.14814814814814814,
+    "counterfactual_delta": -0.14814814814814814
+  },
+  {
+    "episode_id": 75720021,
+    "step": 34,
+    "num_players": 2,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 2,
+      "prod_share": 0.4222222222222222,
+      "ship_share": 0.5174050632911392,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.008031442241968556,
+    "start_prod_share": 0.4222222222222222,
+    "historical_delta": -0.03261183261183259,
+    "counterfactual_delta": -0.04064327485380115
+  },
+  {
+    "episode_id": 75720021,
+    "step": 44,
+    "num_players": 2,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 2,
+      "prod_share": 0.36231884057971014,
+      "ship_share": 0.48095238095238096,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.006855791962174951,
+    "start_prod_share": 0.36231884057971014,
+    "historical_delta": 0.041936478569226,
+    "counterfactual_delta": 0.04879227053140095
+  },
+  {
+    "episode_id": 75720021,
+    "step": 54,
+    "num_players": 2,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 2,
+      "prod_share": 0.4157303370786517,
+      "ship_share": 0.4712041884816754,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.02105263157894738,
+    "start_prod_share": 0.4157303370786517,
+    "historical_delta": 0.026374926079243022,
+    "counterfactual_delta": 0.0474275576581904
+  },
+  {
+    "episode_id": 75720021,
+    "step": 64,
+    "num_players": 2,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 2,
+      "prod_share": 0.4,
+      "ship_share": 0.4534358047016275,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.01041666666666663,
+    "start_prod_share": 0.4,
+    "historical_delta": 0.08958333333333329,
+    "counterfactual_delta": 0.07916666666666666
+  },
+  {
+    "episode_id": 75720021,
+    "step": 74,
+    "num_players": 2,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 2,
+      "prod_share": 0.4270833333333333,
+      "ship_share": 0.4447900466562986,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.4270833333333333,
+    "historical_delta": 0.07291666666666669,
+    "counterfactual_delta": 0.07291666666666669
+  },
+  {
+    "episode_id": 75720021,
+    "step": 84,
+    "num_players": 2,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 2,
+      "prod_share": 0.4891304347826087,
+      "ship_share": 0.42408787759905847,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.03260869565217395,
+    "start_prod_share": 0.4891304347826087,
+    "historical_delta": 0.010869565217391297,
+    "counterfactual_delta": 0.043478260869565244
+  },
+  {
+    "episode_id": 75720021,
+    "step": 94,
+    "num_players": 2,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 2,
+      "prod_share": 0.5652173913043478,
+      "ship_share": 0.41107300342969133,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.03260869565217395,
+    "start_prod_share": 0.5652173913043478,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.03260869565217395
+  },
+  {
+    "episode_id": 75720021,
+    "step": 104,
+    "num_players": 2,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 2,
+      "prod_share": 0.532608695652174,
+      "ship_share": 0.4269005847953216,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.532608695652174,
+    "historical_delta": -0.16304347826086962,
+    "counterfactual_delta": -0.16304347826086962
+  },
+  {
+    "episode_id": 75720021,
+    "step": 114,
+    "num_players": 2,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 2,
+      "prod_share": 0.358695652173913,
+      "ship_share": 0.43627246134559133,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.358695652173913,
+    "historical_delta": 0.010869565217391297,
+    "counterfactual_delta": 0.010869565217391297
+  },
+  {
+    "episode_id": 75720021,
+    "step": 124,
+    "num_players": 2,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 2,
+      "prod_share": 0.3804347826086957,
+      "ship_share": 0.38761726078799247,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.3804347826086957,
+    "historical_delta": -0.11956521739130438,
+    "counterfactual_delta": -0.11956521739130438
+  },
+  {
+    "episode_id": 75720021,
+    "step": 134,
+    "num_players": 2,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 2,
+      "prod_share": 0.3804347826086957,
+      "ship_share": 0.3415545590433483,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.3804347826086957,
+    "historical_delta": -0.3369565217391305,
+    "counterfactual_delta": -0.3369565217391305
+  },
+  {
+    "episode_id": 75720220,
+    "step": 24,
+    "num_players": 4,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 4,
+      "prod_share": 0.30303030303030304,
+      "ship_share": 0.2064343163538874,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.30303030303030304,
+    "historical_delta": -0.04303030303030303,
+    "counterfactual_delta": -0.04303030303030303
+  },
+  {
+    "episode_id": 75720220,
+    "step": 34,
+    "num_players": 4,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 4,
+      "prod_share": 0.28888888888888886,
+      "ship_share": 0.2657856093979442,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.06785714285714284,
+    "start_prod_share": 0.28888888888888886,
+    "historical_delta": 0.011111111111111127,
+    "counterfactual_delta": -0.05674603174603171
+  },
+  {
+    "episode_id": 75720220,
+    "step": 44,
+    "num_players": 4,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 4,
+      "prod_share": 0.2545454545454545,
+      "ship_share": 0.3229050279329609,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.2545454545454545,
+    "historical_delta": 0.015295815295815307,
+    "counterfactual_delta": 0.015295815295815307
+  },
+  {
+    "episode_id": 75720220,
+    "step": 54,
+    "num_players": 4,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 4,
+      "prod_share": 0.27419354838709675,
+      "ship_share": 0.3274974253347065,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.02217194570135747,
+    "start_prod_share": 0.27419354838709675,
+    "historical_delta": -0.12713472485768498,
+    "counterfactual_delta": -0.10496277915632751
+  },
+  {
+    "episode_id": 75720220,
+    "step": 64,
+    "num_players": 4,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 4,
+      "prod_share": 0.1746031746031746,
+      "ship_share": 0.2871646120377085,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.1746031746031746,
+    "historical_delta": 0.03127917833800187,
+    "counterfactual_delta": 0.03127917833800187
+  },
+  {
+    "episode_id": 75720220,
+    "step": 74,
+    "num_players": 4,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 4,
+      "prod_share": 0.14705882352941177,
+      "ship_share": 0.23853923853923853,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.01470588235294118,
+    "start_prod_share": 0.14705882352941177,
+    "historical_delta": 0.07352941176470587,
+    "counterfactual_delta": 0.05882352941176469
+  },
+  {
+    "episode_id": 75720220,
+    "step": 84,
+    "num_players": 4,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 4,
+      "prod_share": 0.20588235294117646,
+      "ship_share": 0.26452020202020204,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.20588235294117646,
+    "historical_delta": 0.04411764705882354,
+    "counterfactual_delta": 0.04411764705882354
+  },
+  {
+    "episode_id": 75720220,
+    "step": 94,
+    "num_players": 4,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 4,
+      "prod_share": 0.23529411764705882,
+      "ship_share": 0.37308228730822873,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.0735294117647059,
+    "start_prod_share": 0.23529411764705882,
+    "historical_delta": 0.02941176470588236,
+    "counterfactual_delta": -0.04411764705882354
+  },
+  {
+    "episode_id": 75720220,
+    "step": 104,
+    "num_players": 4,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 4,
+      "prod_share": 0.22058823529411764,
+      "ship_share": 0.35724331926863573,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.1470588235294118,
+    "start_prod_share": 0.22058823529411764,
+    "historical_delta": 0.1470588235294118,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75720220,
+    "step": 114,
+    "num_players": 4,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 4,
+      "prod_share": 0.29411764705882354,
+      "ship_share": 0.36404494382022473,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.04880647911338454,
+    "start_prod_share": 0.29411764705882354,
+    "historical_delta": 0.02472293265132136,
+    "counterfactual_delta": 0.0735294117647059
+  },
+  {
+    "episode_id": 75720220,
+    "step": 124,
+    "num_players": 4,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 4,
+      "prod_share": 0.36764705882352944,
+      "ship_share": 0.3577912254160363,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.0821917808219178,
+    "start_prod_share": 0.36764705882352944,
+    "historical_delta": -0.23066075745366643,
+    "counterfactual_delta": -0.14846897663174863
+  },
+  {
+    "episode_id": 75720220,
+    "step": 134,
+    "num_players": 4,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 4,
+      "prod_share": 0.24285714285714285,
+      "ship_share": 0.31226053639846746,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.013513513513513514,
+    "start_prod_share": 0.24285714285714285,
+    "historical_delta": -0.13474903474903474,
+    "counterfactual_delta": -0.14826254826254825
+  },
+  {
+    "episode_id": 75720220,
+    "step": 144,
+    "num_players": 4,
+    "state_features": {
+      "step": 144,
+      "step_frac": 0.288,
+      "num_players": 4,
+      "prod_share": 0.1917808219178082,
+      "ship_share": 0.2533191715347849,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.10126582278481013,
+    "start_prod_share": 0.1917808219178082,
+    "historical_delta": -0.1917808219178082,
+    "counterfactual_delta": -0.09051499913299808
+  },
+  {
+    "episode_id": 75720220,
+    "step": 154,
+    "num_players": 4,
+    "state_features": {
+      "step": 154,
+      "step_frac": 0.308,
+      "num_players": 4,
+      "prod_share": 0.06493506493506493,
+      "ship_share": 0.15362485615650173,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.06493506493506493,
+    "historical_delta": -0.06493506493506493,
+    "counterfactual_delta": -0.06493506493506493
+  },
+  {
+    "episode_id": 75720220,
+    "step": 164,
+    "num_players": 4,
+    "state_features": {
+      "step": 164,
+      "step_frac": 0.328,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.043617021276595745,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75720220,
+    "step": 174,
+    "num_players": 4,
+    "state_features": {
+      "step": 174,
+      "step_frac": 0.348,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.016367265469061875,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75720800,
+    "step": 24,
+    "num_players": 4,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 4,
+      "prod_share": 0.25,
+      "ship_share": 0.2755102040816326,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.04999999999999999,
+    "start_prod_share": 0.25,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.04999999999999999
+  },
+  {
+    "episode_id": 75720800,
+    "step": 34,
+    "num_players": 4,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 4,
+      "prod_share": 0.28,
+      "ship_share": 0.23397435897435898,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.11757105943152452,
+    "start_prod_share": 0.28,
+    "historical_delta": -0.0022222222222222365,
+    "counterfactual_delta": 0.11534883720930228
+  },
+  {
+    "episode_id": 75720800,
+    "step": 44,
+    "num_players": 4,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 4,
+      "prod_share": 0.25,
+      "ship_share": 0.2569444444444444,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.25,
+    "historical_delta": 0.10714285714285715,
+    "counterfactual_delta": 0.10714285714285715
+  },
+  {
+    "episode_id": 75720800,
+    "step": 54,
+    "num_players": 4,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 4,
+      "prod_share": 0.36585365853658536,
+      "ship_share": 0.2756183745583039,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": -0.04166666666666663,
+    "start_prod_share": 0.36585365853658536,
+    "historical_delta": 0.09247967479674796,
+    "counterfactual_delta": 0.05081300813008133
+  },
+  {
+    "episode_id": 75720800,
+    "step": 64,
+    "num_players": 4,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 4,
+      "prod_share": 0.4166666666666667,
+      "ship_share": 0.33863080684596575,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.4166666666666667,
+    "historical_delta": 0.0033333333333332993,
+    "counterfactual_delta": 0.0033333333333332993
+  },
+  {
+    "episode_id": 75720800,
+    "step": 74,
+    "num_players": 4,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 4,
+      "prod_share": 0.4583333333333333,
+      "ship_share": 0.3827708703374778,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": -0.06122448979591838,
+    "start_prod_share": 0.4583333333333333,
+    "historical_delta": -0.070578231292517,
+    "counterfactual_delta": -0.13180272108843538
+  },
+  {
+    "episode_id": 75720800,
+    "step": 84,
+    "num_players": 4,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 4,
+      "prod_share": 0.46938775510204084,
+      "ship_share": 0.421608448415922,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": -0.12,
+    "start_prod_share": 0.46938775510204084,
+    "historical_delta": -0.029387755102040836,
+    "counterfactual_delta": -0.14938775510204083
+  },
+  {
+    "episode_id": 75720800,
+    "step": 94,
+    "num_players": 4,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 4,
+      "prod_share": 0.3877551020408163,
+      "ship_share": 0.4707623982235381,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": -0.03999999999999998,
+    "start_prod_share": 0.3877551020408163,
+    "historical_delta": 0.09224489795918367,
+    "counterfactual_delta": 0.05224489795918369
+  },
+  {
+    "episode_id": 75720800,
+    "step": 104,
+    "num_players": 4,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 4,
+      "prod_share": 0.4,
+      "ship_share": 0.5157278712509145,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.038461538461538436,
+    "start_prod_share": 0.4,
+    "historical_delta": 0.09999999999999998,
+    "counterfactual_delta": 0.1384615384615384
+  },
+  {
+    "episode_id": 75720800,
+    "step": 114,
+    "num_players": 4,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 4,
+      "prod_share": 0.52,
+      "ship_share": 0.5021459227467812,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.019230769230769162,
+    "start_prod_share": 0.52,
+    "historical_delta": -0.0007692307692307443,
+    "counterfactual_delta": 0.018461538461538418
+  },
+  {
+    "episode_id": 75720800,
+    "step": 124,
+    "num_players": 4,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 4,
+      "prod_share": 0.5384615384615384,
+      "ship_share": 0.5218140068886338,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.5384615384615384,
+    "historical_delta": -0.019230769230769162,
+    "counterfactual_delta": -0.019230769230769162
+  },
+  {
+    "episode_id": 75720800,
+    "step": 134,
+    "num_players": 4,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 4,
+      "prod_share": 0.5384615384615384,
+      "ship_share": 0.5335497835497836,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.5384615384615384,
+    "historical_delta": 0.019230769230769273,
+    "counterfactual_delta": 0.019230769230769273
+  },
+  {
+    "episode_id": 75720800,
+    "step": 144,
+    "num_players": 4,
+    "state_features": {
+      "step": 144,
+      "step_frac": 0.288,
+      "num_players": 4,
+      "prod_share": 0.4230769230769231,
+      "ship_share": 0.5135433941404091,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.4230769230769231,
+    "historical_delta": 0.10522496371552975,
+    "counterfactual_delta": 0.10522496371552975
+  },
+  {
+    "episode_id": 75720800,
+    "step": 154,
+    "num_players": 4,
+    "state_features": {
+      "step": 154,
+      "step_frac": 0.308,
+      "num_players": 4,
+      "prod_share": 0.5283018867924528,
+      "ship_share": 0.4787520172135557,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.047169811320754707,
+    "start_prod_share": 0.5283018867924528,
+    "historical_delta": -0.028301886792452824,
+    "counterfactual_delta": 0.018867924528301883
+  },
+  {
+    "episode_id": 75720800,
+    "step": 164,
+    "num_players": 4,
+    "state_features": {
+      "step": 164,
+      "step_frac": 0.328,
+      "num_players": 4,
+      "prod_share": 0.5471698113207547,
+      "ship_share": 0.4745151105096978,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.05357142857142855,
+    "start_prod_share": 0.5471698113207547,
+    "historical_delta": -0.10074123989218325,
+    "counterfactual_delta": -0.047169811320754707
+  },
+  {
+    "episode_id": 75720800,
+    "step": 174,
+    "num_players": 4,
+    "state_features": {
+      "step": 174,
+      "step_frac": 0.348,
+      "num_players": 4,
+      "prod_share": 0.4642857142857143,
+      "ship_share": 0.44824355971896956,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.038461538461538436,
+    "start_prod_share": 0.4642857142857143,
+    "historical_delta": -0.06043956043956045,
+    "counterfactual_delta": -0.02197802197802201
+  },
+  {
+    "episode_id": 75720968,
+    "step": 24,
+    "num_players": 4,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 4,
+      "prod_share": 0.2222222222222222,
+      "ship_share": 0.2581081081081081,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.2222222222222222,
+    "historical_delta": 0.02777777777777779,
+    "counterfactual_delta": 0.02777777777777779
+  },
+  {
+    "episode_id": 75720968,
+    "step": 34,
+    "num_players": 4,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 4,
+      "prod_share": 0.25,
+      "ship_share": 0.2672253258845438,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.25,
+    "historical_delta": 0.009259259259259245,
+    "counterfactual_delta": 0.009259259259259245
+  },
+  {
+    "episode_id": 75720968,
+    "step": 44,
+    "num_players": 4,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 4,
+      "prod_share": 0.2,
+      "ship_share": 0.2620845921450151,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.2,
+    "historical_delta": -0.04146341463414635,
+    "counterfactual_delta": -0.04146341463414635
+  },
+  {
+    "episode_id": 75720968,
+    "step": 54,
+    "num_players": 4,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 4,
+      "prod_share": 0.14634146341463414,
+      "ship_share": 0.246922024623803,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.14634146341463414,
+    "historical_delta": 0.022333235380546573,
+    "counterfactual_delta": 0.022333235380546573
+  },
+  {
+    "episode_id": 75720968,
+    "step": 64,
+    "num_players": 4,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 4,
+      "prod_share": 0.2073170731707317,
+      "ship_share": 0.26101468624833113,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.2073170731707317,
+    "historical_delta": -0.07478695268880398,
+    "counterfactual_delta": -0.07478695268880398
+  },
+  {
+    "episode_id": 75720968,
+    "step": 74,
+    "num_players": 4,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 4,
+      "prod_share": 0.18072289156626506,
+      "ship_share": 0.2384187770228536,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.18072289156626506,
+    "historical_delta": -0.15633264766382604,
+    "counterfactual_delta": -0.15633264766382604
+  },
+  {
+    "episode_id": 75720968,
+    "step": 84,
+    "num_players": 4,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 4,
+      "prod_share": 0.04938271604938271,
+      "ship_share": 0.18653421633554085,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.04938271604938271,
+    "historical_delta": -0.024992472146943688,
+    "counterfactual_delta": -0.024992472146943688
+  },
+  {
+    "episode_id": 75720968,
+    "step": 94,
+    "num_players": 4,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 4,
+      "prod_share": 0.024390243902439025,
+      "ship_share": 0.09202453987730061,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.024390243902439025,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75720968,
+    "step": 104,
+    "num_players": 4,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 4,
+      "prod_share": 0.024390243902439025,
+      "ship_share": 0.04273029966703663,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.024390243902439025,
+    "historical_delta": -0.0002938583602703493,
+    "counterfactual_delta": -0.0002938583602703493
+  },
+  {
+    "episode_id": 75720968,
+    "step": 114,
+    "num_players": 4,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 4,
+      "prod_share": 0.024096385542168676,
+      "ship_share": 0.036176864671728454,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.024096385542168676,
+    "historical_delta": -0.012191623637406772,
+    "counterfactual_delta": -0.012191623637406772
+  },
+  {
+    "episode_id": 75720968,
+    "step": 124,
+    "num_players": 4,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 4,
+      "prod_share": 0.08333333333333333,
+      "ship_share": 0.035910435149978874,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.08333333333333333,
+    "historical_delta": -0.08333333333333333,
+    "counterfactual_delta": -0.08333333333333333
+  },
+  {
+    "episode_id": 75720968,
+    "step": 134,
+    "num_players": 4,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 4,
+      "prod_share": 0.011904761904761904,
+      "ship_share": 0.02541544477028348,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.011904761904761904,
+    "historical_delta": -0.011904761904761904,
+    "counterfactual_delta": -0.011904761904761904
+  },
+  {
+    "episode_id": 75720968,
+    "step": 144,
+    "num_players": 4,
+    "state_features": {
+      "step": 144,
+      "step_frac": 0.288,
+      "num_players": 4,
+      "prod_share": 0.0,
+      "ship_share": 0.005797101449275362,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.0,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.0
+  },
+  {
+    "episode_id": 75721363,
+    "step": 24,
+    "num_players": 2,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 2,
+      "prod_share": 0.55,
+      "ship_share": 0.45454545454545453,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.55,
+    "historical_delta": -0.11000000000000004,
+    "counterfactual_delta": -0.11000000000000004
+  },
+  {
+    "episode_id": 75721363,
+    "step": 34,
+    "num_players": 2,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 2,
+      "prod_share": 0.44,
+      "ship_share": 0.5090497737556561,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.035526315789473684,
+    "start_prod_share": 0.44,
+    "historical_delta": -0.11499999999999999,
+    "counterfactual_delta": -0.15052631578947367
+  },
+  {
+    "episode_id": 75721363,
+    "step": 44,
+    "num_players": 2,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 2,
+      "prod_share": 0.4,
+      "ship_share": 0.4791666666666667,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.4,
+    "historical_delta": -0.10000000000000003,
+    "counterfactual_delta": -0.10000000000000003
+  },
+  {
+    "episode_id": 75721363,
+    "step": 54,
+    "num_players": 2,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 2,
+      "prod_share": 0.21428571428571427,
+      "ship_share": 0.43586550435865506,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.21428571428571427,
+    "historical_delta": 0.030997304582210256,
+    "counterfactual_delta": 0.030997304582210256
+  },
+  {
+    "episode_id": 75722218,
+    "step": 24,
+    "num_players": 2,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 2,
+      "prod_share": 0.5,
+      "ship_share": 0.5,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.5,
+    "historical_delta": 0.13636363636363635,
+    "counterfactual_delta": 0.13636363636363635
+  },
+  {
+    "episode_id": 75722218,
+    "step": 34,
+    "num_players": 2,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 2,
+      "prod_share": 0.5,
+      "ship_share": 0.5862068965517241,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.06521739130434778,
+    "start_prod_share": 0.5,
+    "historical_delta": 0.0,
+    "counterfactual_delta": 0.06521739130434778
+  },
+  {
+    "episode_id": 75722218,
+    "step": 44,
+    "num_players": 2,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 2,
+      "prod_share": 0.5,
+      "ship_share": 0.6240601503759399,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.023550724637681153,
+    "start_prod_share": 0.5,
+    "historical_delta": 0.06521739130434778,
+    "counterfactual_delta": 0.04166666666666663
+  },
+  {
+    "episode_id": 75722218,
+    "step": 54,
+    "num_players": 2,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 2,
+      "prod_share": 0.5652173913043478,
+      "ship_share": 0.5247933884297521,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.02614379084967322,
+    "start_prod_share": 0.5652173913043478,
+    "historical_delta": -0.03580562659846542,
+    "counterfactual_delta": -0.009661835748792202
+  },
+  {
+    "episode_id": 75722218,
+    "step": 64,
+    "num_players": 2,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 2,
+      "prod_share": 0.5806451612903226,
+      "ship_share": 0.5171568627450981,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.5806451612903226,
+    "historical_delta": 0.019354838709677358,
+    "counterfactual_delta": 0.019354838709677358
+  },
+  {
+    "episode_id": 75722218,
+    "step": 74,
+    "num_players": 2,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 2,
+      "prod_share": 0.574468085106383,
+      "ship_share": 0.5401929260450161,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.574468085106383,
+    "historical_delta": -0.036006546644844595,
+    "counterfactual_delta": -0.036006546644844595
+  },
+  {
+    "episode_id": 75722218,
+    "step": 84,
+    "num_players": 2,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 2,
+      "prod_share": 0.5576923076923077,
+      "ship_share": 0.5142566191446029,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.5576923076923077,
+    "historical_delta": -0.02344573234984193,
+    "counterfactual_delta": -0.02344573234984193
+  },
+  {
+    "episode_id": 75722218,
+    "step": 94,
+    "num_players": 2,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 2,
+      "prod_share": 0.5652173913043478,
+      "ship_share": 0.5253623188405797,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.013513513513513487,
+    "start_prod_share": 0.5652173913043478,
+    "historical_delta": -0.06521739130434778,
+    "counterfactual_delta": -0.051703877790834296
+  },
+  {
+    "episode_id": 75722218,
+    "step": 104,
+    "num_players": 2,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 2,
+      "prod_share": 0.4864864864864865,
+      "ship_share": 0.5425471159337522,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.02631578947368418,
+    "start_prod_share": 0.4864864864864865,
+    "historical_delta": -0.14438122332859177,
+    "counterfactual_delta": -0.11806543385490759
+  },
+  {
+    "episode_id": 75722218,
+    "step": 114,
+    "num_players": 2,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 2,
+      "prod_share": 0.4342105263157895,
+      "ship_share": 0.5352358765288293,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.4342105263157895,
+    "historical_delta": -0.05263157894736842,
+    "counterfactual_delta": -0.05263157894736842
+  },
+  {
+    "episode_id": 75722218,
+    "step": 124,
+    "num_players": 2,
+    "state_features": {
+      "step": 124,
+      "step_frac": 0.248,
+      "num_players": 2,
+      "prod_share": 0.3684210526315789,
+      "ship_share": 0.46537842190016104,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.02631578947368418,
+    "start_prod_share": 0.3684210526315789,
+    "historical_delta": -0.01315789473684209,
+    "counterfactual_delta": -0.03947368421052627
+  },
+  {
+    "episode_id": 75722218,
+    "step": 134,
+    "num_players": 2,
+    "state_features": {
+      "step": 134,
+      "step_frac": 0.268,
+      "num_players": 2,
+      "prod_share": 0.34210526315789475,
+      "ship_share": 0.40482433141059254,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.03947368421052633,
+    "start_prod_share": 0.34210526315789475,
+    "historical_delta": -0.1842105263157895,
+    "counterfactual_delta": -0.14473684210526316
+  },
+  {
+    "episode_id": 75722243,
+    "step": 34,
+    "num_players": 2,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 2,
+      "prod_share": 0.4444444444444444,
+      "ship_share": 0.4973544973544973,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.4444444444444444,
+    "historical_delta": -0.013071895424836555,
+    "counterfactual_delta": -0.013071895424836555
+  },
+  {
+    "episode_id": 75722243,
+    "step": 44,
+    "num_players": 2,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 2,
+      "prod_share": 0.4583333333333333,
+      "ship_share": 0.571078431372549,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.03246753246753242,
+    "start_prod_share": 0.4583333333333333,
+    "historical_delta": 0.07413419913419911,
+    "counterfactual_delta": 0.041666666666666685
+  },
+  {
+    "episode_id": 75722243,
+    "step": 54,
+    "num_players": 2,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 2,
+      "prod_share": 0.44642857142857145,
+      "ship_share": 0.5122549019607843,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.04999999999999993,
+    "start_prod_share": 0.44642857142857145,
+    "historical_delta": 0.1335714285714285,
+    "counterfactual_delta": 0.08357142857142857
+  },
+  {
+    "episode_id": 75722243,
+    "step": 64,
+    "num_players": 2,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 2,
+      "prod_share": 0.5125,
+      "ship_share": 0.4837779379956741,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.5125,
+    "historical_delta": 0.02215346534653473,
+    "counterfactual_delta": 0.02215346534653473
+  },
+  {
+    "episode_id": 75722243,
+    "step": 74,
+    "num_players": 2,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 2,
+      "prod_share": 0.5346534653465347,
+      "ship_share": 0.5063484002031488,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.5346534653465347,
+    "historical_delta": -0.00990099009900991,
+    "counterfactual_delta": -0.00990099009900991
+  },
+  {
+    "episode_id": 75722243,
+    "step": 84,
+    "num_players": 2,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 2,
+      "prod_share": 0.5742574257425742,
+      "ship_share": 0.5181401902078197,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": -0.0051399200456881955,
+    "start_prod_share": 0.5742574257425742,
+    "historical_delta": -0.09852927040276838,
+    "counterfactual_delta": -0.10366919044845657
+  },
+  {
+    "episode_id": 75722243,
+    "step": 94,
+    "num_players": 2,
+    "state_features": {
+      "step": 94,
+      "step_frac": 0.188,
+      "num_players": 2,
+      "prod_share": 0.48514851485148514,
+      "ship_share": 0.5188387893761581,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.028846153846153855,
+    "start_prod_share": 0.48514851485148514,
+    "historical_delta": -0.1005331302361005,
+    "counterfactual_delta": -0.12937928408225435
+  },
+  {
+    "episode_id": 75722243,
+    "step": 104,
+    "num_players": 2,
+    "state_features": {
+      "step": 104,
+      "step_frac": 0.208,
+      "num_players": 2,
+      "prod_share": 0.47115384615384615,
+      "ship_share": 0.4980886850152905,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.028846153846153855,
+    "start_prod_share": 0.47115384615384615,
+    "historical_delta": -0.11538461538461536,
+    "counterfactual_delta": -0.08653846153846151
+  },
+  {
+    "episode_id": 75722243,
+    "step": 114,
+    "num_players": 2,
+    "state_features": {
+      "step": 114,
+      "step_frac": 0.228,
+      "num_players": 2,
+      "prod_share": 0.3173076923076923,
+      "ship_share": 0.43843283582089554,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.3173076923076923,
+    "historical_delta": -0.11538461538461536,
+    "counterfactual_delta": -0.11538461538461536
+  },
+  {
+    "episode_id": 75726824,
+    "step": 24,
+    "num_players": 2,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 2,
+      "prod_share": 0.41935483870967744,
+      "ship_share": 0.45,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.06631578947368416,
+    "start_prod_share": 0.41935483870967744,
+    "historical_delta": 0.10696095076400675,
+    "counterfactual_delta": 0.040645161290322585
+  },
+  {
+    "episode_id": 75726824,
+    "step": 34,
+    "num_players": 2,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 2,
+      "prod_share": 0.5,
+      "ship_share": 0.44426494345718903,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.04691558441558441,
+    "start_prod_share": 0.5,
+    "historical_delta": -0.03749999999999998,
+    "counterfactual_delta": -0.08441558441558439
+  },
+  {
+    "episode_id": 75726824,
+    "step": 44,
+    "num_players": 2,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 2,
+      "prod_share": 0.4852941176470588,
+      "ship_share": 0.45714285714285713,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.02750410509031198,
+    "start_prod_share": 0.4852941176470588,
+    "historical_delta": -0.0485125084516565,
+    "counterfactual_delta": -0.02100840336134452
+  },
+  {
+    "episode_id": 75726824,
+    "step": 54,
+    "num_players": 2,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 2,
+      "prod_share": 0.5308641975308642,
+      "ship_share": 0.4731522425773847,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.05681818181818182,
+    "start_prod_share": 0.5308641975308642,
+    "historical_delta": -0.13313692480359152,
+    "counterfactual_delta": -0.0763187429854097
+  },
+  {
+    "episode_id": 75726824,
+    "step": 64,
+    "num_players": 2,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 2,
+      "prod_share": 0.45454545454545453,
+      "ship_share": 0.47578749412317817,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.011363636363636354,
+    "start_prod_share": 0.45454545454545453,
+    "historical_delta": -0.09090909090909088,
+    "counterfactual_delta": -0.10227272727272724
+  },
+  {
+    "episode_id": 75726824,
+    "step": 74,
+    "num_players": 2,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 2,
+      "prod_share": 0.38636363636363635,
+      "ship_share": 0.4233199310740953,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.035714285714285726,
+    "start_prod_share": 0.38636363636363635,
+    "historical_delta": -0.12445887445887444,
+    "counterfactual_delta": -0.16017316017316016
+  },
+  {
+    "episode_id": 75726824,
+    "step": 84,
+    "num_players": 2,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 2,
+      "prod_share": 0.23809523809523808,
+      "ship_share": 0.3448275862068966,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": -0.023809523809523808,
+    "start_prod_share": 0.23809523809523808,
+    "historical_delta": -0.05952380952380951,
+    "counterfactual_delta": -0.08333333333333331
+  },
+  {
+    "episode_id": 75727773,
+    "step": 24,
+    "num_players": 2,
+    "state_features": {
+      "step": 24,
+      "step_frac": 0.048,
+      "num_players": 2,
+      "prod_share": 0.6428571428571429,
+      "ship_share": 0.5512820512820513,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.6428571428571429,
+    "historical_delta": -0.1428571428571429,
+    "counterfactual_delta": -0.1428571428571429
+  },
+  {
+    "episode_id": 75727773,
+    "step": 34,
+    "num_players": 2,
+    "state_features": {
+      "step": 34,
+      "step_frac": 0.068,
+      "num_players": 2,
+      "prod_share": 0.6333333333333333,
+      "ship_share": 0.6185567010309279,
+      "is_ahead": 1.0
+    },
+    "should_intervene": false,
+    "improvement": 0.0208436724565757,
+    "start_prod_share": 0.6333333333333333,
+    "historical_delta": -0.0849462365591398,
+    "counterfactual_delta": -0.0641025641025641
+  },
+  {
+    "episode_id": 75727773,
+    "step": 44,
+    "num_players": 2,
+    "state_features": {
+      "step": 44,
+      "step_frac": 0.088,
+      "num_players": 2,
+      "prod_share": 0.5384615384615384,
+      "ship_share": 0.5737931034482758,
+      "is_ahead": 1.0
+    },
+    "should_intervene": true,
+    "improvement": -0.006172839506172867,
+    "start_prod_share": 0.5384615384615384,
+    "historical_delta": -0.03228869895536557,
+    "counterfactual_delta": -0.038461538461538436
+  },
+  {
+    "episode_id": 75727773,
+    "step": 54,
+    "num_players": 2,
+    "state_features": {
+      "step": 54,
+      "step_frac": 0.108,
+      "num_players": 2,
+      "prod_share": 0.49333333333333335,
+      "ship_share": 0.5125448028673835,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.49333333333333335,
+    "historical_delta": 0.006666666666666654,
+    "counterfactual_delta": 0.006666666666666654
+  },
+  {
+    "episode_id": 75727773,
+    "step": 64,
+    "num_players": 2,
+    "state_features": {
+      "step": 64,
+      "step_frac": 0.128,
+      "num_players": 2,
+      "prod_share": 0.49382716049382713,
+      "ship_share": 0.5012224938875306,
+      "is_ahead": 0.0
+    },
+    "should_intervene": false,
+    "improvement": 0.07317073170731703,
+    "start_prod_share": 0.49382716049382713,
+    "historical_delta": -0.21333935561577833,
+    "counterfactual_delta": -0.1401686239084613
+  },
+  {
+    "episode_id": 75727773,
+    "step": 74,
+    "num_players": 2,
+    "state_features": {
+      "step": 74,
+      "step_frac": 0.148,
+      "num_players": 2,
+      "prod_share": 0.32926829268292684,
+      "ship_share": 0.4669479606188467,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.32926829268292684,
+    "historical_delta": -0.0700090334236676,
+    "counterfactual_delta": -0.0700090334236676
+  },
+  {
+    "episode_id": 75727773,
+    "step": 84,
+    "num_players": 2,
+    "state_features": {
+      "step": 84,
+      "step_frac": 0.168,
+      "num_players": 2,
+      "prod_share": 0.25925925925925924,
+      "ship_share": 0.3779988297249854,
+      "is_ahead": 0.0
+    },
+    "should_intervene": true,
+    "improvement": 0.0,
+    "start_prod_share": 0.25925925925925924,
+    "historical_delta": -0.1728395061728395,
+    "counterfactual_delta": -0.1728395061728395
+  }
+]

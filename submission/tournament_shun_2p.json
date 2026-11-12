@@ -1,0 +1,27 @@
+{
+  "stage2_base": {
+    "wins": 2,
+    "losses": 6,
+    "games": 8
+  },
+  "econfast": {
+    "wins": 4,
+    "losses": 4,
+    "games": 8
+  },
+  "econlite": {
+    "wins": 4,
+    "losses": 4,
+    "games": 8
+  },
+  "shun_combined": {
+    "wins": 5,
+    "losses": 3,
+    "games": 8
+  },
+  "fc_rl": {
+    "wins": 5,
+    "losses": 3,
+    "games": 8
+  }
+}

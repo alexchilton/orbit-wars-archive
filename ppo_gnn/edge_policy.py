@@ -59,9 +59,76 @@ HEURISTIC_DIM = 12  # see _compute_heuristic_features
 # Per-edge input = source_node(28) + target_node(28) + spatial(6) + heuristic(12)
 EDGE_INPUT_DIM = 74
 
+# v131-style scoring constants
+_LOG1000 = math.log(1000)
+_MAX_SPEED_MINUS_1 = 5.0  # max_speed(6) - 1
+SCORE_PROD_WEIGHT = 18.0
+SCORE_TT_PENALTY = 3.5
+NEUTRAL_BONUS = 25.0
+ENEMY_BONUS_EARLY = 15.0   # before pressure phase
+ENEMY_BONUS_PRESSURE = 26.0
+ENEMY_BONUS_AGGRO = 35.0
+DENIAL_BASE_SCORE = 75.0
+DENIAL_PROD_WEIGHT = 8.0
+DENIAL_URGENCY_WEIGHT = 20.0
+PROACTIVE_BONUS = 15.0
+SNIPER_BONUS = 60.0
+SNIPER_RANGE = 35.0
+SNIPER_MIN_SHIPS = 40
+HIGH_PROD_THRESHOLD = 4.0
+TAKEOVER_MARGIN = 1.05
+
+
+def _fleet_speed(ships: int) -> float:
+    """v131 fleet speed formula: log-scaled, 1.0 to 6.0."""
+    if ships <= 0:
+        return 1.0
+    return 1.0 + _MAX_SPEED_MINUS_1 * (math.log(max(ships, 1)) / _LOG1000) ** 1.5
+
+
+def _travel_time(x1: float, y1: float, x2: float, y2: float, ships: int) -> float:
+    """v131 travel time: distance / fleet_speed."""
+    dx = x2 - x1
+    dy = y2 - y1
+    if ships <= 0:
+        return 999.0
+    return math.sqrt(dx * dx + dy * dy) / _fleet_speed(ships)
+
+
+def predict_orbit(x: float, y: float, omega: float, dt: float):
+    """Predict where an orbiting body will be after dt steps."""
+    theta = math.atan2(y - SUN_Y, x - SUN_X)
+    r = math.hypot(x - SUN_X, y - SUN_Y)
+    return SUN_X + r * math.cos(theta + omega * dt), SUN_Y + r * math.sin(theta + omega * dt)
+
+
+def solve_intercept(fx, fy, tx, ty, omega, ships, iterations=25):
+    """Iteratively predict where an orbiting planet will be when our fleet arrives."""
+    if omega == 0:
+        return tx, ty
+    t = _travel_time(fx, fy, tx, ty, ships)
+    ix, iy = tx, ty
+    for _ in range(iterations):
+        ix, iy = predict_orbit(tx, ty, omega, t)
+        t2 = _travel_time(fx, fy, ix, iy, ships)
+        if abs(t2 - t) < 0.05:
+            break
+        t = t2
+    return ix, iy
+
+
+def _ships_needed_for_takeover(tgt_ships: float, tgt_prod: float, tt: float,
+                                owner: int, margin: float = TAKEOVER_MARGIN) -> int:
+    """v131 capture cost: accounts for production growth during travel."""
+    if owner == -1:  # neutral
+        return int(tgt_ships * margin) + 1
+    # enemy: ships grow during travel
+    growth = tgt_prod * tt
+    return int((tgt_ships + growth) * margin) + 1
+
 
 # ---------------------------------------------------------------------------
-# Heuristic edge scorer — filters ~4000 edges to top-K
+# Heuristic edge scorer — v131-quality scoring with top-K + exploration
 # ---------------------------------------------------------------------------
 
 def compute_candidate_edges(
@@ -72,25 +139,26 @@ def compute_candidate_edges(
     step: int,
     max_steps: int,
     max_candidates: int = MAX_CANDIDATES,
-    min_ships_to_send: int = 2,
+    min_ships_to_send: int = 3,
+    angular_velocity: float = 0.0,
+    no_filter: bool = False,
 ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, int]:
-    """Score all possible source→target edges and return top-K candidates.
+    """Score all possible source→target edges using v131-quality heuristics.
 
-    Args:
-        planets: Raw planet list from observation [[id, owner, x, y, orbit_vel, ships, prod], ...]
-        fleets: Raw fleet list from observation
-        player_id: Agent's player ID
-        num_players: Total players (2 or 4)
-        step: Current game step
-        max_steps: Max steps in game
-        max_candidates: Maximum edges to keep (default 192)
-        min_ships_to_send: Minimum ships on source to consider
+    Scoring uses:
+    - v131's prod*18 - travel_time*3.5 formula
+    - Capture viability with production growth during travel
+    - Denial scoring (intercept enemies heading for neutrals)
+    - Phase-aware bonuses (early=neutrals, late=enemies)
+    - Threat-aware source filtering (don't send from threatened planets)
+    - In-flight deduplication (don't pile onto already-targeted planets)
+    - 80% heuristic top-K + 20% exploration wild cards
 
     Returns:
-        edge_features: (K, EDGE_INPUT_DIM) — features for each candidate edge
-        edge_indices: (K, 2) — [source_planet_idx, target_planet_idx] for each edge
+        edge_features: (K, EDGE_INPUT_DIM)
+        edge_indices: (K, 2) — [source_planet_idx, target_planet_idx]
         edge_mask: (K,) — 1.0 for valid edges, 0.0 for padding
-        num_valid: int — number of actual valid edges (before padding)
+        num_valid: int
     """
     N = len(planets)
 
@@ -100,14 +168,27 @@ def compute_candidate_edges(
     planet_owner = [int(p[1]) for p in planets]
     planet_x = [float(p[2]) for p in planets]
     planet_y = [float(p[3]) for p in planets]
-    planet_orbit_vel = [float(p[4]) for p in planets]
+    # p[4] is planet RADIUS, not angular velocity.
+    # angular_velocity is a single game-wide value from obs['angular_velocity'].
+    # Orbiting planets: orbital_radius + planet_radius < 48 (v131 threshold)
+    INNER_ORBIT_THRESHOLD = 48.0
+    planet_radius = [float(p[4]) for p in planets]
+    planet_orbit_vel = []
+    for i in range(N):
+        orbital_r = math.hypot(planet_x[i] - SUN_X, planet_y[i] - SUN_Y)
+        if orbital_r + planet_radius[i] < INNER_ORBIT_THRESHOLD:
+            planet_orbit_vel.append(angular_velocity)
+        else:
+            planet_orbit_vel.append(0.0)
 
-    # Identify owned planets with enough ships
-    my_planets = [i for i in range(N)
-                  if planet_owner[i] == player_id and planet_ships[i] >= min_ships_to_send]
+    # Identify owned planets
+    if no_filter:
+        my_planets = [i for i in range(N) if planet_owner[i] == player_id]
+    else:
+        my_planets = [i for i in range(N)
+                      if planet_owner[i] == player_id and planet_ships[i] >= min_ships_to_send]
 
     if not my_planets:
-        # No valid sources — return empty padded tensor
         return (
             torch.zeros(max_candidates, EDGE_INPUT_DIM),
             torch.zeros(max_candidates, 2, dtype=torch.long),
@@ -115,14 +196,16 @@ def compute_candidate_edges(
             0,
         )
 
-    # Precompute inbound ships per planet
+    # --- Precompute inbound ships per planet (with fleet-to-nearest mapping) ---
     inbound_friendly = [0.0] * N
     inbound_enemy = [0.0] * N
-    for f in fleets:
+    fleet_nearest_planet = {}  # fleet_index -> nearest_planet_idx
+    in_flight_to = {}  # planet_idx -> total friendly ships heading there
+
+    for fi, f in enumerate(fleets):
         f_owner = int(f[1])
         f_ships = float(f[6])
         f_x, f_y = float(f[2]), float(f[3])
-        # Find closest planet as destination estimate
         best_dist = float('inf')
         best_idx = 0
         for i in range(N):
@@ -130,22 +213,119 @@ def compute_candidate_edges(
             if d < best_dist:
                 best_dist = d
                 best_idx = i
+        fleet_nearest_planet[fi] = best_idx
         if f_owner == player_id:
             inbound_friendly[best_idx] += f_ships
+            in_flight_to[best_idx] = in_flight_to.get(best_idx, 0) + f_ships
         else:
             inbound_enemy[best_idx] += f_ships
 
-    # Global stats
+    # --- Threat assessment (v131-style) ---
+    threats = [0.0] * N
+    for fi, f in enumerate(fleets):
+        f_owner = int(f[1])
+        if f_owner == player_id or f_owner < 0:
+            continue
+        nearest = fleet_nearest_planet.get(fi, -1)
+        if nearest >= 0 and planet_owner[nearest] == player_id:
+            f_x, f_y = float(f[2]), float(f[3])
+            d = math.sqrt((f_x - planet_x[nearest])**2 + (f_y - planet_y[nearest])**2)
+            if d < 400:  # within ~80 turns travel
+                threats[nearest] += float(f[6])
+
+    # --- Denial scoring (v131-style) ---
+    denial_bonus = {}  # planet_idx -> (bonus_score, enemy_eta)
+
+    # Reactive denial: enemy fleets heading for neutrals
+    for fi, f in enumerate(fleets):
+        f_owner = int(f[1])
+        if f_owner == player_id or f_owner < 0:
+            continue
+        nearest = fleet_nearest_planet.get(fi, -1)
+        if nearest < 0 or planet_owner[nearest] != -1:
+            continue  # only neutral targets
+        f_x, f_y = float(f[2]), float(f[3])
+        f_ships = max(int(f[6]), 1)
+        eta = _travel_time(f_x, f_y, planet_x[nearest], planet_y[nearest], f_ships)
+        dbonus = (DENIAL_BASE_SCORE
+                  + planet_prod[nearest] * DENIAL_PROD_WEIGHT
+                  + (1.0 / max(eta, 0.5)) * DENIAL_URGENCY_WEIGHT)
+        if nearest not in denial_bonus or dbonus > denial_bonus[nearest][0]:
+            denial_bonus[nearest] = (dbonus, eta)
+
+    # Proactive denial: high-prod neutrals enemy can reach
+    enemy_planets = [i for i in range(N)
+                     if planet_owner[i] >= 0 and planet_owner[i] != player_id]
+    neutral_planets = [i for i in range(N) if planet_owner[i] < 0]
+
+    for ni in neutral_planets:
+        if planet_prod[ni] < HIGH_PROD_THRESHOLD:
+            continue
+        if ni in denial_bonus:
+            continue
+        if not enemy_planets:
+            continue
+        min_enemy_tt = min(_travel_time(planet_x[ei], planet_y[ei],
+                                         planet_x[ni], planet_y[ni], 20)
+                          for ei in enemy_planets)
+        if min_enemy_tt > 20:
+            continue
+        min_my_tt = min(_travel_time(planet_x[mi], planet_y[mi],
+                                      planet_x[ni], planet_y[ni], 20)
+                        for mi in my_planets)
+        if min_my_tt < min_enemy_tt:
+            denial_bonus[ni] = (PROACTIVE_BONUS, min_enemy_tt)
+
+    # Sniper nest denial: neutrals close to our big planets
+    big_planets = [i for i in my_planets if planet_ships[i] >= SNIPER_MIN_SHIPS]
+    for ni in neutral_planets:
+        for bi in big_planets:
+            sd = math.sqrt((planet_x[ni] - planet_x[bi])**2 +
+                           (planet_y[ni] - planet_y[bi])**2)
+            if sd <= SNIPER_RANGE:
+                sb = SNIPER_BONUS + planet_prod[ni] * DENIAL_PROD_WEIGHT
+                if ni not in denial_bonus or sb > denial_bonus[ni][0]:
+                    my_tt = _travel_time(planet_x[bi], planet_y[bi],
+                                          planet_x[ni], planet_y[ni], 20)
+                    denial_bonus[ni] = (sb, my_tt)
+                break
+
+    # --- Global stats ---
     my_total_ships = sum(planet_ships[i] for i in range(N) if planet_owner[i] == player_id)
     my_total_prod = sum(planet_prod[i] for i in range(N) if planet_owner[i] == player_id)
+    enemy_total_prod = sum(planet_prod[i] for i in enemy_planets)
     total_prod = sum(planet_prod[i] for i in range(N) if planet_owner[i] >= 0)
     step_progress = step / max(max_steps, 1)
 
-    # Score all edges
+    # Phase detection (simplified v131)
+    my_planet_count = len(my_planets)
+    enemy_planet_count = len(enemy_planets)
+    prod_ratio = my_total_prod / max(enemy_total_prod, 0.1)
+    ship_ratio = my_total_ships / max(
+        sum(planet_ships[i] for i in enemy_planets), 0.1)
+
+    is_early = step_progress < 0.1
+    is_pressure = (step_progress >= 0.07 and prod_ratio >= 0.95 and ship_ratio >= 0.9)
+    is_aggressive = (prod_ratio >= 2.0 or ship_ratio >= 2.5)
+    is_cleanup = (step_progress >= 0.28 and enemy_planet_count <= 4
+                  and prod_ratio >= 1.9 and ship_ratio >= 1.8)
+
+    # --- Score all edges ---
     scored_edges = []
     for src_idx in my_planets:
         sx, sy = planet_x[src_idx], planet_y[src_idx]
         src_ships = planet_ships[src_idx]
+
+        # v131 threat-aware source filtering: skip if under heavy threat
+        # (unless the only way to use ships is to attack)
+        threat = threats[src_idx]
+        under_threat = threat > src_ships * 0.4
+        if under_threat and my_planet_count > 1:
+            # Still generate a few edges from threatened planets (escape/counter)
+            # but with reduced priority
+            threat_penalty = -20.0
+        else:
+            threat_penalty = 0.0
 
         for tgt_idx in range(N):
             if tgt_idx == src_idx:
@@ -156,90 +336,108 @@ def compute_candidate_edges(
             tgt_ships = planet_ships[tgt_idx]
             tgt_prod = planet_prod[tgt_idx]
 
-            # Basic geometry
             dist = math.sqrt((tx - sx)**2 + (ty - sy)**2)
             if dist < 1e-6:
                 continue
 
-            # Sun check (soft — just penalizes score, doesn't eliminate)
             sun_blocked = sun_intersects_path(sx, sy, tx, ty)
+            if sun_blocked and not no_filter:
+                continue
 
-            # Heuristic score (higher = more promising)
-            score = 0.0
+            # v131-style travel time (speed depends on fleet size)
+            tt = _travel_time(sx, sy, tx, ty, max(int(src_ships * 0.5), 1))
 
-            # Distance preference (closer is better, but not too close)
-            dist_score = max(0, 1.0 - dist / BOARD_DIAGONAL) * 2.0
-            score += dist_score
+            # Max ETA filter (v131-style, phase-aware)
+            max_eta = 14 if is_early else (20 if step_progress < 0.4 else 30)
+            if tt > max_eta and not no_filter:
+                continue
 
-            # Production value of target
-            prod_score = tgt_prod / 5.0
-            score += prod_score
+            # Sun penalty (soft — still include edge but rank lower)
+            sun_penalty = -30.0 if sun_blocked else 0.0
 
-            # Fleet ratio — can we take it?
-            defense = tgt_ships + inbound_enemy[tgt_idx] if tgt_owner != player_id else tgt_ships
-            takeover_ratio = src_ships / max(defense + 1, 1)
+            # --- Own planet: reinforcement/transfer scoring ---
+            if tgt_owner == player_id:
+                tgt_threat = threats[tgt_idx]
+                reinforce_score = -tt * SCORE_TT_PENALTY
+                if tgt_threat > 0:
+                    reinforce_score += min(tgt_threat / 10.0, 20.0)
+                reinforce_score += tgt_prod * 3.0
+                if tgt_threat > tgt_ships * 0.3:
+                    reinforce_score += 15.0
+                reinforce_score += 5.0
+                reinforce_score += threat_penalty + sun_penalty
+                scored_edges.append((reinforce_score, src_idx, tgt_idx))
+                continue
+
+            # --- v131 scoring formula (neutral/enemy targets) ---
+            score = tgt_prod * SCORE_PROD_WEIGHT - tt * SCORE_TT_PENALTY
+
+            # Capture viability (v131: accounts for production growth)
+            needed = _ships_needed_for_takeover(tgt_ships, tgt_prod, tt, tgt_owner)
+            can_take = src_ships >= needed
+
             if tgt_owner < 0:  # neutral
-                score += min(takeover_ratio, 2.0) * 1.5
-            elif tgt_owner != player_id:  # enemy
-                score += min(takeover_ratio, 2.0) * 2.0
-            else:  # own planet — never include
-                # v131/shunlite approach: defense = hold ships, don't shuffle
-                continue
+                score += NEUTRAL_BONUS
+                if can_take:
+                    score += 10.0  # bonus for viable captures
+            else:  # enemy
+                if is_cleanup:
+                    score += 55.0 - tgt_ships * 0.04
+                elif is_aggressive:
+                    score += ENEMY_BONUS_AGGRO - tgt_ships * 0.12
+                elif is_pressure:
+                    score += ENEMY_BONUS_PRESSURE - tgt_ships * 0.07
+                else:
+                    score += ENEMY_BONUS_EARLY - tgt_ships * 0.1
+                if can_take:
+                    score += 15.0
 
-            # Sun penalty
-            if sun_blocked:
-                score -= 3.0
+            # Denial bonus (v131)
+            if tgt_owner < 0 and tgt_idx in denial_bonus:
+                dbonus, enemy_eta = denial_bonus[tgt_idx]
+                if tt <= enemy_eta:  # we can get there in time
+                    score += dbonus
 
-            # Static planet bonus (shunlite: orbiting planets are harder to hit)
+            # Orbit penalty (v131: orbiting planets harder to hit)
             orbit_vel = abs(planet_orbit_vel[tgt_idx])
-            if orbit_vel < 0.1:  # static planet
-                score += 1.0
-            elif orbit_vel > 1.0:  # fast orbiter
-                score -= 0.5
+            if orbit_vel < 0.001:
+                score += 2.0  # static planet bonus
+            else:
+                score -= 6.0  # orbiter penalty (v131 style)
 
-            # Max ETA filter — don't include edges across the entire map
-            travel_time = dist / 6.0
-            step_progress_local = step / max(max_steps, 1)
-            max_eta = 14 if step_progress_local < 0.1 else (20 if step_progress_local < 0.4 else 30)
-            if travel_time > max_eta:
-                continue
+            # Already-targeted penalty (don't pile on)
+            already_sent = in_flight_to.get(tgt_idx, 0)
+            if already_sent > 0:
+                score -= min(already_sent / 50.0, 10.0) * 3.0
 
-            # Production value relative to defense cost
-            if defense > 0:
-                roi = tgt_prod / (defense + 1)
-                score += roi * 2.0
+            # ROI: production value relative to capture cost
+            if needed > 0:
+                roi = tgt_prod / needed
+                score += roi * 5.0
+
+            # Source threat penalty + sun penalty
+            score += threat_penalty + sun_penalty
 
             scored_edges.append((score, src_idx, tgt_idx))
 
-    # Diverse candidate selection: quota-based, not strict top-K
-    # ~40% neutral, ~40% enemy, ~20% overall top (fills gaps)
-    neutral_edges = [(s, src, tgt) for s, src, tgt in scored_edges if planet_owner[tgt] < 0]
-    enemy_edges = [(s, src, tgt) for s, src, tgt in scored_edges
-                   if planet_owner[tgt] >= 0 and planet_owner[tgt] != player_id]
+    # --- Top-K with exploration wild cards ---
+    # 80% top heuristic picks, 20% random from remaining (exploration)
+    scored_edges.sort(key=lambda x: x[0], reverse=True)
+    n_heuristic = int(max_candidates * 0.8)
+    heuristic_edges = scored_edges[:n_heuristic]
 
-    neutral_edges.sort(key=lambda x: x[0], reverse=True)
-    enemy_edges.sort(key=lambda x: x[0], reverse=True)
+    # Exploration: sample from remaining edges (not already in top-K)
+    remaining = scored_edges[n_heuristic:]
+    n_explore = min(max_candidates - len(heuristic_edges), len(remaining))
+    if n_explore > 0 and remaining:
+        # Weighted sample: higher-scored remaining edges more likely
+        # But use deterministic stride to avoid randomness in features
+        stride = max(1, len(remaining) // n_explore)
+        explore_edges = remaining[::stride][:n_explore]
+    else:
+        explore_edges = []
 
-    n_neutral = min(len(neutral_edges), max_candidates * 2 // 5)
-    n_enemy = min(len(enemy_edges), max_candidates * 2 // 5)
-
-    top_edges = []
-    seen = set()
-    for e in neutral_edges[:n_neutral]:
-        top_edges.append(e)
-        seen.add((e[1], e[2]))
-    for e in enemy_edges[:n_enemy]:
-        if (e[1], e[2]) not in seen:
-            top_edges.append(e)
-            seen.add((e[1], e[2]))
-    # Fill remaining slots from overall top
-    all_sorted = sorted(scored_edges, key=lambda x: x[0], reverse=True)
-    for e in all_sorted:
-        if len(top_edges) >= max_candidates:
-            break
-        if (e[1], e[2]) not in seen:
-            top_edges.append(e)
-            seen.add((e[1], e[2]))
+    top_edges = heuristic_edges + explore_edges
     num_valid = len(top_edges)
 
     # Build feature tensors
@@ -434,7 +632,7 @@ def _build_node_features_compact(
             min(nearest_enemy_dist / 100.0, 1.0),                   # 13: nearest enemy
             min(nearest_enemy_eta / 50.0, 1.0),                     # 14: enemy fleet ETA
             surplus,                                                # 15: surplus ratio
-            planet_orbit_vel[i] / 4.0,                              # 16: orbit velocity
+            planet_orbit_vel[i] / 0.05,                              # 16: orbit velocity (normalized by max omega)
             num_players / 4.0,                                      # 17: game mode
             my_planet_count / max(total_owned, 1),                  # 18: planet fraction
             my_total_all / max(total_ships_global, 1),              # 19: military share

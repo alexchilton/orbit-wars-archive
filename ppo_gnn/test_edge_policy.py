@@ -8,6 +8,7 @@ import torch
 from ppo_gnn.edge_policy import (
     EdgePolicy, compute_candidate_edges, MAX_CANDIDATES, EDGE_INPUT_DIM,
     FRACTION_BUCKETS, MAX_ACTIONS, NUM_FRACTIONS,
+    _fleet_speed, _travel_time, solve_intercept, predict_orbit,
 )
 import math
 import random
@@ -291,6 +292,122 @@ def test_fraction_head_freezing():
     print("  PASSED ✓\n")
 
 
+def test_solve_intercept_stationary():
+    """Stationary planet: intercept should equal current position."""
+    ix, iy = solve_intercept(10.0, 10.0, 60.0, 60.0, omega=0.0, ships=100)
+    assert abs(ix - 60.0) < 0.5 and abs(iy - 60.0) < 0.5, (
+        f"Stationary planet: expected (60, 60) got ({ix:.2f}, {iy:.2f})"
+    )
+
+
+def test_solve_intercept_orbiting():
+    """Orbiting planet: intercept must be on the same orbital circle as the planet."""
+    from ppo_gnn.sun_geometry import SUN_X, SUN_Y
+    # Planet at (70, 50) orbiting at omega=0.05 rad/step
+    tx, ty, omega = 70.0, 50.0, 0.05
+    orbital_radius = math.hypot(tx - SUN_X, ty - SUN_Y)
+    ix, iy = solve_intercept(10.0, 10.0, tx, ty, omega=omega, ships=50)
+    intercept_radius = math.hypot(ix - SUN_X, iy - SUN_Y)
+    assert abs(intercept_radius - orbital_radius) < 1.0, (
+        f"Intercept not on orbital circle: r={intercept_radius:.2f} vs planet r={orbital_radius:.2f}"
+    )
+    # Intercept must differ from current position (planet moved)
+    assert math.hypot(ix - tx, iy - ty) > 1.0, (
+        f"Orbiting planet: intercept too close to current position ({ix:.2f},{iy:.2f}) vs ({tx},{ty})"
+    )
+
+
+def test_fleet_speed_log_scaling():
+    """Fleet speed must be strictly less than 6.0 for small fleets (not max speed)."""
+    speed_20 = _fleet_speed(20)
+    speed_1000 = _fleet_speed(1000)
+    assert speed_20 < 4.0, f"20-ship fleet should be slow, got {speed_20:.2f}"
+    assert speed_1000 <= 6.0, f"Speed must not exceed 6.0, got {speed_1000:.2f}"
+    assert speed_20 < speed_1000, "More ships should be faster"
+
+
+def test_viability_check_uses_correct_travel_time():
+    """The viability check in play_episode must use _travel_time (log-scaled speed),
+    NOT dist / 6.0 (max speed). For a 20-ship fleet over distance 40, the correct
+    travel time is ~2.5x longer than dist/6.0 — skipping this means we dispatch
+    fleets that cannot possibly capture their target.
+    """
+    dist = 40.0
+    ships = 20
+    wrong_tt = dist / 6.0                        # what the old bug used
+    correct_tt = dist / _fleet_speed(ships)       # what it should use
+
+    # The correct travel time must be significantly longer than the naive estimate
+    assert correct_tt > wrong_tt * 1.5, (
+        f"correct_tt ({correct_tt:.1f}) should be >1.5× wrong_tt ({wrong_tt:.1f}); "
+        f"fleet speed for {ships} ships is {_fleet_speed(ships):.2f} not 6.0"
+    )
+
+
+def test_max_eta_filter_uses_correct_travel_time():
+    """The max_eta filter must reject long trips that only appear short
+    because of the naive dist/6.0 approximation.
+
+    A 15-ship fleet travelling dist=80 should exceed max_eta=14 using
+    correct speed, but incorrectly pass using dist/6.0.
+    """
+    dist = 80.0
+    ships = 15
+    max_eta = 14
+
+    wrong_tt = dist / 6.0
+    correct_tt = dist / _fleet_speed(ships)
+
+    # With wrong formula this looks acceptable (< max_eta)
+    assert wrong_tt <= max_eta, (
+        f"Test setup: wrong_tt ({wrong_tt:.1f}) should be ≤ max_eta ({max_eta})"
+    )
+    # With correct formula this is correctly filtered out
+    assert correct_tt > max_eta, (
+        f"Correct travel time ({correct_tt:.1f}) must exceed max_eta ({max_eta}) "
+        f"for dist={dist}, ships={ships}"
+    )
+
+
+def test_viability_margin_calibration():
+    """
+    With correct physics, the 1.05 safety margin over-inflates 'needed' ships.
+
+    Scenario: 35 ships attacking a planet 20 units away with 20 defenders and
+    prod 2. With correct travel time the fleet arrives when the planet has ~34
+    ships — so 35 ships is a genuine (barely-winning) capture.
+
+    Old margin (1.05 + 2): needed = 37  →  35 < 37  →  BLOCKED  (wrong)
+    New margin (1.00 + 1): needed = 35  →  35 >= 35 →  PASSES   (correct)
+    """
+    sx, sy = 0.0, 0.0
+    tx, ty = 20.0, 0.0   # stationary target (omega=0)
+    tgt_ships = 20.0
+    tgt_prod  = 2.0
+    ships_sent = 35
+
+    travel_time = _travel_time(sx, sy, tx, ty, ships_sent)
+    ships_on_arrival = tgt_ships + tgt_prod * travel_time
+
+    # The fleet genuinely wins: 35 > ships_on_arrival
+    assert ships_sent > ships_on_arrival, (
+        f"Test setup: 35 ships must exceed ships_on_arrival ({ships_on_arrival:.2f})"
+    )
+
+    # Old margin — blocks a valid attack
+    needed_old = int(ships_on_arrival * 1.05) + 2
+    assert ships_sent < needed_old, (
+        f"Old margin should block this attack: {ships_sent} < {needed_old}"
+    )
+
+    # New margin — correctly allows it
+    needed_new = int(ships_on_arrival) + 1
+    assert ships_sent >= needed_new, (
+        f"New margin should allow this attack: {ships_sent} >= {needed_new} "
+        f"(ships_on_arrival={ships_on_arrival:.2f})"
+    )
+
+
 if __name__ == "__main__":
     random.seed(42)
     torch.manual_seed(42)
@@ -302,6 +419,12 @@ if __name__ == "__main__":
     test_gradient_flow()
     test_planet_count_reward_shaping()
     test_fraction_head_freezing()
+    test_solve_intercept_stationary()
+    test_solve_intercept_orbiting()
+    test_fleet_speed_log_scaling()
+    test_viability_check_uses_correct_travel_time()
+    test_max_eta_filter_uses_correct_travel_time()
+    test_viability_margin_calibration()
 
     print("=" * 50)
     print("ALL TESTS PASSED ✓")

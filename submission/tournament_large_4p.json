@@ -1,0 +1,717 @@
+{
+  "results_4p": {
+    "rc3_antidogpile": {
+      "firsts": 11,
+      "top2": 18,
+      "games": 30,
+      "total_reward": -8.0
+    },
+    "rc3_leaderboard": {
+      "firsts": 8,
+      "top2": 17,
+      "games": 30,
+      "total_reward": -14.0
+    },
+    "stage2_base": {
+      "firsts": 7,
+      "top2": 16,
+      "games": 30,
+      "total_reward": -16.0
+    },
+    "s2_4p_aggro": {
+      "firsts": 8,
+      "top2": 11,
+      "games": 30,
+      "total_reward": -14.0
+    },
+    "shun_combined": {
+      "firsts": 6,
+      "top2": 15,
+      "games": 30,
+      "total_reward": -18.0
+    },
+    "fc_rl_shunlite": {
+      "firsts": 5,
+      "top2": 13,
+      "games": 30,
+      "total_reward": -20.0
+    }
+  },
+  "games": [
+    {
+      "seats": [
+        "s2_4p_aggro",
+        "stage2_base",
+        "rc3_antidogpile",
+        "rc3_leaderboard"
+      ],
+      "rewards": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "first": "stage2_base"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "stage2_base",
+        "s2_4p_aggro",
+        "rc3_antidogpile"
+      ],
+      "rewards": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "first": "rc3_leaderboard"
+    },
+    {
+      "seats": [
+        "stage2_base",
+        "s2_4p_aggro",
+        "rc3_antidogpile",
+        "rc3_leaderboard"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "rc3_antidogpile",
+        "rc3_leaderboard",
+        "shun_combined",
+        "stage2_base"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "stage2_base"
+    },
+    {
+      "seats": [
+        "shun_combined",
+        "stage2_base",
+        "rc3_leaderboard",
+        "rc3_antidogpile"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "rc3_leaderboard"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "rc3_antidogpile",
+        "shun_combined",
+        "stage2_base"
+      ],
+      "rewards": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "first": "rc3_leaderboard"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "fc_rl_shunlite",
+        "stage2_base",
+        "rc3_antidogpile"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "stage2_base"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "fc_rl_shunlite",
+        "rc3_antidogpile",
+        "stage2_base"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "stage2_base",
+        "rc3_antidogpile",
+        "rc3_leaderboard",
+        "fc_rl_shunlite"
+      ],
+      "rewards": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "first": "stage2_base"
+    },
+    {
+      "seats": [
+        "s2_4p_aggro",
+        "shun_combined",
+        "rc3_antidogpile",
+        "rc3_leaderboard"
+      ],
+      "rewards": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "first": "s2_4p_aggro"
+    },
+    {
+      "seats": [
+        "rc3_antidogpile",
+        "rc3_leaderboard",
+        "s2_4p_aggro",
+        "shun_combined"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "s2_4p_aggro"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "rc3_antidogpile",
+        "s2_4p_aggro",
+        "shun_combined"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "shun_combined"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "fc_rl_shunlite",
+        "rc3_antidogpile",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "fc_rl_shunlite",
+        "rc3_leaderboard",
+        "rc3_antidogpile",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "rc3_antidogpile",
+        "fc_rl_shunlite",
+        "rc3_leaderboard",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "rc3_leaderboard"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "shun_combined",
+        "rc3_antidogpile",
+        "fc_rl_shunlite"
+      ],
+      "rewards": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "first": "shun_combined"
+    },
+    {
+      "seats": [
+        "shun_combined",
+        "rc3_antidogpile",
+        "rc3_leaderboard",
+        "fc_rl_shunlite"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "rc3_leaderboard"
+    },
+    {
+      "seats": [
+        "shun_combined",
+        "fc_rl_shunlite",
+        "rc3_leaderboard",
+        "rc3_antidogpile"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "s2_4p_aggro",
+        "shun_combined",
+        "stage2_base",
+        "rc3_antidogpile"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "shun_combined",
+        "s2_4p_aggro",
+        "stage2_base",
+        "rc3_antidogpile"
+      ],
+      "rewards": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "first": "s2_4p_aggro"
+    },
+    {
+      "seats": [
+        "stage2_base",
+        "rc3_antidogpile",
+        "shun_combined",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "fc_rl_shunlite",
+        "stage2_base",
+        "rc3_antidogpile",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "stage2_base",
+        "fc_rl_shunlite",
+        "rc3_antidogpile",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "first": "fc_rl_shunlite"
+    },
+    {
+      "seats": [
+        "rc3_antidogpile",
+        "s2_4p_aggro",
+        "stage2_base",
+        "fc_rl_shunlite"
+      ],
+      "rewards": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "first": "s2_4p_aggro"
+    },
+    {
+      "seats": [
+        "rc3_antidogpile",
+        "shun_combined",
+        "fc_rl_shunlite",
+        "stage2_base"
+      ],
+      "rewards": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "first": "shun_combined"
+    },
+    {
+      "seats": [
+        "rc3_antidogpile",
+        "stage2_base",
+        "shun_combined",
+        "fc_rl_shunlite"
+      ],
+      "rewards": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "stage2_base",
+        "shun_combined",
+        "rc3_antidogpile",
+        "fc_rl_shunlite"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "fc_rl_shunlite"
+    },
+    {
+      "seats": [
+        "fc_rl_shunlite",
+        "shun_combined",
+        "s2_4p_aggro",
+        "rc3_antidogpile"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "shun_combined",
+        "fc_rl_shunlite",
+        "s2_4p_aggro",
+        "rc3_antidogpile"
+      ],
+      "rewards": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "first": "shun_combined"
+    },
+    {
+      "seats": [
+        "rc3_antidogpile",
+        "fc_rl_shunlite",
+        "s2_4p_aggro",
+        "shun_combined"
+      ],
+      "rewards": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "first": "rc3_antidogpile"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "stage2_base",
+        "s2_4p_aggro",
+        "shun_combined"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "s2_4p_aggro"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "shun_combined",
+        "s2_4p_aggro",
+        "stage2_base"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "stage2_base"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "shun_combined",
+        "stage2_base",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "stage2_base"
+    },
+    {
+      "seats": [
+        "fc_rl_shunlite",
+        "rc3_leaderboard",
+        "s2_4p_aggro",
+        "stage2_base"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "stage2_base"
+    },
+    {
+      "seats": [
+        "stage2_base",
+        "fc_rl_shunlite",
+        "s2_4p_aggro",
+        "rc3_leaderboard"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "rc3_leaderboard"
+    },
+    {
+      "seats": [
+        "stage2_base",
+        "fc_rl_shunlite",
+        "rc3_leaderboard",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "rc3_leaderboard"
+    },
+    {
+      "seats": [
+        "shun_combined",
+        "fc_rl_shunlite",
+        "rc3_leaderboard",
+        "stage2_base"
+      ],
+      "rewards": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "first": "fc_rl_shunlite"
+    },
+    {
+      "seats": [
+        "stage2_base",
+        "fc_rl_shunlite",
+        "rc3_leaderboard",
+        "shun_combined"
+      ],
+      "rewards": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "first": "fc_rl_shunlite"
+    },
+    {
+      "seats": [
+        "fc_rl_shunlite",
+        "stage2_base",
+        "rc3_leaderboard",
+        "shun_combined"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "shun_combined"
+    },
+    {
+      "seats": [
+        "rc3_leaderboard",
+        "shun_combined",
+        "fc_rl_shunlite",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "s2_4p_aggro"
+    },
+    {
+      "seats": [
+        "shun_combined",
+        "fc_rl_shunlite",
+        "s2_4p_aggro",
+        "rc3_leaderboard"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "rc3_leaderboard"
+    },
+    {
+      "seats": [
+        "fc_rl_shunlite",
+        "shun_combined",
+        "s2_4p_aggro",
+        "rc3_leaderboard"
+      ],
+      "rewards": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "first": "fc_rl_shunlite"
+    },
+    {
+      "seats": [
+        "s2_4p_aggro",
+        "fc_rl_shunlite",
+        "stage2_base",
+        "shun_combined"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "shun_combined"
+    },
+    {
+      "seats": [
+        "fc_rl_shunlite",
+        "stage2_base",
+        "s2_4p_aggro",
+        "shun_combined"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "first": "s2_4p_aggro"
+    },
+    {
+      "seats": [
+        "shun_combined",
+        "fc_rl_shunlite",
+        "stage2_base",
+        "s2_4p_aggro"
+      ],
+      "rewards": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "first": "s2_4p_aggro"
+    }
+  ]
+}

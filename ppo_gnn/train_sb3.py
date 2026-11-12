@@ -27,22 +27,23 @@ def main():
     parser = argparse.ArgumentParser(description="SB3 MaskablePPO for Orbit Wars")
     parser.add_argument("--total-timesteps", type=int, default=2_000_000)
     parser.add_argument("--device", type=str, default="auto")
-    parser.add_argument("--start-tier", type=int, default=2)
+    parser.add_argument("--start-tier", type=int, default=99, help="Max tier (99=all opponents)")
     parser.add_argument("--min-tier", type=int, default=1, help="Floor tier — skip easy opponents")
     parser.add_argument("--checkpoint", type=str, default=None, help="Resume from checkpoint .zip")
-    parser.add_argument("--n-steps", type=int, default=2048, help="Steps per rollout")
+    parser.add_argument("--bc-weights", type=str, default=None, help="Load BC pre-trained weights (.pt) into fresh model")
+    parser.add_argument("--n-steps", type=int, default=8192, help="Steps per rollout")
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--n-epochs", type=int, default=10)
     parser.add_argument("--ent-coef", type=float, default=0.02)
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--eval-freq", type=int, default=80000, help="Eval every N steps (~200 episodes)")
+    parser.add_argument("--max-steps", type=int, default=500, help="Max game steps (shorter = faster credit assignment)")
     parser.add_argument("--mode", type=str, default="2p", choices=["2p", "mixed"])
     parser.add_argument("--log-path", type=str, default="ppo_gnn/cache/sb3_train.log")
     args = parser.parse_args()
 
     # Lazy imports so argparse --help is fast
     from sb3_contrib import MaskablePPO
-    from sb3_contrib.common.maskable.policies import MaskableActorCriticPolicy
     from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
 
     from .sb3_env import OrbitWarsEnv
@@ -92,6 +93,7 @@ def main():
             mode=args.mode,
             max_tier=args.start_tier,
             min_tier=args.min_tier,
+            max_steps=args.max_steps,
         )
 
     env = DummyVecEnv([make_env])
@@ -104,7 +106,7 @@ def main():
         env.training = True
         env.norm_reward = True
     else:
-        env = VecNormalize(env, norm_obs=True, norm_reward=True, clip_obs=10.0, clip_reward=10.0)
+        env = VecNormalize(env, norm_obs=False, norm_reward=True, clip_obs=10.0)
 
     if args.checkpoint:
         print(f"Loading checkpoint: {args.checkpoint}")
@@ -124,7 +126,7 @@ def main():
             batch_size=args.batch_size,
             n_epochs=args.n_epochs,
             gamma=0.997,
-            gae_lambda=0.95,
+            gae_lambda=0.98,
             clip_range=0.2,
             ent_coef=args.ent_coef,
             vf_coef=0.5,
@@ -132,16 +134,44 @@ def main():
             policy_kwargs=dict(
                 features_extractor_class=CandidateTransformerExtractor,
                 features_extractor_kwargs=dict(
-                    features_dim=6144,  # 48 * 128, per-candidate features
+                    features_dim=256,
+                    d_model=256,
+                    n_heads=8,
+                    n_layers=6,
+                    pool=False,  # Return per-candidate embeddings
+                ),
+                vf_features_extractor_kwargs=dict(
+                    features_dim=128,
                     d_model=128,
                     n_heads=4,
-                    n_layers=3,
+                    n_layers=2,
                 ),
-                net_arch=dict(pi=[], vf=[]),  # custom heads handle everything
+                share_features_extractor=False,
+                net_arch=[],  # No MLP extractor — handled by custom policy
             ),
             verbose=1,
             device=args.device,
         )
+
+    # --- Load BC pre-trained weights ---
+    if args.bc_weights:
+        bc_state = torch.load(args.bc_weights, map_location=args.device, weights_only=True)
+        policy_state = model.policy.state_dict()
+
+        loaded = 0
+        for k, v in bc_state.items():
+            if k in policy_state:
+                policy_state[k] = v
+                loaded += 1
+            # Copy features_extractor weights to pi_features_extractor
+            if k.startswith("features_extractor."):
+                pi_key = "pi_" + k
+                if pi_key in policy_state:
+                    policy_state[pi_key] = v
+                    loaded += 1
+
+        model.policy.load_state_dict(policy_state)
+        print(f"Loaded {loaded} BC weight tensors into policy")
 
     log_msg = (
         f"SB3 MaskablePPO training — {args.mode} mode\n"
@@ -169,13 +199,12 @@ def main():
             save_path="ppo_gnn/cache",
             log_path=args.log_path,
         ),
-        # SelfPlayCallback disabled — free wins dilute learning signal at high tiers
-        # SelfPlayCallback(
-        #     snapshot_freq=50,
-        #     max_archive=5,
-        #     self_play_tier=7,
-        #     log_path=args.log_path,
-        # ),
+        SelfPlayCallback(
+            snapshot_freq=50,
+            max_archive=5,
+            self_play_tier=7,
+            log_path=args.log_path,
+        ),
         CheckpointCallback(
             save_freq=50000,
             save_path="ppo_gnn/cache",

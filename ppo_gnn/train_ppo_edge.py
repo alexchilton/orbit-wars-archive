@@ -32,6 +32,8 @@ from .edge_policy import (
     EDGE_INPUT_DIM,
     FRACTION_BUCKETS,
     compute_candidate_edges,
+    solve_intercept,
+    _travel_time,
 )
 
 os.environ.setdefault("KAGGLE_ENVIRONMENTS_QUIET", "1")
@@ -96,10 +98,41 @@ def compute_planet_count_bonus(my_planet_count: int) -> float:
     return 0.005 * math.sqrt(my_planet_count)
 
 
+class RewardNormalizer:
+    """Running mean/std normalizer for rewards (like SB3's VecNormalize)."""
+
+    def __init__(self, clip: float = 10.0, epsilon: float = 1e-8):
+        self.mean = 0.0
+        self.var = 1.0
+        self.count = 0
+        self.clip = clip
+        self.epsilon = epsilon
+
+    def update(self, rewards: List[float]):
+        """Update running stats with a batch of rewards."""
+        for r in rewards:
+            self.count += 1
+            if self.count == 1:
+                self.mean = r
+                self.var = 0.0
+            else:
+                delta = r - self.mean
+                self.mean += delta / self.count
+                delta2 = r - self.mean
+                self.var += (delta * delta2 - self.var) / self.count
+
+    def normalize(self, reward: float) -> float:
+        """Normalize a single reward."""
+        std = math.sqrt(self.var + self.epsilon)
+        normed = (reward - self.mean) / std
+        return max(-self.clip, min(self.clip, normed))
+
+
 def compute_gae(
     rollout: List[EdgeRolloutStep],
     gamma: float = 0.997,
     lam: float = 0.95,
+    reward_normalizer: RewardNormalizer = None,
 ) -> Tuple[torch.Tensor, torch.Tensor]:
     T = len(rollout)
     advantages = torch.zeros(T)
@@ -109,7 +142,10 @@ def compute_gae(
     for t in reversed(range(T)):
         s = rollout[t]
         mask = 0.0 if s.done else 1.0
-        delta = s.reward + gamma * next_value * mask - s.value
+        r = s.reward
+        if reward_normalizer is not None:
+            r = reward_normalizer.normalize(r)
+        delta = r + gamma * next_value * mask - s.value
         gae = delta + gamma * lam * mask * gae
         advantages[t] = gae
         returns[t] = gae + s.value
@@ -131,12 +167,13 @@ def ppo_update(
     value_coef: float = 0.5,
     entropy_coef: float = 0.015,
     entropy_frac_coef: float = 0.05,
+    reward_normalizer: RewardNormalizer = None,
     kl_coef: float = 0.1,
     gamma: float = 0.997,
     gae_lambda: float = 0.95,
     device: torch.device = torch.device("cpu"),
 ) -> dict:
-    advantages, returns = compute_gae(rollout, gamma, gae_lambda)
+    advantages, returns = compute_gae(rollout, gamma, gae_lambda, reward_normalizer)
     advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
 
     T = len(rollout)
@@ -343,10 +380,12 @@ def make_edge_self_play_agent(
             tgt_p = planets[tgt_pidx]
             sx, sy = float(src_p[2]), float(src_p[3])
             tx, ty = float(tgt_p[2]), float(tgt_p[3])
-            angle = math.atan2(ty - sy, tx - sx)
+            omega = float(tgt_p[4])
             ships = max(1, int(float(src_p[5]) * FRACTION_BUCKETS[frac_idx]))
             if ships < 5:
                 continue
+            ix, iy = solve_intercept(sx, sy, tx, ty, omega, ships)
+            angle = math.atan2(iy - sy, ix - sx)
             actions.append([int(src_p[0]), angle, ships])
         return actions
 
@@ -361,7 +400,7 @@ def build_opponent_pool(mode: str) -> list:
     from kaggle_environments.envs.orbit_wars.orbit_wars import random_agent, starter_agent
     pool = [
         (1, "random",  random_agent),
-        (4, "starter", starter_agent),
+        (3, "starter", starter_agent),
     ]
 
     candidates = [
@@ -370,24 +409,31 @@ def build_opponent_pool(mode: str) -> list:
         (2, "dual",           "submission/pool_dual.py"),
         (3, "prospector",     "submission/pool_prospector.py"),
         (3, "nearest_sniper", "submission/ext/pool_baseline_nearest_sniper.py"),
-        (5, "baseline",       "submission/pool_baseline.py"),
-        (5, "sig_starter",    "submission/ext/pool_sigmaborov_starter.py"),
+        (3, "sig_starter",    "submission/ext/pool_sigmaborov_starter.py"),
         (6, "pascal_v14",     "submission/ext/pool_pascal_orbitwork_v14.py"),
-        (6, "ykhnkf_dist",    "submission/ext/pool_ykhnkf_distance_prioritized.py"),
-        (7, "shunlite",       "submission/main_fc_rl_shunlite.py"),
-        (7, "v131_2p",        "submission/main_v131_plus_2p.py"),
-        (7, "sig_reinforce",  "submission/ext/pool_sigmaborov_reinforce.py"),
+        # Tier 7: easy wins (>75% WR)
+        (7, "tamrazov",       "submission/ext/pool_tamrazov_starwars.py"),
         (7, "kashiwaba_rl",   "submission/ext/pool_kashiwaba_rl.py"),
-        (8, "v131_denial",    "submission/main_v131_plus_denial.py"),
-        (8, "v131_wave",      "submission/main_v131_plus_wave.py"),
-        (8, "tamrazov",       "submission/ext/pool_tamrazov_starwars.py"),
-        (8, "yuriy_arch",     "submission/ext/pool_yuriygreben_architect.py"),
+        (7, "yuriy_arch",     "submission/ext/pool_yuriygreben_architect.py"),
+        # Tier 8: stubborn (~16% WR — defensive/economic style)
+        (8, "baseline",       "submission/pool_baseline.py"),
+        (8, "ykhnkf_dist",    "submission/ext/pool_ykhnkf_distance_prioritized.py"),
+        # Tier 9: crackable (~5-10% WR)
         (9, "pilkwang",       "submission/ext/pool_pilkwang_structured.py"),
+        (9, "v131_denial",    "submission/main_v131_plus_denial.py"),
+        # Tier 10: hard (0-8% WR currently)
+        (10, "sig_reinforce", "submission/ext/pool_sigmaborov_reinforce.py"),
+        (10, "marco_dg",      "submission/ext/pool_marco_dg_v3.py"),
+        (10, "ml_shot_hybrid","submission/ext/pool_ml_shot_hybrid.py"),
+        # Tier 11: top tier — 0% WR, the real targets
+        (11, "shunlite",      "submission/main_fc_rl_shunlite.py"),
+        (11, "v131_2p",       "submission/main_v131_plus_2p.py"),
+        (11, "v131_wave",     "submission/main_v131_plus_wave.py"),
     ]
-    if mode == "4p":
+    if mode in ("4p", "mixed"):
         candidates += [
-            (6, "plus4p",    "submission/main_v131_plus_4p.py"),
-            (7, "political", "submission/main_v131_plus_4p_political.py"),
+            (10, "plus4p",    "submission/main_v131_plus_4p.py"),
+            (11, "political", "submission/main_v131_plus_4p_political.py"),
         ]
 
     for tier, name, rel_path in candidates:
@@ -485,12 +531,10 @@ def play_episode(
                 tgt_p = planets[tgt_pidx]
                 sx, sy = float(src_p[2]), float(src_p[3])
                 tx, ty = float(tgt_p[2]), float(tgt_p[3])
-                angle = math.atan2(ty - sy, tx - sx)
+                omega = float(tgt_p[4])
                 src_fleet = int(float(src_p[5]))
-                tgt_ships = float(tgt_p[5])
-                tgt_owner = int(tgt_p[1])
 
-                # #4: Ship reserve — always keep some ships on planet
+                # Ship reserve — keep some ships on planet
                 reserve = min(5, int(src_fleet * 0.2))
                 available = src_fleet - reserve
                 if available < 1:
@@ -498,35 +542,19 @@ def play_episode(
 
                 ships = max(1, int(available * FRACTION_BUCKETS[frac_idx]))
 
-                # Min capture viability (v131-style: account for travel time)
-                min_send = 12
-                if ships < min_send:
-                    if available >= min_send:
-                        ships = min_send
-                    else:
-                        continue
+                # Min send — don't waste tiny fleets
+                if ships < 5:
+                    continue
 
-                # Travel-aware viability: target grows while fleet travels
-                dist = math.sqrt((tx - sx)**2 + (ty - sy)**2)
-                travel_time = dist / 6.0  # ship speed ~6 units/step
-                if tgt_owner != player:  # neutral or enemy
-                    tgt_prod = float(tgt_p[6])
-                    ships_on_arrival = tgt_ships + tgt_prod * travel_time
-                    needed = int(ships_on_arrival * 1.05) + 2
-                    if ships < needed:
-                        continue  # can't capture after travel
+                # Orbit intercept — aim at predicted position
+                ix, iy = solve_intercept(sx, sy, tx, ty, omega, ships)
+                angle = math.atan2(iy - sy, ix - sx)
 
-                # Max ETA filter (shunlite-style: don't send across map)
+                # Max ETA filter — don't send across the whole map
+                travel_time = _travel_time(sx, sy, ix, iy, ships)
                 max_eta = 14 if env_steps < 50 else (20 if env_steps < 150 else 30)
                 if travel_time > max_eta:
                     continue
-
-                # Early-game patience — 1 planet, first 30 steps
-                if step_idx < 30 and num_my_planets == 1:
-                    if tgt_owner >= 0 and tgt_owner != player:
-                        continue  # only neutrals early
-                    if len(actions) >= 1:
-                        break  # max 1 fleet when we have 1 planet
 
                 actions.append([int(src_p[0]), angle, ships])
 
@@ -552,9 +580,10 @@ def play_episode(
         # Delta shaping — reward gaining advantage
         PROD_W = 3.0
         score = (my_fleet + PROD_W * my_prod) - (enemy_fleet + PROD_W * enemy_prod)
-        # Gentle idle penalty: flat below 250, soft scale above
-        excess = max(0.0, my_fleet - 250.0)
-        idle_penalty = step_penalty + excess * 0.0002
+        # Aggressive idle penalty — hoarding ships must hurt
+        # Scales with fleet size: sitting on 100 ships = -0.04/step, 200 = -0.08/step
+        # Over 500 steps at 200 ships that's -40, far exceeding win bonus (10)
+        idle_penalty = step_penalty + my_fleet * 0.0004
         shaped_reward = (score - prev_shaped_score) * 0.01 - idle_penalty
         prev_shaped_score = score
 
@@ -905,8 +934,8 @@ def save_progress_graph(episodes, win_rates, rewards, pol_loss, val_loss,
 
 def main():
     parser = argparse.ArgumentParser(description="PPO fine-tuning of EdgePolicy")
-    parser.add_argument("--checkpoint", required=True,
-                        help="BC edge checkpoint to warm-start from")
+    parser.add_argument("--checkpoint", default=None,
+                        help="BC edge checkpoint to warm-start from (omit for random init)")
     parser.add_argument("--mode", choices=["2p", "4p", "mixed"], default="2p")
     parser.add_argument("--cache-dir", default="ppo_gnn/cache")
     parser.add_argument("--num-episodes", type=int, default=50000)
@@ -929,6 +958,8 @@ def main():
     parser.add_argument("--ppo-epochs", type=int, default=10)
     parser.add_argument("--reset-value-head", action="store_true",
                         help="Re-initialize value head weights to force relearning")
+    parser.add_argument("--start-tier", type=int, default=2,
+                        help="Starting curriculum tier (skip easy opponents)")
     parser.add_argument("--mini-batch-size", type=int, default=64)
     parser.add_argument("--eval-every", type=int, default=200)
     parser.add_argument("--pid-lr", action="store_true")
@@ -942,13 +973,18 @@ def main():
     cache_dir = Path(args.cache_dir)
     log_path = cache_dir / "ppo_edge_train.log"
 
-    # Load BC checkpoint
-    ckpt = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
-    sd = ckpt.get("model_state_dict", ckpt)
-    d_model = ckpt.get("d_model", args.d_model)
-    separate_critic = ckpt.get("separate_critic", True)
+    # Load checkpoint or init from scratch
+    d_model = args.d_model
+    separate_critic = True
 
-    # Always use current MAX_ACTIONS (ignore checkpoint's old value)
+    if args.checkpoint:
+        ckpt = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
+        sd = ckpt.get("model_state_dict", ckpt)
+        d_model = ckpt.get("d_model", args.d_model)
+        separate_critic = ckpt.get("separate_critic", True)
+    else:
+        sd = None
+
     model = EdgePolicy(
         d_model=d_model,
         n_heads=args.n_heads,
@@ -957,28 +993,33 @@ def main():
         separate_critic=separate_critic,
     )
 
-    # Filter out mismatched fraction head weights (old=10, new=16)
-    model_sd = model.state_dict()
-    filtered_sd = {}
-    skipped = []
-    for k, v in sd.items():
-        if k in model_sd and v.shape != model_sd[k].shape:
-            skipped.append(f"  {k}: ckpt={list(v.shape)} vs model={list(model_sd[k].shape)}")
-        else:
-            filtered_sd[k] = v
+    if sd is not None:
+        # Filter out mismatched weights (shape changes between versions)
+        model_sd = model.state_dict()
+        filtered_sd = {}
+        skipped = []
+        for k, v in sd.items():
+            if k in model_sd and v.shape != model_sd[k].shape:
+                skipped.append(f"  {k}: ckpt={list(v.shape)} vs model={list(model_sd[k].shape)}")
+            else:
+                filtered_sd[k] = v
 
-    missing, unexpected = model.load_state_dict(filtered_sd, strict=False)
-    if skipped:
-        print(f"Reinitialised {len(skipped)} layers (shape mismatch):")
-        for s in skipped:
-            print(s)
-    if missing:
-        print(f"Warning: {len(missing)} missing keys in checkpoint")
+        missing, unexpected = model.load_state_dict(filtered_sd, strict=False)
+        if skipped:
+            print(f"Reinitialised {len(skipped)} layers (shape mismatch):")
+            for s in skipped:
+                print(s)
+        if missing:
+            print(f"Warning: {len(missing)} missing keys in checkpoint")
+        init_msg = f"loaded from {args.checkpoint}"
+    else:
+        init_msg = "random init (from scratch)"
+
     model.to(device)
 
     params = model.count_parameters()
     print(f"EdgePolicy PPO: d={d_model}, heads={args.n_heads}, layers={args.n_layers}")
-    print(f"Parameters: {params['total']:,}  (loaded from {args.checkpoint})")
+    print(f"Parameters: {params['total']:,}  ({init_msg})")
 
     # Reset value head if requested (forces critic to relearn → larger advantages)
     if args.reset_value_head:
@@ -1042,6 +1083,13 @@ def main():
     enable_4p = args.mode == "mixed" and len(pool_4p) > 0
     curriculum = CurriculumManager(promotion_threshold=0.70, window=50, log_fn=log,
                                    enable_4p=enable_4p)
+    if args.start_tier > 2:
+        curriculum.current_max_tier = args.start_tier
+        # Set 4p ratio to match what it would be after promotions
+        if enable_4p:
+            promotions_done = args.start_tier - 2
+            curriculum.fourp_ratio = min(0.05 + 0.05 * promotions_done, curriculum.fourp_max)
+        log(f"Starting at tier {args.start_tier} (4p ratio: {curriculum.fourp_ratio:.0%})")
 
     # Self-play archive — ring buffer of lagged checkpoints
     selfplay_archive = []  # list of (episode, agent_fn)
@@ -1062,6 +1110,9 @@ def main():
 
     # Per-opponent cumulative tracking
     opp_record: dict = {}  # name -> [wins, played]
+
+    # Reward normalizer (SB3-style running mean/std)
+    reward_norm = RewardNormalizer()
 
     while ep < args.num_episodes:
         # Collect episodes_per_update episodes before updating
@@ -1130,6 +1181,10 @@ def main():
         # PPO update — move model to update_device for the backward pass
         model.to(update_device)
         model.train()
+        # Update reward normalizer with this batch's rewards
+        batch_rewards = [s.reward for s in batch_rollout]
+        reward_norm.update(batch_rewards)
+
         update_stats = ppo_update(
             model, optimizer, batch_rollout,
             epochs=args.ppo_epochs,
@@ -1138,6 +1193,7 @@ def main():
             value_coef=args.value_coef,
             entropy_coef=args.entropy_coef,
             entropy_frac_coef=args.entropy_frac_coef,
+            reward_normalizer=reward_norm,
             gamma=args.gamma,
             gae_lambda=args.gae_lambda,
             device=update_device,

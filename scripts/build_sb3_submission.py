@@ -34,9 +34,9 @@ def export_weights(sb3_zip_path: str, output_dir: Path):
     # Export policy state_dict
     weights_path = output_dir / "sb3_policy_weights.pt"
     state = model.policy.state_dict()
-    # Only keep keys needed for inference (features_extractor + candidate_scorer + noop_logit)
+    # Only keep keys needed for inference (features_extractor + mlp + action_net)
     inference_keys = {k: v for k, v in state.items()
-                     if k.startswith(("features_extractor.", "candidate_scorer.")) or k == "noop_logit"}
+                     if k.startswith(("features_extractor.", "mlp_extractor.policy_net.", "action_net."))}
     torch.save(inference_keys, weights_path)
     print(f"  Saved {len(inference_keys)} weight tensors to {weights_path}")
 

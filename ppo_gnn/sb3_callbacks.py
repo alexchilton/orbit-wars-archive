@@ -56,6 +56,8 @@ class WinRateCallback(BaseCallback):
         self._recent_losses: deque = deque(maxlen=window)
         self._recent_model_noop_pct: deque = deque(maxlen=window)
         self._recent_vetoed_pct: deque = deque(maxlen=window)
+        self._recent_unique_sources: deque = deque(maxlen=window)
+        self._recent_multi_source_pct: deque = deque(maxlen=window)
         self._4p_wins = 0
         self._4p_total = 0
         self._last_logged_ep = 0
@@ -132,6 +134,8 @@ class WinRateCallback(BaseCallback):
             self._recent_losses.append(info.get("episode_losses", 0))
             self._recent_model_noop_pct.append(info.get("model_noop_pct", 0))
             self._recent_vetoed_pct.append(info.get("vetoed_pct", 0))
+            self._recent_unique_sources.append(info.get("avg_unique_sources", 0))
+            self._recent_multi_source_pct.append(info.get("multi_source_pct", 0))
 
             # Log update line every N episodes
             if self.total_episodes - self._last_logged_ep >= self.log_every:
@@ -157,6 +161,18 @@ class WinRateCallback(BaseCallback):
                 val_loss = sb3_log.get("train/value_loss", 0)
                 lr = sb3_log.get("train/learning_rate", 0)
 
+                # Value prediction diagnostics from rollout buffer
+                val_mean = val_std = ret_mean = ret_std = 0.0
+                try:
+                    buf = self.model.rollout_buffer
+                    if buf is not None and buf.values is not None:
+                        val_mean = float(buf.values.mean())
+                        val_std = float(buf.values.std())
+                        ret_mean = float(buf.returns.mean())
+                        ret_std = float(buf.returns.std())
+                except Exception:
+                    pass
+
                 # Action stats
                 avg_actions = sum(self._recent_actions) / max(len(self._recent_actions), 1)
                 avg_noop_pct = sum(self._recent_noops) / max(len(self._recent_noops), 1)
@@ -175,17 +191,21 @@ class WinRateCallback(BaseCallback):
                 avg_losses = sum(self._recent_losses) / max(len(self._recent_losses), 1)
                 avg_model_noop = sum(self._recent_model_noop_pct) / max(len(self._recent_model_noop_pct), 1)
                 avg_vetoed = sum(self._recent_vetoed_pct) / max(len(self._recent_vetoed_pct), 1)
+                avg_unique_src = sum(self._recent_unique_sources) / max(len(self._recent_unique_sources), 1)
+                avg_multi_src = sum(self._recent_multi_source_pct) / max(len(self._recent_multi_source_pct), 1)
                 self._log(
                     f"Update ep={self.total_episodes} ({elapsed:.0f}s) | "
                     f"wr={wr:.3f} W={self.total_wins} L={self.total_losses} avg_r={avg_reward:+.2f} | "
                     f"4p={self._4p_total} 4pwr={fourp_wr:.0%} | "
                     f"pol={pol_loss:.4f} val={val_loss:.4f} ent={abs(ent):.4f} "
-                    f"kl={kl:.4f} clip={clip:.3f} ev={ev:.3f} | "
+                    f"kl={kl:.4f} clip={clip:.3f} ev={ev:.3f} "
+                    f"vpred={val_mean:+.2f}±{val_std:.2f} ret={ret_mean:+.2f}±{ret_std:.2f} | "
                     f"lr={lr:.2e} | steps={self.num_timesteps} | tier={tier} | "
                     f"acts={avg_actions:.0f} noop={avg_noop_pct:.0f}% "
                     f"[model={avg_model_noop:.0f}% veto={avg_vetoed:.0f}%] "
                     f"planets={avg_planets:.1f} "
                     f"ships/fleet={avg_spf:.0f} cap={avg_captures:.1f} lost={avg_losses:.1f} | "
+                    f"diversity: src={avg_unique_src:.1f} multi={avg_multi_src:.0f}% | "
                     f"early: fleet@{avg_first_fleet:.0f} p25={avg_p25:.1f} p50={avg_p50:.1f}"
                 )
                 # Per-opponent breakdown
@@ -211,13 +231,7 @@ class WinRateCallback(BaseCallback):
                     )
                     self.recent_wins.clear()
 
-                elif wr <= self.demotion_threshold and env.max_tier > 2:
-                    env.set_tier(env.max_tier - 1)
-                    self._log(
-                        f"*** DEMOTED to tier {env.max_tier} "
-                        f"(wr={wr:.2f} over {self.window} games)"
-                    )
-                    self.recent_wins.clear()
+                # No demotion — keep pushing forward
 
         return True
 
@@ -347,6 +361,11 @@ class SelfPlayCallback(BaseCallback):
         from .sb3_env import (
             OrbitWarsEnv, SB3_MAX_CANDIDATES, NUM_FRACTIONS,
             NOOP_ACTION, EDGE_INPUT_DIM, MAX_ACTIONS, NUM_CHOICES,
+            compute_global_features,
+        )
+        from .sb3_constants import (
+            OBS_DIM, CANDIDATE_OBS_DIM, TEMPORAL_OBS_DIM,
+            GLOBAL_DIM, TEMPORAL_STEPS,
         )
         from .edge_policy import compute_candidate_edges
         import torch
@@ -368,6 +387,11 @@ class SelfPlayCallback(BaseCallback):
         except Exception:
             pass
 
+        # Persistent temporal buffer for this agent (closure state)
+        temporal_buffer = np.zeros((TEMPORAL_STEPS, GLOBAL_DIM), dtype=np.float32)
+        # Track game identity to reset buffer between games
+        last_game_step = [0]
+
         def agent_fn(obs, config):
             """Self-play agent wrapping a frozen SB3 model."""
             planets = obs.get("planets", [])
@@ -375,6 +399,11 @@ class SelfPlayCallback(BaseCallback):
             player = obs.get("player", 0)
             step = obs.get("step", 0)
             angular_velocity = obs.get("angular_velocity", 0.0)
+
+            # Reset temporal buffer on new game (step went backwards)
+            if step < last_game_step[0]:
+                temporal_buffer[:] = 0
+            last_game_step[0] = step
 
             if not planets or not any(int(p[1]) == player for p in planets):
                 return []
@@ -390,29 +419,43 @@ class SelfPlayCallback(BaseCallback):
                 angular_velocity=angular_velocity,
             )
             ef = torch.nan_to_num(ef, nan=0.0, posinf=1.0, neginf=-1.0)
-            obs_flat = ef.numpy().flatten().astype(np.float32)
+            candidate_flat = ef.numpy().flatten().astype(np.float32)
+
+            # Compute global features and update temporal buffer
+            global_feats = compute_global_features(planets, fleets, player, step, 500)
+            temporal_buffer[:-1] = temporal_buffer[1:]
+            temporal_buffer[-1] = global_feats
+
+            # Build full obs: [candidate_features | temporal_history]
+            obs_flat = np.zeros(OBS_DIM, dtype=np.float32)
+            obs_flat[:CANDIDATE_OBS_DIM] = candidate_flat
+            obs_flat[CANDIDATE_OBS_DIM:] = temporal_buffer.flatten()
 
             # Apply VecNormalize (same transform as training)
             if obs_mean is not None:
                 obs_flat = (obs_flat - obs_mean) / np.sqrt(obs_var + 1e-8)
                 obs_flat = np.clip(obs_flat, -clip_obs, clip_obs)
 
-            # Build action mask
-            single_mask = np.zeros(NUM_CHOICES, dtype=bool)
+            # Build action mask — use same heuristic filter as training
+            from .sb3_env import build_action_mask
             nv = min(num_valid, SB3_MAX_CANDIDATES)
-            for i in range(nv):
-                single_mask[i * NUM_FRACTIONS : (i + 1) * NUM_FRACTIONS] = True
-            single_mask[NOOP_ACTION] = True
+            single_mask, intercept_cache = build_action_mask(
+                planets=planets,
+                player=player,
+                env_steps=step,
+                edge_indices=edge_indices,
+                num_valid=nv,
+                angular_velocity=angular_velocity,
+            )
             mask = np.tile(single_mask, MAX_ACTIONS)
 
             action, _ = frozen_model.predict(
                 obs_flat, deterministic=True, action_masks=mask,
             )
 
-            # Decode actions (simplified — reuse env logic)
+            # Decode actions using intercept_cache from mask building
             import math
-            from .edge_policy import solve_intercept, _travel_time
-            from .sun_geometry import sun_intersects_path, SUN_X, SUN_Y
+            from .edge_policy import FRACTION_BUCKETS
 
             actions = []
             committed = {}
@@ -425,31 +468,25 @@ class SelfPlayCallback(BaseCallback):
                 if cand_idx >= nv:
                     continue
 
-                src_pidx = edge_indices[cand_idx, 0].item()
-                tgt_pidx = edge_indices[cand_idx, 1].item()
-                src_p = planets[src_pidx]
-                tgt_p = planets[tgt_pidx]
-                if int(src_p[1]) != player:
+                cached = intercept_cache.get(cand_idx)
+                if cached is None:
                     continue
 
+                ix, iy = cached
+                src_pidx = edge_indices[cand_idx, 0].item()
+                src_p = planets[src_pidx]
                 sx, sy = float(src_p[2]), float(src_p[3])
-                tx, ty = float(tgt_p[2]), float(tgt_p[3])
-                tgt_planet_r = float(tgt_p[4])
-                tgt_orbital_r = math.hypot(tx - 50.0, ty - 50.0)
-                omega = angular_velocity if (tgt_orbital_r + tgt_planet_r < 48.0) else 0.0
-
                 src_fleet = int(float(src_p[5]))
+
                 already = committed.get(src_pidx, 0)
                 available = src_fleet - max(5, int(src_fleet * 0.15)) - already
                 if available < 5:
                     continue
 
-                from .edge_policy import FRACTION_BUCKETS
                 ships = max(1, int(available * FRACTION_BUCKETS[frac_idx]))
                 if ships < 5:
                     continue
 
-                ix, iy = solve_intercept(sx, sy, tx, ty, omega, ships)
                 angle = math.atan2(iy - sy, ix - sx)
                 actions.append([int(src_p[0]), angle, ships])
                 committed[src_pidx] = already + ships

@@ -1,0 +1,89 @@
+{
+  "Enhanced (RL+filt+veto)": {
+    "aggregate": 0.55,
+    "per_opponent": {
+      "baseline": {
+        "draws": 0,
+        "losses": 4,
+        "score": 0.6,
+        "wins": 6
+      },
+      "mtmr": {
+        "draws": 0,
+        "losses": 6,
+        "score": 0.4,
+        "wins": 4
+      },
+      "v16": {
+        "draws": 0,
+        "losses": 3,
+        "score": 0.7,
+        "wins": 7
+      },
+      "v23": {
+        "draws": 0,
+        "losses": 5,
+        "score": 0.5,
+        "wins": 5
+      }
+    }
+  },
+  "Pure heuristic baseline": {
+    "aggregate": 0.475,
+    "per_opponent": {
+      "baseline": {
+        "draws": 0,
+        "losses": 3,
+        "score": 0.7,
+        "wins": 7
+      },
+      "mtmr": {
+        "draws": 0,
+        "losses": 7,
+        "score": 0.3,
+        "wins": 3
+      },
+      "v16": {
+        "draws": 0,
+        "losses": 5,
+        "score": 0.5,
+        "wins": 5
+      },
+      "v23": {
+        "draws": 0,
+        "losses": 6,
+        "score": 0.4,
+        "wins": 4
+      }
+    }
+  },
+  "RL-only (linear v3)": {
+    "aggregate": 0.625,
+    "per_opponent": {
+      "baseline": {
+        "draws": 0,
+        "losses": 2,
+        "score": 0.8,
+        "wins": 8
+      },
+      "mtmr": {
+        "draws": 0,
+        "losses": 5,
+        "score": 0.5,
+        "wins": 5
+      },
+      "v16": {
+        "draws": 0,
+        "losses": 4,
+        "score": 0.6,
+        "wins": 6
+      },
+      "v23": {
+        "draws": 0,
+        "losses": 4,
+        "score": 0.6,
+        "wins": 6
+      }
+    }
+  }
+}

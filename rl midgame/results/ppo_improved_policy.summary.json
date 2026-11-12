@@ -1,0 +1,64 @@
+{
+  "config": {
+    "updates": 5,
+    "games_per_update": 4,
+    "epochs": 3,
+    "learning_rate": 0.0001,
+    "seed": 7,
+    "policy_out": "/Users/alexchilton/DataspellProjects/orbit_wars/rl midgame/results/ppo_improved_policy.json",
+    "warmstart_from": "/Users/alexchilton/DataspellProjects/orbit_wars/rl midgame/results/policy_gated_neutral.json",
+    "skip_warmstart": false,
+    "hidden_size": 64,
+    "eval_games": 6,
+    "eval_every": 5,
+    "opponent": "heuristic"
+  },
+  "baseline_eval": {
+    "games": 6.0,
+    "win_rate": 0.6666666666666666,
+    "avg_reward": -0.3333333333333333
+  },
+  "best_win_rate": 0.8333333333333334,
+  "history": [
+    {
+      "update": 1,
+      "decisions": 711.0,
+      "reward": -0.4004795551300049,
+      "loss": 0.7748225331306458,
+      "time": 91.61376214027405
+    },
+    {
+      "update": 2,
+      "decisions": 914.0,
+      "reward": -0.024952402338385582,
+      "loss": 0.33288612961769104,
+      "time": 107.85709285736084
+    },
+    {
+      "update": 3,
+      "decisions": 1055.0,
+      "reward": 0.34972643852233887,
+      "loss": 0.06146857142448425,
+      "time": 99.16698789596558
+    },
+    {
+      "update": 4,
+      "decisions": 956.0,
+      "reward": -1.0786556005477905,
+      "loss": 0.9623698592185974,
+      "time": 106.42751789093018
+    },
+    {
+      "update": 5,
+      "decisions": 889.0,
+      "reward": -0.31870293617248535,
+      "loss": 0.5221108794212341,
+      "time": 108.84012913703918,
+      "eval": {
+        "games": 6.0,
+        "win_rate": 0.8333333333333334,
+        "avg_reward": 0.3333333333333333
+      }
+    }
+  ]
+}

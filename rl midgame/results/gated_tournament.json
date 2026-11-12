@@ -1,0 +1,26 @@
+{
+  "gated_neutral": {
+    "wins": 14,
+    "total": 20,
+    "win_rate": 0.7,
+    "time": 560.6459839344025
+  },
+  "gated_slight": {
+    "wins": 12,
+    "total": 20,
+    "win_rate": 0.6,
+    "time": 475.75623321533203
+  },
+  "gated_moderate": {
+    "wins": 10,
+    "total": 20,
+    "win_rate": 0.5,
+    "time": 484.2944712638855
+  },
+  "gated_strong": {
+    "wins": 9,
+    "total": 20,
+    "win_rate": 0.45,
+    "time": 444.43588304519653
+  }
+}

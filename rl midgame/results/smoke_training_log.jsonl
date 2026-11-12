@@ -1,0 +1,1 @@
+{"decisions": 0, "episode": 1, "opponent": "random", "reward_signal": 1.0, "ships_a": 5411, "ships_b": 0, "swapped": false, "update": {"avg_abs_weight": 0.0, "decisions": 0.0, "reward": 1.0}, "winner": "A"}

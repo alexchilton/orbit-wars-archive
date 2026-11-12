@@ -1,0 +1,1565 @@
+{
+  "candidates": [
+    {
+      "episode_id": 75599477,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.9824491424012765,
+        "production_by_player": [
+          88.0,
+          0.0
+        ],
+        "ships_by_player": [
+          2485.0,
+          22.0
+        ],
+        "step": 144,
+        "target_rank": 2,
+        "target_share": 0.008775428799361787,
+        "target_ships": 22.0,
+        "total_ships": 2507.0
+      },
+      "historical_margin_drop": 1.0753032288368776,
+      "horizon_end_step": 144,
+      "num_agents": 2,
+      "player_index": 1,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52135704/episode-75599477-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.09285408643560117,
+        "production_by_player": [
+          56.0,
+          32.0
+        ],
+        "ships_by_player": [
+          1060.0,
+          1277.0
+        ],
+        "step": 94,
+        "target_rank": 1,
+        "target_share": 0.5464270432178006,
+        "target_ships": 1277.0,
+        "total_ships": 2337.0
+      },
+      "start_step": 94
+    },
+    {
+      "episode_id": 75599477,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.9906796116504855,
+        "production_by_player": [
+          88.0,
+          0.0
+        ],
+        "ships_by_player": [
+          2563.0,
+          12.0
+        ],
+        "step": 145,
+        "target_rank": 2,
+        "target_share": 0.004660194174757282,
+        "target_ships": 12.0,
+        "total_ships": 2575.0
+      },
+      "historical_margin_drop": 1.0728422340429928,
+      "horizon_end_step": 145,
+      "num_agents": 2,
+      "player_index": 1,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52135704/episode-75599477-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.08216262239250743,
+        "production_by_player": [
+          56.0,
+          32.0
+        ],
+        "ships_by_player": [
+          1078.0,
+          1271.0
+        ],
+        "step": 95,
+        "target_rank": 1,
+        "target_share": 0.5410813111962537,
+        "target_ships": 1271.0,
+        "total_ships": 2349.0
+      },
+      "start_step": 95
+    },
+    {
+      "episode_id": 75584311,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.855072463768116,
+        "production_by_player": [
+          0.0,
+          37.0
+        ],
+        "ships_by_player": [
+          100.0,
+          1280.0
+        ],
+        "step": 151,
+        "target_rank": 2,
+        "target_share": 0.07246376811594203,
+        "target_ships": 100.0,
+        "total_ships": 1380.0
+      },
+      "historical_margin_drop": 0.9427348014304535,
+      "horizon_end_step": 151,
+      "num_agents": 2,
+      "player_index": 0,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52123617/episode-75584311-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.08766233766233761,
+        "production_by_player": [
+          17.0,
+          20.0
+        ],
+        "ships_by_player": [
+          670.0,
+          562.0
+        ],
+        "step": 101,
+        "target_rank": 1,
+        "target_share": 0.5438311688311688,
+        "target_ships": 670.0,
+        "total_ships": 1232.0
+      },
+      "start_step": 101
+    },
+    {
+      "episode_id": 75584311,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.8541210795040117,
+        "production_by_player": [
+          0.0,
+          37.0
+        ],
+        "ships_by_player": [
+          100.0,
+          1271.0
+        ],
+        "step": 152,
+        "target_rank": 2,
+        "target_share": 0.07293946024799416,
+        "target_ships": 100.0,
+        "total_ships": 1371.0
+      },
+      "historical_margin_drop": 0.939695651631151,
+      "horizon_end_step": 152,
+      "num_agents": 2,
+      "player_index": 0,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52123617/episode-75584311-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.08557457212713931,
+        "production_by_player": [
+          10.0,
+          27.0
+        ],
+        "ships_by_player": [
+          666.0,
+          561.0
+        ],
+        "step": 102,
+        "target_rank": 1,
+        "target_share": 0.5427872860635696,
+        "target_ships": 666.0,
+        "total_ships": 1227.0
+      },
+      "start_step": 102
+    },
+    {
+      "episode_id": 75581626,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.7755013077593723,
+        "production_by_player": [
+          5.0,
+          85.0,
+          6.0,
+          0.0
+        ],
+        "ships_by_player": [
+          209.0,
+          1988.0,
+          97.0,
+          0.0
+        ],
+        "step": 115,
+        "target_rank": 2,
+        "target_share": 0.0911072362685266,
+        "target_ships": 209.0,
+        "total_ships": 2294.0
+      },
+      "historical_margin_drop": 0.9378629313756085,
+      "horizon_end_step": 115,
+      "num_agents": 4,
+      "player_index": 0,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52122258/episode-75581626-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.16236162361623618,
+        "production_by_player": [
+          37.0,
+          43.0,
+          8.0,
+          0.0
+        ],
+        "ships_by_player": [
+          869.0,
+          561.0,
+          335.0,
+          132.0
+        ],
+        "step": 65,
+        "target_rank": 1,
+        "target_share": 0.4580917237743806,
+        "target_ships": 869.0,
+        "total_ships": 1897.0
+      },
+      "start_step": 65
+    },
+    {
+      "episode_id": 75722218,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.8897030466640956,
+        "production_by_player": [
+          0.0,
+          80.0
+        ],
+        "ships_by_player": [
+          143.0,
+          2450.0
+        ],
+        "step": 167,
+        "target_rank": 2,
+        "target_share": 0.05514847666795218,
+        "target_ships": 143.0,
+        "total_ships": 2593.0
+      },
+      "historical_margin_drop": 0.9344622534629625,
+      "horizon_end_step": 167,
+      "num_agents": 2,
+      "player_index": 0,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/latest_balanced/episode-75722218-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.04475920679886686,
+        "production_by_player": [
+          29.0,
+          47.0
+        ],
+        "ships_by_player": [
+          922.0,
+          843.0
+        ],
+        "step": 117,
+        "target_rank": 1,
+        "target_share": 0.5223796033994335,
+        "target_ships": 922.0,
+        "total_ships": 1765.0
+      },
+      "start_step": 117
+    },
+    {
+      "episode_id": 75722218,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.875049115913556,
+        "production_by_player": [
+          0.0,
+          80.0
+        ],
+        "ships_by_player": [
+          159.0,
+          2386.0
+        ],
+        "step": 166,
+        "target_rank": 2,
+        "target_share": 0.062475442043222,
+        "target_ships": 159.0,
+        "total_ships": 2545.0
+      },
+      "historical_margin_drop": 0.9302568563802607,
+      "horizon_end_step": 166,
+      "num_agents": 2,
+      "player_index": 0,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/latest_balanced/episode-75722218-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.055207740466704625,
+        "production_by_player": [
+          29.0,
+          47.0
+        ],
+        "ships_by_player": [
+          927.0,
+          830.0
+        ],
+        "step": 116,
+        "target_rank": 1,
+        "target_share": 0.5276038702333523,
+        "target_ships": 927.0,
+        "total_ships": 1757.0
+      },
+      "start_step": 116
+    },
+    {
+      "episode_id": 75581626,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.7831578947368422,
+        "production_by_player": [
+          5.0,
+          85.0,
+          6.0,
+          0.0
+        ],
+        "ships_by_player": [
+          206.0,
+          2066.0,
+          103.0,
+          0.0
+        ],
+        "step": 116,
+        "target_rank": 2,
+        "target_share": 0.08673684210526315,
+        "target_ships": 206.0,
+        "total_ships": 2375.0
+      },
+      "historical_margin_drop": 0.9266788033584219,
+      "horizon_end_step": 116,
+      "num_agents": 4,
+      "player_index": 0,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52122258/episode-75581626-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.1435209086215798,
+        "production_by_player": [
+          32.0,
+          43.0,
+          13.0,
+          0.0
+        ],
+        "ships_by_player": [
+          882.0,
+          604.0,
+          319.0,
+          132.0
+        ],
+        "step": 66,
+        "target_rank": 1,
+        "target_share": 0.4553433144037171,
+        "target_ships": 882.0,
+        "total_ships": 1937.0
+      },
+      "start_step": 66
+    },
+    {
+      "episode_id": 75636015,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.9137760158572845,
+        "production_by_player": [
+          64.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ships_by_player": [
+          1931.0,
+          87.0,
+          0.0,
+          0.0
+        ],
+        "step": 172,
+        "target_rank": 2,
+        "target_share": 0.04311199207135778,
+        "target_ships": 87.0,
+        "total_ships": 2018.0
+      },
+      "historical_margin_drop": 0.921201758431542,
+      "horizon_end_step": 172,
+      "num_agents": 4,
+      "player_index": 1,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52158901/episode-75636015-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.007425742574257432,
+        "production_by_player": [
+          29.0,
+          28.0,
+          0.0,
+          1.0
+        ],
+        "ships_by_player": [
+          959.0,
+          974.0,
+          0.0,
+          87.0
+        ],
+        "step": 122,
+        "target_rank": 1,
+        "target_share": 0.48217821782178216,
+        "target_ships": 974.0,
+        "total_ships": 2020.0
+      },
+      "start_step": 122
+    },
+    {
+      "episode_id": 75561027,
+      "final_reward": -1.0,
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.8939061814993424,
+        "production_by_player": [
+          0.0,
+          0.0,
+          80.0,
+          2.0
+        ],
+        "ships_by_player": [
+          0.0,
+          10.0,
+          2155.0,
+          116.0
+        ],
+        "step": 151,
+        "target_rank": 2,
+        "target_share": 0.05085488820692679,
+        "target_ships": 116.0,
+        "total_ships": 2281.0
+      },
+      "historical_margin_drop": 0.9093621320403007,
+      "horizon_end_step": 151,
+      "num_agents": 4,
+      "player_index": 3,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52107365/episode-75561027-replay.json",
+      "start_metrics": {
+        "margin_vs_best_other": 0.015455950540958274,
+        "production_by_player": [
+          0.0,
+          13.0,
+          37.0,
+          16.0
+        ],
+        "ships_by_player": [
+          0.0,
+          274.0,
+          500.0,
+          520.0
+        ],
+        "step": 101,
+        "target_rank": 1,
+        "target_share": 0.401854714064915,
+        "target_ships": 520.0,
+        "total_ships": 1294.0
+      },
+      "start_step": 101
+    }
+  ],
+  "config": {
+    "activation_turn": 0,
+    "allow_opening_rl": false,
+    "candidates_per_replay": 2,
+    "contested_only": true,
+    "eval_candidates": 20,
+    "force_rl_window": true,
+    "hidden_size": 32,
+    "horizon": 50,
+    "learning_rate": 0.05,
+    "max_candidates": 10,
+    "min_candidates": 1,
+    "min_start_share_2p": 0.45,
+    "min_start_share_4p": 0.3,
+    "policy_model": "mlp",
+    "rl_max_turn": 220,
+    "start_rank_max": 1,
+    "top_k": 8,
+    "train_episodes": 20
+  },
+  "evaluation": [
+    {
+      "episode_id": 75599477,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.41834002677376175,
+          "production_by_player": [
+            56.0,
+            32.0
+          ],
+          "ships_by_player": [
+            2119.0,
+            869.0
+          ],
+          "step": 144,
+          "target_rank": 2,
+          "target_share": 0.29082998661311915,
+          "target_ships": 869.0,
+          "total_ships": 2988.0
+        },
+        "reward_signal": -0.5111941132093629,
+        "step": 144
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.9824491424012765,
+        "production_by_player": [
+          88.0,
+          0.0
+        ],
+        "ships_by_player": [
+          2485.0,
+          22.0
+        ],
+        "step": 144,
+        "target_rank": 2,
+        "target_share": 0.008775428799361787,
+        "target_ships": 22.0,
+        "total_ships": 2507.0
+      },
+      "historical_margin_drop": 1.0753032288368776,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52135704/episode-75599477-replay.json",
+      "rl": {
+        "decision_count": 1,
+        "end_metrics": {
+          "margin_vs_best_other": -0.41834002677376175,
+          "production_by_player": [
+            56.0,
+            32.0
+          ],
+          "ships_by_player": [
+            2119.0,
+            869.0
+          ],
+          "step": 144,
+          "target_rank": 2,
+          "target_share": 0.29082998661311915,
+          "target_ships": 869.0,
+          "total_ships": 2988.0
+        },
+        "reward_signal": -0.5111941132093629,
+        "step": 144
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.09285408643560117,
+        "production_by_player": [
+          56.0,
+          32.0
+        ],
+        "ships_by_player": [
+          1060.0,
+          1277.0
+        ],
+        "step": 94,
+        "target_rank": 1,
+        "target_share": 0.5464270432178006,
+        "target_ships": 1277.0,
+        "total_ships": 2337.0
+      },
+      "start_step": 94
+    },
+    {
+      "episode_id": 75599477,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.46337926033357507,
+          "production_by_player": [
+            51.0,
+            37.0
+          ],
+          "ships_by_player": [
+            2018.0,
+            740.0
+          ],
+          "step": 145,
+          "target_rank": 2,
+          "target_share": 0.2683103698332125,
+          "target_ships": 740.0,
+          "total_ships": 2758.0
+        },
+        "reward_signal": -0.5455418827260825,
+        "step": 145
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.9906796116504855,
+        "production_by_player": [
+          88.0,
+          0.0
+        ],
+        "ships_by_player": [
+          2563.0,
+          12.0
+        ],
+        "step": 145,
+        "target_rank": 2,
+        "target_share": 0.004660194174757282,
+        "target_ships": 12.0,
+        "total_ships": 2575.0
+      },
+      "historical_margin_drop": 1.0728422340429928,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52135704/episode-75599477-replay.json",
+      "rl": {
+        "decision_count": 1,
+        "end_metrics": {
+          "margin_vs_best_other": -0.467434328895286,
+          "production_by_player": [
+            51.0,
+            37.0
+          ],
+          "ships_by_player": [
+            2039.0,
+            740.0
+          ],
+          "step": 145,
+          "target_rank": 2,
+          "target_share": 0.266282835552357,
+          "target_ships": 740.0,
+          "total_ships": 2779.0
+        },
+        "reward_signal": -0.5495969512877934,
+        "step": 145
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.08216262239250743,
+        "production_by_player": [
+          56.0,
+          32.0
+        ],
+        "ships_by_player": [
+          1078.0,
+          1271.0
+        ],
+        "step": 95,
+        "target_rank": 1,
+        "target_share": 0.5410813111962537,
+        "target_ships": 1271.0,
+        "total_ships": 2349.0
+      },
+      "start_step": 95
+    },
+    {
+      "episode_id": 75584311,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.7881944444444444,
+          "production_by_player": [
+            6.0,
+            31.0
+          ],
+          "ships_by_player": [
+            122.0,
+            1030.0
+          ],
+          "step": 151,
+          "target_rank": 2,
+          "target_share": 0.10590277777777778,
+          "target_ships": 122.0,
+          "total_ships": 1152.0
+        },
+        "reward_signal": -0.875856782106782,
+        "step": 151
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.855072463768116,
+        "production_by_player": [
+          0.0,
+          37.0
+        ],
+        "ships_by_player": [
+          100.0,
+          1280.0
+        ],
+        "step": 151,
+        "target_rank": 2,
+        "target_share": 0.07246376811594203,
+        "target_ships": 100.0,
+        "total_ships": 1380.0
+      },
+      "historical_margin_drop": 0.9427348014304535,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52123617/episode-75584311-replay.json",
+      "rl": {
+        "decision_count": 92,
+        "end_metrics": {
+          "margin_vs_best_other": -0.7511961722488039,
+          "production_by_player": [
+            5.0,
+            33.0
+          ],
+          "ships_by_player": [
+            156.0,
+            1098.0
+          ],
+          "step": 151,
+          "target_rank": 2,
+          "target_share": 0.12440191387559808,
+          "target_ships": 156.0,
+          "total_ships": 1254.0
+        },
+        "reward_signal": -0.8388585099111414,
+        "step": 151
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.08766233766233761,
+        "production_by_player": [
+          17.0,
+          20.0
+        ],
+        "ships_by_player": [
+          670.0,
+          562.0
+        ],
+        "step": 101,
+        "target_rank": 1,
+        "target_share": 0.5438311688311688,
+        "target_ships": 670.0,
+        "total_ships": 1232.0
+      },
+      "start_step": 101
+    },
+    {
+      "episode_id": 75584311,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.7775987107171636,
+          "production_by_player": [
+            3.0,
+            34.0
+          ],
+          "ships_by_player": [
+            138.0,
+            1103.0
+          ],
+          "step": 152,
+          "target_rank": 2,
+          "target_share": 0.11120064464141821,
+          "target_ships": 138.0,
+          "total_ships": 1241.0
+        },
+        "reward_signal": -0.8631732828443028,
+        "step": 152
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.8541210795040117,
+        "production_by_player": [
+          0.0,
+          37.0
+        ],
+        "ships_by_player": [
+          100.0,
+          1271.0
+        ],
+        "step": 152,
+        "target_rank": 2,
+        "target_share": 0.07293946024799416,
+        "target_ships": 100.0,
+        "total_ships": 1371.0
+      },
+      "historical_margin_drop": 0.939695651631151,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52123617/episode-75584311-replay.json",
+      "rl": {
+        "decision_count": 88,
+        "end_metrics": {
+          "margin_vs_best_other": -0.750599520383693,
+          "production_by_player": [
+            3.0,
+            34.0
+          ],
+          "ships_by_player": [
+            156.0,
+            1095.0
+          ],
+          "step": 152,
+          "target_rank": 2,
+          "target_share": 0.12470023980815348,
+          "target_ships": 156.0,
+          "total_ships": 1251.0
+        },
+        "reward_signal": -0.8361740925108323,
+        "step": 152
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.08557457212713931,
+        "production_by_player": [
+          10.0,
+          27.0
+        ],
+        "ships_by_player": [
+          666.0,
+          561.0
+        ],
+        "step": 102,
+        "target_rank": 1,
+        "target_share": 0.5427872860635696,
+        "target_ships": 666.0,
+        "total_ships": 1227.0
+      },
+      "start_step": 102
+    },
+    {
+      "episode_id": 75581626,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.5174032068830661,
+          "production_by_player": [
+            23.0,
+            71.0,
+            2.0,
+            0.0
+          ],
+          "ships_by_player": [
+            596.0,
+            1919.0,
+            42.0,
+            0.0
+          ],
+          "step": 115,
+          "target_rank": 2,
+          "target_share": 0.23308564724286274,
+          "target_ships": 596.0,
+          "total_ships": 2557.0
+        },
+        "reward_signal": -0.6797648304993023,
+        "step": 115
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.7755013077593723,
+        "production_by_player": [
+          5.0,
+          85.0,
+          6.0,
+          0.0
+        ],
+        "ships_by_player": [
+          209.0,
+          1988.0,
+          97.0,
+          0.0
+        ],
+        "step": 115,
+        "target_rank": 2,
+        "target_share": 0.0911072362685266,
+        "target_ships": 209.0,
+        "total_ships": 2294.0
+      },
+      "historical_margin_drop": 0.9378629313756085,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52122258/episode-75581626-replay.json",
+      "rl": {
+        "decision_count": 174,
+        "end_metrics": {
+          "margin_vs_best_other": -0.4578512396694215,
+          "production_by_player": [
+            37.0,
+            59.0,
+            0.0,
+            0.0
+          ],
+          "ships_by_player": [
+            656.0,
+            1764.0,
+            0.0,
+            0.0
+          ],
+          "step": 115,
+          "target_rank": 2,
+          "target_share": 0.27107438016528923,
+          "target_ships": 656.0,
+          "total_ships": 2420.0
+        },
+        "reward_signal": -0.6202128632856576,
+        "step": 115
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.16236162361623618,
+        "production_by_player": [
+          37.0,
+          43.0,
+          8.0,
+          0.0
+        ],
+        "ships_by_player": [
+          869.0,
+          561.0,
+          335.0,
+          132.0
+        ],
+        "step": 65,
+        "target_rank": 1,
+        "target_share": 0.4580917237743806,
+        "target_ships": 869.0,
+        "total_ships": 1897.0
+      },
+      "start_step": 65
+    },
+    {
+      "episode_id": 75722218,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.8080541964621755,
+          "production_by_player": [
+            8.0,
+            72.0
+          ],
+          "ships_by_player": [
+            255.0,
+            2402.0
+          ],
+          "step": 167,
+          "target_rank": 2,
+          "target_share": 0.09597290176891231,
+          "target_ships": 255.0,
+          "total_ships": 2657.0
+        },
+        "reward_signal": -0.8528134032610424,
+        "step": 167
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.8897030466640956,
+        "production_by_player": [
+          0.0,
+          80.0
+        ],
+        "ships_by_player": [
+          143.0,
+          2450.0
+        ],
+        "step": 167,
+        "target_rank": 2,
+        "target_share": 0.05514847666795218,
+        "target_ships": 143.0,
+        "total_ships": 2593.0
+      },
+      "historical_margin_drop": 0.9344622534629625,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/latest_balanced/episode-75722218-replay.json",
+      "rl": {
+        "decision_count": 164,
+        "end_metrics": {
+          "margin_vs_best_other": -0.7650981845127824,
+          "production_by_player": [
+            11.0,
+            68.0
+          ],
+          "ships_by_player": [
+            317.0,
+            2382.0
+          ],
+          "step": 167,
+          "target_rank": 2,
+          "target_share": 0.11745090774360874,
+          "target_ships": 317.0,
+          "total_ships": 2699.0
+        },
+        "reward_signal": -0.8098573913116494,
+        "step": 167
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.04475920679886686,
+        "production_by_player": [
+          29.0,
+          47.0
+        ],
+        "ships_by_player": [
+          922.0,
+          843.0
+        ],
+        "step": 117,
+        "target_rank": 1,
+        "target_share": 0.5223796033994335,
+        "target_ships": 922.0,
+        "total_ships": 1765.0
+      },
+      "start_step": 117
+    },
+    {
+      "episode_id": 75722218,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.7581187010078387,
+          "production_by_player": [
+            9.0,
+            67.0
+          ],
+          "ships_by_player": [
+            324.0,
+            2355.0
+          ],
+          "step": 166,
+          "target_rank": 2,
+          "target_share": 0.12094064949608063,
+          "target_ships": 324.0,
+          "total_ships": 2679.0
+        },
+        "reward_signal": -0.8133264414745434,
+        "step": 166
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.875049115913556,
+        "production_by_player": [
+          0.0,
+          80.0
+        ],
+        "ships_by_player": [
+          159.0,
+          2386.0
+        ],
+        "step": 166,
+        "target_rank": 2,
+        "target_share": 0.062475442043222,
+        "target_ships": 159.0,
+        "total_ships": 2545.0
+      },
+      "historical_margin_drop": 0.9302568563802607,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/latest_balanced/episode-75722218-replay.json",
+      "rl": {
+        "decision_count": 156,
+        "end_metrics": {
+          "margin_vs_best_other": -0.8051643192488263,
+          "production_by_player": [
+            11.0,
+            69.0
+          ],
+          "ships_by_player": [
+            249.0,
+            2307.0
+          ],
+          "step": 166,
+          "target_rank": 2,
+          "target_share": 0.09741784037558686,
+          "target_ships": 249.0,
+          "total_ships": 2556.0
+        },
+        "reward_signal": -0.8603720597155309,
+        "step": 166
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.055207740466704625,
+        "production_by_player": [
+          29.0,
+          47.0
+        ],
+        "ships_by_player": [
+          927.0,
+          830.0
+        ],
+        "step": 116,
+        "target_rank": 1,
+        "target_share": 0.5276038702333523,
+        "target_ships": 927.0,
+        "total_ships": 1757.0
+      },
+      "start_step": 116
+    },
+    {
+      "episode_id": 75581626,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.33568548387096775,
+          "production_by_player": [
+            26.0,
+            65.0,
+            0.0,
+            5.0
+          ],
+          "ships_by_player": [
+            955.0,
+            1954.0,
+            0.0,
+            67.0
+          ],
+          "step": 116,
+          "target_rank": 2,
+          "target_share": 0.3209005376344086,
+          "target_ships": 955.0,
+          "total_ships": 2976.0
+        },
+        "reward_signal": -0.47920639249254754,
+        "step": 116
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.7831578947368422,
+        "production_by_player": [
+          5.0,
+          85.0,
+          6.0,
+          0.0
+        ],
+        "ships_by_player": [
+          206.0,
+          2066.0,
+          103.0,
+          0.0
+        ],
+        "step": 116,
+        "target_rank": 2,
+        "target_share": 0.08673684210526315,
+        "target_ships": 206.0,
+        "total_ships": 2375.0
+      },
+      "historical_margin_drop": 0.9266788033584219,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52122258/episode-75581626-replay.json",
+      "rl": {
+        "decision_count": 158,
+        "end_metrics": {
+          "margin_vs_best_other": -0.370014245014245,
+          "production_by_player": [
+            30.0,
+            57.0,
+            0.0,
+            5.0
+          ],
+          "ships_by_player": [
+            856.0,
+            1895.0,
+            0.0,
+            57.0
+          ],
+          "step": 116,
+          "target_rank": 2,
+          "target_share": 0.30484330484330485,
+          "target_ships": 856.0,
+          "total_ships": 2808.0
+        },
+        "reward_signal": -0.5135351536358248,
+        "step": 116
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.1435209086215798,
+        "production_by_player": [
+          32.0,
+          43.0,
+          13.0,
+          0.0
+        ],
+        "ships_by_player": [
+          882.0,
+          604.0,
+          319.0,
+          132.0
+        ],
+        "step": 66,
+        "target_rank": 1,
+        "target_share": 0.4553433144037171,
+        "target_ships": 882.0,
+        "total_ships": 1937.0
+      },
+      "start_step": 66
+    },
+    {
+      "episode_id": 75636015,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.7171293871136721,
+          "production_by_player": [
+            51.0,
+            11.0,
+            0.0,
+            0.0
+          ],
+          "ships_by_player": [
+            1639.0,
+            270.0,
+            0.0,
+            0.0
+          ],
+          "step": 172,
+          "target_rank": 2,
+          "target_share": 0.14143530644316396,
+          "target_ships": 270.0,
+          "total_ships": 1909.0
+        },
+        "reward_signal": -0.7245551296879296,
+        "step": 172
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.9137760158572845,
+        "production_by_player": [
+          64.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ships_by_player": [
+          1931.0,
+          87.0,
+          0.0,
+          0.0
+        ],
+        "step": 172,
+        "target_rank": 2,
+        "target_share": 0.04311199207135778,
+        "target_ships": 87.0,
+        "total_ships": 2018.0
+      },
+      "historical_margin_drop": 0.921201758431542,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52158901/episode-75636015-replay.json",
+      "rl": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.6819300837026097,
+          "production_by_player": [
+            45.0,
+            17.0,
+            0.0,
+            0.0
+          ],
+          "ships_by_player": [
+            1708.0,
+            323.0,
+            0.0,
+            0.0
+          ],
+          "step": 172,
+          "target_rank": 2,
+          "target_share": 0.15903495814869523,
+          "target_ships": 323.0,
+          "total_ships": 2031.0
+        },
+        "reward_signal": -0.6893558262768671,
+        "step": 172
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.007425742574257432,
+        "production_by_player": [
+          29.0,
+          28.0,
+          0.0,
+          1.0
+        ],
+        "ships_by_player": [
+          959.0,
+          974.0,
+          0.0,
+          87.0
+        ],
+        "step": 122,
+        "target_rank": 1,
+        "target_share": 0.48217821782178216,
+        "target_ships": 974.0,
+        "total_ships": 2020.0
+      },
+      "start_step": 122
+    },
+    {
+      "episode_id": 75561027,
+      "heuristic": {
+        "decision_count": 0,
+        "end_metrics": {
+          "margin_vs_best_other": -0.48500713945740126,
+          "production_by_player": [
+            0.0,
+            0.0,
+            51.0,
+            32.0
+          ],
+          "ships_by_player": [
+            0.0,
+            10.0,
+            1555.0,
+            536.0
+          ],
+          "step": 151,
+          "target_rank": 2,
+          "target_share": 0.2551166111375536,
+          "target_ships": 536.0,
+          "total_ships": 2101.0
+        },
+        "reward_signal": -0.5004630899983595,
+        "step": 151
+      },
+      "historical_end_metrics": {
+        "margin_vs_best_other": -0.8939061814993424,
+        "production_by_player": [
+          0.0,
+          0.0,
+          80.0,
+          2.0
+        ],
+        "ships_by_player": [
+          0.0,
+          10.0,
+          2155.0,
+          116.0
+        ],
+        "step": 151,
+        "target_rank": 2,
+        "target_share": 0.05085488820692679,
+        "target_ships": 116.0,
+        "total_ships": 2281.0
+      },
+      "historical_margin_drop": 0.9093621320403007,
+      "player_name": "alex chilton",
+      "replay_path": "/Users/alexchilton/DataspellProjects/orbit_wars/kaggle_replays/52107365/episode-75561027-replay.json",
+      "rl": {
+        "decision_count": 3,
+        "end_metrics": {
+          "margin_vs_best_other": -0.4884160756501182,
+          "production_by_player": [
+            0.0,
+            0.0,
+            50.0,
+            32.0
+          ],
+          "ships_by_player": [
+            0.0,
+            10.0,
+            1569.0,
+            536.0
+          ],
+          "step": 151,
+          "target_rank": 2,
+          "target_share": 0.25342789598108745,
+          "target_ships": 536.0,
+          "total_ships": 2115.0
+        },
+        "reward_signal": -0.5038720261910765,
+        "step": 151
+      },
+      "start_metrics": {
+        "margin_vs_best_other": 0.015455950540958274,
+        "production_by_player": [
+          0.0,
+          13.0,
+          37.0,
+          16.0
+        ],
+        "ships_by_player": [
+          0.0,
+          274.0,
+          500.0,
+          520.0
+        ],
+        "step": 101,
+        "target_rank": 1,
+        "target_share": 0.401854714064915,
+        "target_ships": 520.0,
+        "total_ships": 1294.0
+      },
+      "start_step": 101
+    }
+  ],
+  "policy": "rl midgame/results/replay_midgame_policy_stage4_pretrained_mlp_v1.json",
+  "training": [
+    {
+      "advantage": -0.05562348898079872,
+      "avg_abs_weight": 0.07544135228612306,
+      "decision_count": 0,
+      "episode": 1,
+      "episode_id": 75599477,
+      "heuristic_reward": -0.5111941132093629,
+      "reward_signal": -0.5668176021901616,
+      "start_step": 94
+    },
+    {
+      "advantage": 0.07801340667503853,
+      "avg_abs_weight": 0.0754413990875734,
+      "decision_count": 1,
+      "episode": 2,
+      "episode_id": 75599477,
+      "heuristic_reward": -0.5455418827260825,
+      "reward_signal": -0.467528476051044,
+      "start_step": 95
+    },
+    {
+      "advantage": -0.000842100406053925,
+      "avg_abs_weight": 0.07544085348266139,
+      "decision_count": 83,
+      "episode": 3,
+      "episode_id": 75584311,
+      "heuristic_reward": -0.875856782106782,
+      "reward_signal": -0.8766988825128359,
+      "start_step": 101
+    },
+    {
+      "advantage": -0.036448108044407235,
+      "avg_abs_weight": 0.07539067629452699,
+      "decision_count": 71,
+      "episode": 4,
+      "episode_id": 75584311,
+      "heuristic_reward": -0.8349798060684557,
+      "reward_signal": -0.8714279141128629,
+      "start_step": 102
+    },
+    {
+      "advantage": 0.1280709935273332,
+      "avg_abs_weight": 0.07586081955104707,
+      "decision_count": 176,
+      "episode": 5,
+      "episode_id": 75581626,
+      "heuristic_reward": -0.6797648304993023,
+      "reward_signal": -0.551693836971969,
+      "start_step": 65
+    },
+    {
+      "advantage": 0.015118830378866743,
+      "avg_abs_weight": 0.07589036359944001,
+      "decision_count": 168,
+      "episode": 6,
+      "episode_id": 75722218,
+      "heuristic_reward": -0.8016935133682099,
+      "reward_signal": -0.7865746829893432,
+      "start_step": 117
+    },
+    {
+      "advantage": -0.03467409178495395,
+      "avg_abs_weight": 0.07587994281502956,
+      "decision_count": 142,
+      "episode": 7,
+      "episode_id": 75722218,
+      "heuristic_reward": -0.8133264414745434,
+      "reward_signal": -0.8480005332594973,
+      "start_step": 116
+    },
+    {
+      "advantage": -0.04827477162938715,
+      "avg_abs_weight": 0.07585458769131236,
+      "decision_count": 146,
+      "episode": 8,
+      "episode_id": 75581626,
+      "heuristic_reward": -0.47920639249254754,
+      "reward_signal": -0.5274811641219347,
+      "start_step": 66
+    },
+    {
+      "advantage": 0.26245840552652505,
+      "avg_abs_weight": 0.07585509418108957,
+      "decision_count": 1,
+      "episode": 9,
+      "episode_id": 75636015,
+      "heuristic_reward": -0.7367810968630162,
+      "reward_signal": -0.47432269133649113,
+      "start_step": 122
+    },
+    {
+      "advantage": 0.0012826751694133276,
+      "avg_abs_weight": 0.07585525443680285,
+      "decision_count": 6,
+      "episode": 10,
+      "episode_id": 75561027,
+      "heuristic_reward": -0.5007080913592266,
+      "reward_signal": -0.49942541618981323,
+      "start_step": 101
+    },
+    {
+      "advantage": -0.009868359503239499,
+      "avg_abs_weight": 0.07585523010792511,
+      "decision_count": 1,
+      "episode": 11,
+      "episode_id": 75599477,
+      "heuristic_reward": -0.5111941132093629,
+      "reward_signal": -0.5210624727126024,
+      "start_step": 94
+    },
+    {
+      "advantage": 0.2863757760130176,
+      "avg_abs_weight": 0.07585593616237434,
+      "decision_count": 1,
+      "episode": 12,
+      "episode_id": 75599477,
+      "heuristic_reward": -0.5455418827260825,
+      "reward_signal": -0.2591661067130649,
+      "start_step": 95
+    },
+    {
+      "advantage": 0.034463101160862264,
+      "avg_abs_weight": 0.07586231926114619,
+      "decision_count": 85,
+      "episode": 13,
+      "episode_id": 75584311,
+      "heuristic_reward": -0.875856782106782,
+      "reward_signal": -0.8413936809459197,
+      "start_step": 101
+    },
+    {
+      "advantage": -0.02819347677584716,
+      "avg_abs_weight": 0.07587082367025169,
+      "decision_count": 90,
+      "episode": 14,
+      "episode_id": 75584311,
+      "heuristic_reward": -0.8349798060684557,
+      "reward_signal": -0.8631732828443028,
+      "start_step": 102
+    },
+    {
+      "advantage": 0.05480395907696489,
+      "avg_abs_weight": 0.07580286195275522,
+      "decision_count": 177,
+      "episode": 15,
+      "episode_id": 75581626,
+      "heuristic_reward": -0.6797648304993023,
+      "reward_signal": -0.6249608714223374,
+      "start_step": 65
+    },
+    {
+      "advantage": 0.005727474040564617,
+      "avg_abs_weight": 0.0758211426965338,
+      "decision_count": 177,
+      "episode": 16,
+      "episode_id": 75722218,
+      "heuristic_reward": -0.8016935133682099,
+      "reward_signal": -0.7959660393276453,
+      "start_step": 117
+    },
+    {
+      "advantage": 0.018246478676038347,
+      "avg_abs_weight": 0.07580160771212621,
+      "decision_count": 149,
+      "episode": 17,
+      "episode_id": 75722218,
+      "heuristic_reward": -0.8128062395286184,
+      "reward_signal": -0.7945597608525801,
+      "start_step": 116
+    },
+    {
+      "advantage": -0.04342801512164468,
+      "avg_abs_weight": 0.07575933026237984,
+      "decision_count": 144,
+      "episode": 18,
+      "episode_id": 75581626,
+      "heuristic_reward": -0.47920639249254754,
+      "reward_signal": -0.5226344076141922,
+      "start_step": 66
+    },
+    {
+      "advantage": 0.062311292034956445,
+      "avg_abs_weight": 0.07575933026237984,
+      "decision_count": 0,
+      "episode": 19,
+      "episode_id": 75636015,
+      "heuristic_reward": -0.6542364963960814,
+      "reward_signal": -0.591925204361125,
+      "start_step": 122
+    },
+    {
+      "advantage": 0.029006481554177288,
+      "avg_abs_weight": 0.07575942258072199,
+      "decision_count": 1,
+      "episode": 20,
+      "episode_id": 75561027,
+      "heuristic_reward": -0.5038720261910765,
+      "reward_signal": -0.47486554463689923,
+      "start_step": 101
+    }
+  ]
+}

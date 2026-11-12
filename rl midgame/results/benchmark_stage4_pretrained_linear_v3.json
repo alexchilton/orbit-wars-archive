@@ -1,0 +1,78 @@
+{
+  "games_per_seat": 3,
+  "policy": "/Users/alexchilton/DataspellProjects/orbit_wars/rl midgame/results/replay_midgame_policy_stage4_pretrained_linear_v3.json",
+  "results": {
+    "baseline": {
+      "avg_reward_diff": 1.3333333333333333,
+      "avg_ship_diff": 2608.6666666666665,
+      "draws": 0.0,
+      "games": 6.0,
+      "losses": 1.0,
+      "score_rate": 0.8333333333333334,
+      "wins": 5.0
+    },
+    "greedy": {
+      "avg_reward_diff": 2.0,
+      "avg_ship_diff": 4684.833333333333,
+      "draws": 0.0,
+      "games": 6.0,
+      "losses": 0.0,
+      "score_rate": 1.0,
+      "wins": 6.0
+    },
+    "mtmr": {
+      "avg_reward_diff": 0.6666666666666666,
+      "avg_ship_diff": 142.33333333333334,
+      "draws": 0.0,
+      "games": 6.0,
+      "losses": 2.0,
+      "score_rate": 0.6666666666666666,
+      "wins": 4.0
+    },
+    "random": {
+      "avg_reward_diff": 2.0,
+      "avg_ship_diff": 2627.6666666666665,
+      "draws": 0.0,
+      "games": 6.0,
+      "losses": 0.0,
+      "score_rate": 1.0,
+      "wins": 6.0
+    },
+    "turtle": {
+      "avg_reward_diff": 2.0,
+      "avg_ship_diff": 3787.6666666666665,
+      "draws": 0.0,
+      "games": 6.0,
+      "losses": 0.0,
+      "score_rate": 1.0,
+      "wins": 6.0
+    },
+    "v16": {
+      "avg_reward_diff": 0.0,
+      "avg_ship_diff": -20.166666666666668,
+      "draws": 0.0,
+      "games": 6.0,
+      "losses": 3.0,
+      "score_rate": 0.5,
+      "wins": 3.0
+    },
+    "v21": {
+      "avg_reward_diff": 0.6666666666666666,
+      "avg_ship_diff": 1659.5,
+      "draws": 0.0,
+      "games": 6.0,
+      "losses": 2.0,
+      "score_rate": 0.6666666666666666,
+      "wins": 4.0
+    },
+    "v23": {
+      "avg_reward_diff": 0.6666666666666666,
+      "avg_ship_diff": 791.6666666666666,
+      "draws": 0.0,
+      "games": 6.0,
+      "losses": 2.0,
+      "score_rate": 0.6666666666666666,
+      "wins": 4.0
+    }
+  }
+}

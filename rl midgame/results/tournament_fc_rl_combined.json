@@ -1,0 +1,48 @@
+{
+  "tournament_date": "2026-05-02T16:14:05Z",
+  "pool_results": {
+    "force_conc_plus_rl": {
+      "total": "19/32",
+      "pct": 59.4,
+      "vs": {
+        "stage2": "6/8",
+        "v23_exp": "3/8",
+        "mtmr": "3/8",
+        "stage3": "7/8"
+      }
+    },
+    "force_conc_only": {
+      "total": "16/32",
+      "pct": 50.0,
+      "vs": {
+        "stage2": "3/8",
+        "v23_exp": "4/8",
+        "mtmr": "4/8",
+        "stage3": "5/8"
+      }
+    },
+    "gated_rl_only": {
+      "total": "13/32",
+      "pct": 40.6,
+      "vs": {
+        "stage2": "3/8",
+        "v23_exp": "2/8",
+        "mtmr": "5/8",
+        "stage3": "3/8"
+      }
+    }
+  },
+  "head_to_head": {
+    "fc_rl_vs_fc_only": "5/10",
+    "fc_rl_vs_rl_only": "6/10",
+    "fc_only_vs_rl_only": "4/10"
+  },
+  "conclusions": [
+    "force_conc+RL is best in pool (59.4%) \u2014 BOTH components contribute",
+    "force_conc alone adds ~10% over baseline (50% vs 40.6%)",
+    "RL alone adds ~10% in the other direction",
+    "Combined they are synergistic (59.4% > 50% and > 40.6%)",
+    "Head-to-head is near-even (noise) but pool performance is clear",
+    "opener changes from fixed_v1 HURT (53.1% with them vs 59.4% without)"
+  ]
+}

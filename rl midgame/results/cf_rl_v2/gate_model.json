@@ -1,0 +1,19 @@
+{
+  "features": [
+    "step_frac",
+    "prod_share",
+    "ship_share",
+    "is_ahead"
+  ],
+  "weights": {
+    "step_frac": -2.7928920691076313,
+    "prod_share": 0.4162571333055051,
+    "ship_share": -4.078207529721849,
+    "is_ahead": -0.06927391017940987
+  },
+  "bias": 2.91264251471609,
+  "accuracy": 0.8132530120481928,
+  "n_samples": 332,
+  "n_intervene": 270,
+  "n_defer": 62
+}

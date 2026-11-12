@@ -1,0 +1,43 @@
+{
+  "champions": {
+    "balanced": null,
+    "four_player": null,
+    "two_player": null
+  },
+  "current_progress": {
+    "generation": 0,
+    "genome_index": 1,
+    "genome_total": 4,
+    "phase": "four_player",
+    "seat": 3,
+    "slug": "balanc-v23-v23-v23-v23-balanc-base-static-base-base-v23-base-base-off-base-off-base-base",
+    "total": 4
+  },
+  "generation_summaries": [],
+  "meta": {
+    "champion_mutants": 1,
+    "four_player_opponents": [
+      "oldbase_balanced",
+      "release_candidate_v2",
+      "s2_4p_antidogpile"
+    ],
+    "games_per_seat": 1,
+    "generations": 1,
+    "mutant_games_per_seat": 1,
+    "population": 4,
+    "records_completed": 0,
+    "resume": false,
+    "seed": 7,
+    "self_play_games_per_seat": 1,
+    "skip_four_player": false,
+    "two_player_opponents": [
+      "baseline",
+      "oldbase_balanced",
+      "oldbase_two_player",
+      "release_candidate_v2",
+      "v23"
+    ]
+  },
+  "pareto_front": [],
+  "top_balanced": []
+}

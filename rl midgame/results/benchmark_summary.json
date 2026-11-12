@@ -1,0 +1,15 @@
+{
+  "games_per_seat": 1,
+  "policy": "/Users/alexchilton/DataspellProjects/orbit_wars/rl midgame/results/smoke_policy.json",
+  "results": {
+    "random": {
+      "avg_reward_diff": 2.0,
+      "avg_ship_diff": 3004.5,
+      "draws": 0.0,
+      "games": 2.0,
+      "losses": 0.0,
+      "score_rate": 1.0,
+      "wins": 2.0
+    }
+  }
+}

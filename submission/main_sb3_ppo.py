@@ -16,6 +16,7 @@ import torch.nn as nn
 from ppo_gnn.edge_policy import (
     compute_candidate_edges,
     solve_intercept,
+    _travel_time,
     FRACTION_BUCKETS,
     NUM_FRACTIONS,
     MAX_ACTIONS,
@@ -26,7 +27,7 @@ from ppo_gnn.sb3_constants import (
     NUM_CHOICES,
     NOOP_ACTION,
 )
-from ppo_gnn.sun_geometry import sun_intersects_path
+from ppo_gnn.sun_geometry import sun_intersects_path, SUN_X, SUN_Y
 
 # ---------------------------------------------------------------------------
 # Constants (inference-only, not in shared modules)
@@ -70,9 +71,9 @@ class EdgeTransformerBlock(nn.Module):
 
 
 class PolicyNetwork(nn.Module):
-    """Standalone policy network matching SB3 PointerNetPolicy architecture.
+    """Standalone policy network matching SB3 MaskableActorCriticPolicy.
 
-    Per-candidate scoring: Transformer → scorer(128→64→10) per candidate → noop bias.
+    Transformer → mean-pool → MLP(256,256) → action logits.
     """
 
     def __init__(self, d_model=128, n_heads=4, n_layers=3, n_candidates=MAX_CANDIDATES, edge_dim=EDGE_INPUT_DIM):
@@ -90,13 +91,13 @@ class PolicyNetwork(nn.Module):
             EdgeTransformerBlock(d_model, n_heads) for _ in range(n_layers)
         ])
 
-        # Per-candidate scorer (matches PointerNetPolicy.candidate_scorer)
-        self.candidate_scorer = nn.Sequential(
-            nn.Linear(d_model, 64), nn.ReLU(),
-            nn.Linear(64, NUM_FRACTIONS),
+        # MLP policy head (matches net_arch pi=[256, 256])
+        self.pi_mlp = nn.Sequential(
+            nn.Linear(d_model, 256), nn.ReLU(),
+            nn.Linear(256, 256), nn.ReLU(),
         )
-        # Learned noop bias
-        self.noop_logit = nn.Parameter(torch.zeros(1))
+        # Action net: outputs logits for all slots concatenated
+        self.action_net = nn.Linear(256, NUM_CHOICES * MAX_ACTIONS)
 
     def forward(self, obs_flat, action_mask):
         B = obs_flat.shape[0]
@@ -108,15 +109,16 @@ class PolicyNetwork(nn.Module):
         for block in self.blocks:
             x = block(x, mask=pad_mask)
 
-        # Per-candidate scoring: (B, 48, 10)
-        scores = self.candidate_scorer(x)
-        # Flatten to (B, 480), append noop → (B, 481)
-        flat = scores.reshape(B, -1)
-        noop = self.noop_logit.expand(B, 1)
-        slot_logits = torch.cat([flat, noop], dim=-1)
+        # Masked mean-pool
+        valid = (~pad_mask).unsqueeze(-1).float()
+        pooled = (x * valid).sum(dim=1) / valid.sum(dim=1).clamp(min=1)  # (B, d_model)
 
-        # Tile for 5 slots → (B, 5, 481)
-        logits = slot_logits.unsqueeze(1).expand(-1, MAX_ACTIONS, -1)
+        # MLP → action logits
+        h = self.pi_mlp(pooled)
+        logits_flat = self.action_net(h)  # (B, NUM_CHOICES * MAX_ACTIONS)
+
+        # Reshape to (B, MAX_ACTIONS, NUM_CHOICES) and apply mask
+        logits = logits_flat.view(B, MAX_ACTIONS, NUM_CHOICES)
         mask_reshaped = action_mask.view(B, MAX_ACTIONS, NUM_CHOICES)
         logits = logits.masked_fill(~mask_reshaped, -1e8)
 
@@ -180,14 +182,15 @@ def _load_model():
             blocks_sd[k] = block_state[full_key]
     _MODEL.blocks.load_state_dict(blocks_sd)
 
-    # Per-candidate scorer (PointerNetPolicy)
-    scorer_state = extract_prefix("candidate_scorer")
-    _MODEL.candidate_scorer.load_state_dict(scorer_state)
+    # MLP policy head
+    mlp_state = extract_prefix("mlp_extractor.policy_net")
+    if mlp_state:
+        _MODEL.pi_mlp.load_state_dict(mlp_state)
 
-    # Noop logit
-    noop_key = "noop_logit"
-    if noop_key in state:
-        _MODEL.noop_logit.data.copy_(state[noop_key])
+    # Action net
+    action_state = extract_prefix("action_net")
+    if action_state:
+        _MODEL.action_net.load_state_dict(action_state)
 
     _MODEL.eval()
 
@@ -228,12 +231,93 @@ def agent(obs, config=None):
 
     obs_flat = torch.from_numpy(obs_np.astype(np.float32)).unsqueeze(0)  # (1, 3552)
 
-    # Build action mask
+    # Build action mask — identical to training (sb3_env.py action_masks())
     nv = min(num_valid, MAX_CANDIDATES)
     single_mask = np.zeros(NUM_CHOICES, dtype=bool)
-    for i in range(nv):
-        single_mask[i * NUM_FRACTIONS: (i + 1) * NUM_FRACTIONS] = True
     single_mask[NOOP_ACTION] = True
+    intercept_cache = {}  # cand_idx -> (ix, iy) or None
+
+    max_eta = 14 if step < 50 else (20 if step < 150 else 30)
+
+    for cand_idx in range(nv):
+        src_pidx = edge_indices[cand_idx, 0].item()
+        tgt_pidx = edge_indices[cand_idx, 1].item()
+        src_p = planets[src_pidx]
+        tgt_p = planets[tgt_pidx]
+
+        if int(src_p[1]) != player:
+            intercept_cache[cand_idx] = None
+            continue
+
+        sx, sy = float(src_p[2]), float(src_p[3])
+        tx, ty = float(tgt_p[2]), float(tgt_p[3])
+        tgt_planet_r = float(tgt_p[4])
+        tgt_orbital_r = math.hypot(tx - 50.0, ty - 50.0)
+        omega = angular_velocity if (tgt_orbital_r + tgt_planet_r < INNER_ORBIT_THRESHOLD) else 0.0
+        src_fleet = int(float(src_p[5]))
+        tgt_owner = int(tgt_p[1])
+        tgt_ships = int(float(tgt_p[5]))
+        tgt_prod = float(tgt_p[6])
+
+        base_reserve = max(5, int(src_fleet * 0.15))
+        available = src_fleet - base_reserve
+        if available < 5:
+            intercept_cache[cand_idx] = None
+            continue
+
+        # Sun check — once per candidate using mid-range ships
+        mid_ships = max(5, int(available * 0.5))
+        ix, iy = solve_intercept(sx, sy, tx, ty, omega, mid_ships)
+
+        sun_blocked = False
+        if sun_intersects_path(sx, sy, ix, iy):
+            dx, dy = ix - sx, iy - sy
+            dist_val = math.sqrt(dx * dx + dy * dy)
+            if dist_val > 1e-6:
+                mid_x, mid_y = (sx + ix) / 2, (sy + iy) / 2
+                sun_dist = math.sqrt((mid_x - SUN_X) ** 2 + (mid_y - SUN_Y) ** 2)
+                if sun_dist < 1e-6:
+                    sun_blocked = True
+                else:
+                    perp_x = -(SUN_Y - mid_y) / sun_dist
+                    perp_y = (SUN_X - mid_x) / sun_dist
+                    offset = 14.0 / dist_val
+                    ix2 = ix + perp_x * offset * dist_val * 0.3
+                    iy2 = iy + perp_y * offset * dist_val * 0.3
+                    if sun_intersects_path(sx, sy, ix2, iy2):
+                        sun_blocked = True
+                    else:
+                        ix, iy = ix2, iy2
+            else:
+                sun_blocked = True
+
+        if sun_blocked:
+            intercept_cache[cand_idx] = None
+            continue
+
+        intercept_cache[cand_idx] = (ix, iy)
+
+        # Per-fraction viability checks
+        for frac_idx in range(NUM_FRACTIONS):
+            ships = max(1, int(available * FRACTION_BUCKETS[frac_idx]))
+            if ships < 5:
+                continue
+
+            travel_time = _travel_time(sx, sy, ix, iy, ships)
+            if travel_time > max_eta:
+                continue
+
+            if tgt_owner != player:
+                if tgt_owner >= 0:
+                    needed = tgt_ships + tgt_prod * travel_time * 1.05 + 1
+                    if ships < needed * 0.7:
+                        continue
+                else:
+                    if ships < tgt_ships + 1:
+                        continue
+
+            single_mask[cand_idx * NUM_FRACTIONS + frac_idx] = True
+
     mask = np.tile(single_mask, MAX_ACTIONS)
     mask_t = torch.from_numpy(mask).unsqueeze(0)
 
@@ -241,7 +325,7 @@ def agent(obs, config=None):
         logits = _MODEL(obs_flat, mask_t)  # (1, MAX_ACTIONS, NUM_CHOICES)
         actions_idx = logits.argmax(dim=-1).squeeze(0).numpy()  # (MAX_ACTIONS,)
 
-    # Decode actions into game commands
+    # Decode — only overdraw check (identical to training _decode_actions)
     actions = []
     committed = {}
 
@@ -255,22 +339,19 @@ def agent(obs, config=None):
         if cand_idx >= nv:
             continue
 
-        src_pidx = edge_indices[cand_idx, 0].item()
-        tgt_pidx = edge_indices[cand_idx, 1].item()
-        src_p, tgt_p = planets[src_pidx], planets[tgt_pidx]
-
-        if int(src_p[1]) != player:
+        cached = intercept_cache.get(cand_idx)
+        if cached is None:
             continue
 
-        sx, sy = float(src_p[2]), float(src_p[3])
-        tx, ty = float(tgt_p[2]), float(tgt_p[3])
-        tgt_planet_r = float(tgt_p[4])
-        tgt_orbital_r = math.hypot(tx - 50.0, ty - 50.0)
-        omega = angular_velocity if (tgt_orbital_r + tgt_planet_r < INNER_ORBIT_THRESHOLD) else 0.0
+        ix, iy = cached
+        src_pidx = edge_indices[cand_idx, 0].item()
+        src_p = planets[src_pidx]
 
+        sx, sy = float(src_p[2]), float(src_p[3])
         src_fleet = int(float(src_p[5]))
-        already = committed.get(src_pidx, 0)
+
         base_reserve = max(5, int(src_fleet * 0.15))
+        already = committed.get(src_pidx, 0)
         available = src_fleet - base_reserve - already
         if available < 5:
             continue
@@ -278,26 +359,6 @@ def agent(obs, config=None):
         ships = max(1, int(available * FRACTION_BUCKETS[frac_idx]))
         if ships < 5:
             continue
-
-        ix, iy = solve_intercept(sx, sy, tx, ty, omega, ships)
-
-        # Sun avoidance at action level (belt-and-suspenders with candidate filter)
-        if sun_intersects_path(sx, sy, ix, iy):
-            dx, dy = ix - sx, iy - sy
-            dist = math.sqrt(dx * dx + dy * dy)
-            if dist > 1e-6:
-                mid_x, mid_y = (sx + ix) / 2, (sy + iy) / 2
-                sun_dist = math.sqrt((mid_x - 50.0) ** 2 + (mid_y - 50.0) ** 2)
-                if sun_dist < 1e-6:
-                    continue
-                perp_x = -(50.0 - mid_y) / sun_dist
-                perp_y = (50.0 - mid_x) / sun_dist
-                offset = 14.0 / dist
-                ix2 = ix + perp_x * offset * dist * 0.3
-                iy2 = iy + perp_y * offset * dist * 0.3
-                if sun_intersects_path(sx, sy, ix2, iy2):
-                    continue
-                ix, iy = ix2, iy2
 
         angle = math.atan2(iy - sy, ix - sx)
         actions.append([int(src_p[0]), angle, ships])

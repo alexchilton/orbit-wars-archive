@@ -1,0 +1,40 @@
+{
+  "gated_rl": {
+    "wins": 18,
+    "total": 32,
+    "by_opponent": {
+      "stage2": "3/8",
+      "v23_exp": "2/8",
+      "mtmr": "6/8",
+      "stage3": "7/8"
+    }
+  },
+  "stage2": {
+    "wins": 11,
+    "total": 24,
+    "by_opponent": {
+      "v23_exp": "4/8",
+      "mtmr": "3/8",
+      "stage3": "4/8"
+    }
+  },
+  "force_conc": {
+    "wins": 19,
+    "total": 32,
+    "by_opponent": {
+      "stage2": "4/8",
+      "v23_exp": "4/8",
+      "mtmr": "5/8",
+      "stage3": "6/8"
+    }
+  },
+  "stage3": {
+    "wins": 12,
+    "total": 24,
+    "by_opponent": {
+      "stage2": "4/8",
+      "v23_exp": "5/8",
+      "mtmr": "3/8"
+    }
+  }
+}

@@ -1,0 +1,3440 @@
+{
+  "champions": {
+    "balanced": {
+      "balanced_score": 0.7774687500000002,
+      "combined_score": 0.7774687500000002,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 1.0,
+          "avg_ship_diff": 4922.625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 4.0,
+          "score_rate": 0.75,
+          "wins": 12.0
+        },
+        "greedy": {
+          "avg_reward_diff": 1.75,
+          "avg_ship_diff": 6520.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 1.0,
+          "score_rate": 0.9375,
+          "wins": 15.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 3140.8125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 2289.3125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 7324.875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": -0.25,
+          "avg_ship_diff": -589.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 9.0,
+          "score_rate": 0.4375,
+          "wins": 7.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 2256.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 2976.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        }
+      },
+      "fixed_two_player_score": 0.7578125,
+      "four_player": {
+        "avg_rank": 1.25,
+        "avg_reward": 0.5,
+        "avg_ships": 3468.75,
+        "games": 4.0,
+        "rank_sum": 5.0,
+        "reward_sum": 2.0,
+        "score": 0.9416666666666667,
+        "ship_sum": 13875.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 3.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "relaxed",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "base",
+        "threat_profile": "anti_snowball",
+        "transition_profile": "base",
+        "value_profile": "hostile"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.0,
+        "avg_ship_diff": -160.58333333333334,
+        "games": 12.0,
+        "score_rate": 0.5,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -804.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": -1.0,
+            "avg_ship_diff": -2545.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 3.0,
+            "score_rate": 0.25,
+            "wins": 1.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 2868.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          }
+        }
+      },
+      "objective_2p": 0.6431250000000001,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.4,
+        "avg_ship_diff": 2426.1,
+        "games": 20.0,
+        "points": 12.0,
+        "reward_diff_sum": 8.0,
+        "score_rate": 0.6,
+        "ship_diff_sum": 48522.0
+      },
+      "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-antisn-base-off-base-base"
+    },
+    "four_player": {
+      "balanced_score": 0.7774687500000002,
+      "combined_score": 0.7774687500000002,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 1.0,
+          "avg_ship_diff": 4922.625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 4.0,
+          "score_rate": 0.75,
+          "wins": 12.0
+        },
+        "greedy": {
+          "avg_reward_diff": 1.75,
+          "avg_ship_diff": 6520.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 1.0,
+          "score_rate": 0.9375,
+          "wins": 15.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 3140.8125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 2289.3125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 7324.875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": -0.25,
+          "avg_ship_diff": -589.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 9.0,
+          "score_rate": 0.4375,
+          "wins": 7.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 2256.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 2976.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        }
+      },
+      "fixed_two_player_score": 0.7578125,
+      "four_player": {
+        "avg_rank": 1.25,
+        "avg_reward": 0.5,
+        "avg_ships": 3468.75,
+        "games": 4.0,
+        "rank_sum": 5.0,
+        "reward_sum": 2.0,
+        "score": 0.9416666666666667,
+        "ship_sum": 13875.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 3.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "relaxed",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "base",
+        "threat_profile": "anti_snowball",
+        "transition_profile": "base",
+        "value_profile": "hostile"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.0,
+        "avg_ship_diff": -160.58333333333334,
+        "games": 12.0,
+        "score_rate": 0.5,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -804.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": -1.0,
+            "avg_ship_diff": -2545.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 3.0,
+            "score_rate": 0.25,
+            "wins": 1.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 2868.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          }
+        }
+      },
+      "objective_2p": 0.6431250000000001,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.4,
+        "avg_ship_diff": 2426.1,
+        "games": 20.0,
+        "points": 12.0,
+        "reward_diff_sum": 8.0,
+        "score_rate": 0.6,
+        "ship_diff_sum": 48522.0
+      },
+      "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-antisn-base-off-base-base"
+    },
+    "two_player": {
+      "balanced_score": 0.7577395833333334,
+      "combined_score": 0.7577395833333334,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 1955.875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "greedy": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 6595.125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.25,
+          "avg_ship_diff": 330.6875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 7.0,
+          "score_rate": 0.5625,
+          "wins": 9.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 6391.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 6242.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": 1.0,
+          "avg_ship_diff": 5514.25,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 4.0,
+          "score_rate": 0.75,
+          "wins": 12.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": 896.125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 8.0,
+          "score_rate": 0.5,
+          "wins": 8.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 2425.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        }
+      },
+      "fixed_two_player_score": 0.7734375,
+      "four_player": {
+        "avg_rank": 1.75,
+        "avg_reward": -0.5,
+        "avg_ships": 4594.25,
+        "games": 4.0,
+        "rank_sum": 7.0,
+        "reward_sum": -2.0,
+        "score": 0.825,
+        "ship_sum": 18377.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 1.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "v23",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "base",
+        "threat_profile": "v23",
+        "transition_profile": "base",
+        "value_profile": "hostile"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.6666666666666666,
+        "avg_ship_diff": -612.0833333333334,
+        "games": 12.0,
+        "score_rate": 0.6666666666666666,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 1486.5,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -3643.5,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 320.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          }
+        }
+      },
+      "objective_2p": 0.7027083333333334,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.6,
+        "avg_ship_diff": 1477.75,
+        "games": 20.0,
+        "points": 13.0,
+        "reward_diff_sum": 12.0,
+        "score_rate": 0.65,
+        "ship_diff_sum": 29555.0
+      },
+      "slug": "aggres-v23-v23-v23-v23-hostil-high-static-base-v23-base-off-base-base"
+    }
+  },
+  "current_progress": null,
+  "generation_summaries": [
+    {
+      "best_2p": {
+        "balanced_score": 0.74765625,
+        "combined_score": 0.74765625,
+        "fixed_two_player": {
+          "baseline": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": 2735.6875,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 8.0,
+            "score_rate": 0.5,
+            "wins": 8.0
+          },
+          "greedy": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 5750.5,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "mtmr": {
+            "avg_reward_diff": -0.5,
+            "avg_ship_diff": 135.75,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 10.0,
+            "score_rate": 0.375,
+            "wins": 6.0
+          },
+          "random": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 2637.0625,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "turtle": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 11892.25,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "v16": {
+            "avg_reward_diff": 0.5,
+            "avg_ship_diff": 1864.3125,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 6.0,
+            "score_rate": 0.625,
+            "wins": 10.0
+          },
+          "v21": {
+            "avg_reward_diff": 0.5,
+            "avg_ship_diff": 1658.9375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 6.0,
+            "score_rate": 0.625,
+            "wins": 10.0
+          },
+          "v23": {
+            "avg_reward_diff": 0.5,
+            "avg_ship_diff": 3840.8125,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 6.0,
+            "score_rate": 0.625,
+            "wins": 10.0
+          }
+        },
+        "fixed_two_player_score": 0.71875,
+        "four_player": {
+          "avg_rank": 1.75,
+          "avg_reward": -0.5,
+          "avg_ships": 10695.0,
+          "games": 4.0,
+          "rank_sum": 7.0,
+          "reward_sum": -2.0,
+          "score": 0.825,
+          "ship_sum": 42780.0,
+          "top2": 4.0,
+          "top2_rate": 1.0,
+          "wins": 1.0
+        },
+        "generation": 0,
+        "genome": {
+          "concentration_profile": "base",
+          "conversion_profile": "base",
+          "duel_attack_order": "v23",
+          "duel_filter": "v23",
+          "duel_launch_cap": "v23",
+          "duel_opening": "v23",
+          "followup_profile": "base",
+          "mode_profile": "static",
+          "pressure_profile": "off",
+          "style_profile": "balanced",
+          "swarm_profile": "base",
+          "threat_profile": "v23",
+          "transition_profile": "base",
+          "value_profile": "balanced"
+        },
+        "mutant_pool": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": 0.0,
+          "games": 0.0,
+          "score_rate": 0.0,
+          "series": {}
+        },
+        "objective_2p": 0.6843750000000001,
+        "record_type": "complete",
+        "self_play": {
+          "avg_reward_diff": 0.6,
+          "avg_ship_diff": 1290.15,
+          "games": 20.0,
+          "points": 13.0,
+          "reward_diff_sum": 12.0,
+          "score_rate": 0.65,
+          "ship_diff_sum": 25803.0
+        },
+        "slug": "balanc-v23-v23-v23-v23-balanc-base-static-base-v23-base-off-base-base"
+      },
+      "best_4p": {
+        "balanced_score": 0.7476953125000001,
+        "combined_score": 0.7476953125000001,
+        "fixed_two_player": {
+          "baseline": {
+            "avg_reward_diff": 0.5,
+            "avg_ship_diff": 4688.25,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 6.0,
+            "score_rate": 0.625,
+            "wins": 10.0
+          },
+          "greedy": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 5466.75,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "mtmr": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 1284.4375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          },
+          "random": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 4458.9375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "turtle": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 5911.4375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "v16": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 735.5,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          },
+          "v21": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -1095.625,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 8.0,
+            "score_rate": 0.5,
+            "wins": 8.0
+          },
+          "v23": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 1085.625,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          }
+        },
+        "fixed_two_player_score": 0.7734375,
+        "four_player": {
+          "avg_rank": 1.5,
+          "avg_reward": 0.0,
+          "avg_ships": 4346.5,
+          "games": 4.0,
+          "rank_sum": 6.0,
+          "reward_sum": 0.0,
+          "score": 0.8833333333333333,
+          "ship_sum": 17386.0,
+          "top2": 4.0,
+          "top2_rate": 1.0,
+          "wins": 2.0
+        },
+        "generation": 0,
+        "genome": {
+          "concentration_profile": "base",
+          "conversion_profile": "base",
+          "duel_attack_order": "v23",
+          "duel_filter": "v23",
+          "duel_launch_cap": "relaxed",
+          "duel_opening": "v23",
+          "followup_profile": "high",
+          "mode_profile": "static",
+          "pressure_profile": "off",
+          "style_profile": "aggressive",
+          "swarm_profile": "loose",
+          "threat_profile": "v23",
+          "transition_profile": "base",
+          "value_profile": "hostile"
+        },
+        "mutant_pool": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": 0.0,
+          "games": 0.0,
+          "score_rate": 0.0,
+          "series": {}
+        },
+        "objective_2p": 0.63671875,
+        "record_type": "complete",
+        "self_play": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": 1528.65,
+          "games": 20.0,
+          "points": 10.0,
+          "reward_diff_sum": 0.0,
+          "score_rate": 0.5,
+          "ship_diff_sum": 30573.0
+        },
+        "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-v23-base-off-loose-base"
+      },
+      "best_balanced": {
+        "balanced_score": 0.7476953125000001,
+        "combined_score": 0.7476953125000001,
+        "fixed_two_player": {
+          "baseline": {
+            "avg_reward_diff": 0.5,
+            "avg_ship_diff": 4688.25,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 6.0,
+            "score_rate": 0.625,
+            "wins": 10.0
+          },
+          "greedy": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 5466.75,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "mtmr": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 1284.4375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          },
+          "random": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 4458.9375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "turtle": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 5911.4375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "v16": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 735.5,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          },
+          "v21": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -1095.625,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 8.0,
+            "score_rate": 0.5,
+            "wins": 8.0
+          },
+          "v23": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 1085.625,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          }
+        },
+        "fixed_two_player_score": 0.7734375,
+        "four_player": {
+          "avg_rank": 1.5,
+          "avg_reward": 0.0,
+          "avg_ships": 4346.5,
+          "games": 4.0,
+          "rank_sum": 6.0,
+          "reward_sum": 0.0,
+          "score": 0.8833333333333333,
+          "ship_sum": 17386.0,
+          "top2": 4.0,
+          "top2_rate": 1.0,
+          "wins": 2.0
+        },
+        "generation": 0,
+        "genome": {
+          "concentration_profile": "base",
+          "conversion_profile": "base",
+          "duel_attack_order": "v23",
+          "duel_filter": "v23",
+          "duel_launch_cap": "relaxed",
+          "duel_opening": "v23",
+          "followup_profile": "high",
+          "mode_profile": "static",
+          "pressure_profile": "off",
+          "style_profile": "aggressive",
+          "swarm_profile": "loose",
+          "threat_profile": "v23",
+          "transition_profile": "base",
+          "value_profile": "hostile"
+        },
+        "mutant_pool": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": 0.0,
+          "games": 0.0,
+          "score_rate": 0.0,
+          "series": {}
+        },
+        "objective_2p": 0.63671875,
+        "record_type": "complete",
+        "self_play": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": 1528.65,
+          "games": 20.0,
+          "points": 10.0,
+          "reward_diff_sum": 0.0,
+          "score_rate": 0.5,
+          "ship_diff_sum": 30573.0
+        },
+        "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-v23-base-off-loose-base"
+      },
+      "generation": 0,
+      "pareto_front": [
+        {
+          "balanced_score": 0.7476953125000001,
+          "combined_score": 0.7476953125000001,
+          "fixed_two_player": {
+            "baseline": {
+              "avg_reward_diff": 0.5,
+              "avg_ship_diff": 4688.25,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 6.0,
+              "score_rate": 0.625,
+              "wins": 10.0
+            },
+            "greedy": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 5466.75,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "mtmr": {
+              "avg_reward_diff": 0.75,
+              "avg_ship_diff": 1284.4375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 5.0,
+              "score_rate": 0.6875,
+              "wins": 11.0
+            },
+            "random": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 4458.9375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "turtle": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 5911.4375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "v16": {
+              "avg_reward_diff": 0.75,
+              "avg_ship_diff": 735.5,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 5.0,
+              "score_rate": 0.6875,
+              "wins": 11.0
+            },
+            "v21": {
+              "avg_reward_diff": 0.0,
+              "avg_ship_diff": -1095.625,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 8.0,
+              "score_rate": 0.5,
+              "wins": 8.0
+            },
+            "v23": {
+              "avg_reward_diff": 0.75,
+              "avg_ship_diff": 1085.625,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 5.0,
+              "score_rate": 0.6875,
+              "wins": 11.0
+            }
+          },
+          "fixed_two_player_score": 0.7734375,
+          "four_player": {
+            "avg_rank": 1.5,
+            "avg_reward": 0.0,
+            "avg_ships": 4346.5,
+            "games": 4.0,
+            "rank_sum": 6.0,
+            "reward_sum": 0.0,
+            "score": 0.8833333333333333,
+            "ship_sum": 17386.0,
+            "top2": 4.0,
+            "top2_rate": 1.0,
+            "wins": 2.0
+          },
+          "generation": 0,
+          "genome": {
+            "concentration_profile": "base",
+            "conversion_profile": "base",
+            "duel_attack_order": "v23",
+            "duel_filter": "v23",
+            "duel_launch_cap": "relaxed",
+            "duel_opening": "v23",
+            "followup_profile": "high",
+            "mode_profile": "static",
+            "pressure_profile": "off",
+            "style_profile": "aggressive",
+            "swarm_profile": "loose",
+            "threat_profile": "v23",
+            "transition_profile": "base",
+            "value_profile": "hostile"
+          },
+          "mutant_pool": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": 0.0,
+            "games": 0.0,
+            "score_rate": 0.0,
+            "series": {}
+          },
+          "objective_2p": 0.63671875,
+          "record_type": "complete",
+          "self_play": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": 1528.65,
+            "games": 20.0,
+            "points": 10.0,
+            "reward_diff_sum": 0.0,
+            "score_rate": 0.5,
+            "ship_diff_sum": 30573.0
+          },
+          "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-v23-base-off-loose-base"
+        },
+        {
+          "balanced_score": 0.74765625,
+          "combined_score": 0.74765625,
+          "fixed_two_player": {
+            "baseline": {
+              "avg_reward_diff": 0.0,
+              "avg_ship_diff": 2735.6875,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 8.0,
+              "score_rate": 0.5,
+              "wins": 8.0
+            },
+            "greedy": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 5750.5,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "mtmr": {
+              "avg_reward_diff": -0.5,
+              "avg_ship_diff": 135.75,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 10.0,
+              "score_rate": 0.375,
+              "wins": 6.0
+            },
+            "random": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 2637.0625,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "turtle": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 11892.25,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "v16": {
+              "avg_reward_diff": 0.5,
+              "avg_ship_diff": 1864.3125,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 6.0,
+              "score_rate": 0.625,
+              "wins": 10.0
+            },
+            "v21": {
+              "avg_reward_diff": 0.5,
+              "avg_ship_diff": 1658.9375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 6.0,
+              "score_rate": 0.625,
+              "wins": 10.0
+            },
+            "v23": {
+              "avg_reward_diff": 0.5,
+              "avg_ship_diff": 3840.8125,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 6.0,
+              "score_rate": 0.625,
+              "wins": 10.0
+            }
+          },
+          "fixed_two_player_score": 0.71875,
+          "four_player": {
+            "avg_rank": 1.75,
+            "avg_reward": -0.5,
+            "avg_ships": 10695.0,
+            "games": 4.0,
+            "rank_sum": 7.0,
+            "reward_sum": -2.0,
+            "score": 0.825,
+            "ship_sum": 42780.0,
+            "top2": 4.0,
+            "top2_rate": 1.0,
+            "wins": 1.0
+          },
+          "generation": 0,
+          "genome": {
+            "concentration_profile": "base",
+            "conversion_profile": "base",
+            "duel_attack_order": "v23",
+            "duel_filter": "v23",
+            "duel_launch_cap": "v23",
+            "duel_opening": "v23",
+            "followup_profile": "base",
+            "mode_profile": "static",
+            "pressure_profile": "off",
+            "style_profile": "balanced",
+            "swarm_profile": "base",
+            "threat_profile": "v23",
+            "transition_profile": "base",
+            "value_profile": "balanced"
+          },
+          "mutant_pool": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": 0.0,
+            "games": 0.0,
+            "score_rate": 0.0,
+            "series": {}
+          },
+          "objective_2p": 0.6843750000000001,
+          "record_type": "complete",
+          "self_play": {
+            "avg_reward_diff": 0.6,
+            "avg_ship_diff": 1290.15,
+            "games": 20.0,
+            "points": 13.0,
+            "reward_diff_sum": 12.0,
+            "score_rate": 0.65,
+            "ship_diff_sum": 25803.0
+          },
+          "slug": "balanc-v23-v23-v23-v23-balanc-base-static-base-v23-base-off-base-base"
+        }
+      ]
+    },
+    {
+      "best_2p": {
+        "balanced_score": 0.7577395833333334,
+        "combined_score": 0.7577395833333334,
+        "fixed_two_player": {
+          "baseline": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 1955.875,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          },
+          "greedy": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 6595.125,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "mtmr": {
+            "avg_reward_diff": 0.25,
+            "avg_ship_diff": 330.6875,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 7.0,
+            "score_rate": 0.5625,
+            "wins": 9.0
+          },
+          "random": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 6391.5,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "turtle": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 6242.0625,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "v16": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 5514.25,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 4.0,
+            "score_rate": 0.75,
+            "wins": 12.0
+          },
+          "v21": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": 896.125,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 8.0,
+            "score_rate": 0.5,
+            "wins": 8.0
+          },
+          "v23": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 2425.0625,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          }
+        },
+        "fixed_two_player_score": 0.7734375,
+        "four_player": {
+          "avg_rank": 1.75,
+          "avg_reward": -0.5,
+          "avg_ships": 4594.25,
+          "games": 4.0,
+          "rank_sum": 7.0,
+          "reward_sum": -2.0,
+          "score": 0.825,
+          "ship_sum": 18377.0,
+          "top2": 4.0,
+          "top2_rate": 1.0,
+          "wins": 1.0
+        },
+        "generation": 1,
+        "genome": {
+          "concentration_profile": "base",
+          "conversion_profile": "base",
+          "duel_attack_order": "v23",
+          "duel_filter": "v23",
+          "duel_launch_cap": "v23",
+          "duel_opening": "v23",
+          "followup_profile": "high",
+          "mode_profile": "static",
+          "pressure_profile": "off",
+          "style_profile": "aggressive",
+          "swarm_profile": "base",
+          "threat_profile": "v23",
+          "transition_profile": "base",
+          "value_profile": "hostile"
+        },
+        "mutant_pool": {
+          "avg_reward_diff": 0.6666666666666666,
+          "avg_ship_diff": -612.0833333333334,
+          "games": 12.0,
+          "score_rate": 0.6666666666666666,
+          "series": {
+            "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+              "avg_reward_diff": 1.0,
+              "avg_ship_diff": 1486.5,
+              "draws": 0.0,
+              "games": 4.0,
+              "losses": 1.0,
+              "score_rate": 0.75,
+              "wins": 3.0
+            },
+            "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+              "avg_reward_diff": 0.0,
+              "avg_ship_diff": -3643.5,
+              "draws": 0.0,
+              "games": 4.0,
+              "losses": 2.0,
+              "score_rate": 0.5,
+              "wins": 2.0
+            },
+            "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+              "avg_reward_diff": 1.0,
+              "avg_ship_diff": 320.75,
+              "draws": 0.0,
+              "games": 4.0,
+              "losses": 1.0,
+              "score_rate": 0.75,
+              "wins": 3.0
+            }
+          }
+        },
+        "objective_2p": 0.7027083333333334,
+        "record_type": "complete",
+        "self_play": {
+          "avg_reward_diff": 0.6,
+          "avg_ship_diff": 1477.75,
+          "games": 20.0,
+          "points": 13.0,
+          "reward_diff_sum": 12.0,
+          "score_rate": 0.65,
+          "ship_diff_sum": 29555.0
+        },
+        "slug": "aggres-v23-v23-v23-v23-hostil-high-static-base-v23-base-off-base-base"
+      },
+      "best_4p": {
+        "balanced_score": 0.7774687500000002,
+        "combined_score": 0.7774687500000002,
+        "fixed_two_player": {
+          "baseline": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 4922.625,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 4.0,
+            "score_rate": 0.75,
+            "wins": 12.0
+          },
+          "greedy": {
+            "avg_reward_diff": 1.75,
+            "avg_ship_diff": 6520.9375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 1.0,
+            "score_rate": 0.9375,
+            "wins": 15.0
+          },
+          "mtmr": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 3140.8125,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          },
+          "random": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 2289.3125,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "turtle": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 7324.875,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "v16": {
+            "avg_reward_diff": -0.25,
+            "avg_ship_diff": -589.9375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 9.0,
+            "score_rate": 0.4375,
+            "wins": 7.0
+          },
+          "v21": {
+            "avg_reward_diff": 0.5,
+            "avg_ship_diff": 2256.9375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 6.0,
+            "score_rate": 0.625,
+            "wins": 10.0
+          },
+          "v23": {
+            "avg_reward_diff": 0.5,
+            "avg_ship_diff": 2976.5,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 6.0,
+            "score_rate": 0.625,
+            "wins": 10.0
+          }
+        },
+        "fixed_two_player_score": 0.7578125,
+        "four_player": {
+          "avg_rank": 1.25,
+          "avg_reward": 0.5,
+          "avg_ships": 3468.75,
+          "games": 4.0,
+          "rank_sum": 5.0,
+          "reward_sum": 2.0,
+          "score": 0.9416666666666667,
+          "ship_sum": 13875.0,
+          "top2": 4.0,
+          "top2_rate": 1.0,
+          "wins": 3.0
+        },
+        "generation": 1,
+        "genome": {
+          "concentration_profile": "base",
+          "conversion_profile": "base",
+          "duel_attack_order": "v23",
+          "duel_filter": "v23",
+          "duel_launch_cap": "relaxed",
+          "duel_opening": "v23",
+          "followup_profile": "high",
+          "mode_profile": "static",
+          "pressure_profile": "off",
+          "style_profile": "aggressive",
+          "swarm_profile": "base",
+          "threat_profile": "anti_snowball",
+          "transition_profile": "base",
+          "value_profile": "hostile"
+        },
+        "mutant_pool": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": -160.58333333333334,
+          "games": 12.0,
+          "score_rate": 0.5,
+          "series": {
+            "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+              "avg_reward_diff": 0.0,
+              "avg_ship_diff": -804.0,
+              "draws": 0.0,
+              "games": 4.0,
+              "losses": 2.0,
+              "score_rate": 0.5,
+              "wins": 2.0
+            },
+            "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+              "avg_reward_diff": -1.0,
+              "avg_ship_diff": -2545.75,
+              "draws": 0.0,
+              "games": 4.0,
+              "losses": 3.0,
+              "score_rate": 0.25,
+              "wins": 1.0
+            },
+            "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+              "avg_reward_diff": 1.0,
+              "avg_ship_diff": 2868.0,
+              "draws": 0.0,
+              "games": 4.0,
+              "losses": 1.0,
+              "score_rate": 0.75,
+              "wins": 3.0
+            }
+          }
+        },
+        "objective_2p": 0.6431250000000001,
+        "record_type": "complete",
+        "self_play": {
+          "avg_reward_diff": 0.4,
+          "avg_ship_diff": 2426.1,
+          "games": 20.0,
+          "points": 12.0,
+          "reward_diff_sum": 8.0,
+          "score_rate": 0.6,
+          "ship_diff_sum": 48522.0
+        },
+        "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-antisn-base-off-base-base"
+      },
+      "best_balanced": {
+        "balanced_score": 0.7774687500000002,
+        "combined_score": 0.7774687500000002,
+        "fixed_two_player": {
+          "baseline": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 4922.625,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 4.0,
+            "score_rate": 0.75,
+            "wins": 12.0
+          },
+          "greedy": {
+            "avg_reward_diff": 1.75,
+            "avg_ship_diff": 6520.9375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 1.0,
+            "score_rate": 0.9375,
+            "wins": 15.0
+          },
+          "mtmr": {
+            "avg_reward_diff": 0.75,
+            "avg_ship_diff": 3140.8125,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 5.0,
+            "score_rate": 0.6875,
+            "wins": 11.0
+          },
+          "random": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 2289.3125,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "turtle": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 7324.875,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 16.0
+          },
+          "v16": {
+            "avg_reward_diff": -0.25,
+            "avg_ship_diff": -589.9375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 9.0,
+            "score_rate": 0.4375,
+            "wins": 7.0
+          },
+          "v21": {
+            "avg_reward_diff": 0.5,
+            "avg_ship_diff": 2256.9375,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 6.0,
+            "score_rate": 0.625,
+            "wins": 10.0
+          },
+          "v23": {
+            "avg_reward_diff": 0.5,
+            "avg_ship_diff": 2976.5,
+            "draws": 0.0,
+            "games": 16.0,
+            "losses": 6.0,
+            "score_rate": 0.625,
+            "wins": 10.0
+          }
+        },
+        "fixed_two_player_score": 0.7578125,
+        "four_player": {
+          "avg_rank": 1.25,
+          "avg_reward": 0.5,
+          "avg_ships": 3468.75,
+          "games": 4.0,
+          "rank_sum": 5.0,
+          "reward_sum": 2.0,
+          "score": 0.9416666666666667,
+          "ship_sum": 13875.0,
+          "top2": 4.0,
+          "top2_rate": 1.0,
+          "wins": 3.0
+        },
+        "generation": 1,
+        "genome": {
+          "concentration_profile": "base",
+          "conversion_profile": "base",
+          "duel_attack_order": "v23",
+          "duel_filter": "v23",
+          "duel_launch_cap": "relaxed",
+          "duel_opening": "v23",
+          "followup_profile": "high",
+          "mode_profile": "static",
+          "pressure_profile": "off",
+          "style_profile": "aggressive",
+          "swarm_profile": "base",
+          "threat_profile": "anti_snowball",
+          "transition_profile": "base",
+          "value_profile": "hostile"
+        },
+        "mutant_pool": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": -160.58333333333334,
+          "games": 12.0,
+          "score_rate": 0.5,
+          "series": {
+            "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+              "avg_reward_diff": 0.0,
+              "avg_ship_diff": -804.0,
+              "draws": 0.0,
+              "games": 4.0,
+              "losses": 2.0,
+              "score_rate": 0.5,
+              "wins": 2.0
+            },
+            "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+              "avg_reward_diff": -1.0,
+              "avg_ship_diff": -2545.75,
+              "draws": 0.0,
+              "games": 4.0,
+              "losses": 3.0,
+              "score_rate": 0.25,
+              "wins": 1.0
+            },
+            "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+              "avg_reward_diff": 1.0,
+              "avg_ship_diff": 2868.0,
+              "draws": 0.0,
+              "games": 4.0,
+              "losses": 1.0,
+              "score_rate": 0.75,
+              "wins": 3.0
+            }
+          }
+        },
+        "objective_2p": 0.6431250000000001,
+        "record_type": "complete",
+        "self_play": {
+          "avg_reward_diff": 0.4,
+          "avg_ship_diff": 2426.1,
+          "games": 20.0,
+          "points": 12.0,
+          "reward_diff_sum": 8.0,
+          "score_rate": 0.6,
+          "ship_diff_sum": 48522.0
+        },
+        "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-antisn-base-off-base-base"
+      },
+      "generation": 1,
+      "pareto_front": [
+        {
+          "balanced_score": 0.7774687500000002,
+          "combined_score": 0.7774687500000002,
+          "fixed_two_player": {
+            "baseline": {
+              "avg_reward_diff": 1.0,
+              "avg_ship_diff": 4922.625,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 4.0,
+              "score_rate": 0.75,
+              "wins": 12.0
+            },
+            "greedy": {
+              "avg_reward_diff": 1.75,
+              "avg_ship_diff": 6520.9375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 1.0,
+              "score_rate": 0.9375,
+              "wins": 15.0
+            },
+            "mtmr": {
+              "avg_reward_diff": 0.75,
+              "avg_ship_diff": 3140.8125,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 5.0,
+              "score_rate": 0.6875,
+              "wins": 11.0
+            },
+            "random": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 2289.3125,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "turtle": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 7324.875,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "v16": {
+              "avg_reward_diff": -0.25,
+              "avg_ship_diff": -589.9375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 9.0,
+              "score_rate": 0.4375,
+              "wins": 7.0
+            },
+            "v21": {
+              "avg_reward_diff": 0.5,
+              "avg_ship_diff": 2256.9375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 6.0,
+              "score_rate": 0.625,
+              "wins": 10.0
+            },
+            "v23": {
+              "avg_reward_diff": 0.5,
+              "avg_ship_diff": 2976.5,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 6.0,
+              "score_rate": 0.625,
+              "wins": 10.0
+            }
+          },
+          "fixed_two_player_score": 0.7578125,
+          "four_player": {
+            "avg_rank": 1.25,
+            "avg_reward": 0.5,
+            "avg_ships": 3468.75,
+            "games": 4.0,
+            "rank_sum": 5.0,
+            "reward_sum": 2.0,
+            "score": 0.9416666666666667,
+            "ship_sum": 13875.0,
+            "top2": 4.0,
+            "top2_rate": 1.0,
+            "wins": 3.0
+          },
+          "generation": 1,
+          "genome": {
+            "concentration_profile": "base",
+            "conversion_profile": "base",
+            "duel_attack_order": "v23",
+            "duel_filter": "v23",
+            "duel_launch_cap": "relaxed",
+            "duel_opening": "v23",
+            "followup_profile": "high",
+            "mode_profile": "static",
+            "pressure_profile": "off",
+            "style_profile": "aggressive",
+            "swarm_profile": "base",
+            "threat_profile": "anti_snowball",
+            "transition_profile": "base",
+            "value_profile": "hostile"
+          },
+          "mutant_pool": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -160.58333333333334,
+            "games": 12.0,
+            "score_rate": 0.5,
+            "series": {
+              "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+                "avg_reward_diff": 0.0,
+                "avg_ship_diff": -804.0,
+                "draws": 0.0,
+                "games": 4.0,
+                "losses": 2.0,
+                "score_rate": 0.5,
+                "wins": 2.0
+              },
+              "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+                "avg_reward_diff": -1.0,
+                "avg_ship_diff": -2545.75,
+                "draws": 0.0,
+                "games": 4.0,
+                "losses": 3.0,
+                "score_rate": 0.25,
+                "wins": 1.0
+              },
+              "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+                "avg_reward_diff": 1.0,
+                "avg_ship_diff": 2868.0,
+                "draws": 0.0,
+                "games": 4.0,
+                "losses": 1.0,
+                "score_rate": 0.75,
+                "wins": 3.0
+              }
+            }
+          },
+          "objective_2p": 0.6431250000000001,
+          "record_type": "complete",
+          "self_play": {
+            "avg_reward_diff": 0.4,
+            "avg_ship_diff": 2426.1,
+            "games": 20.0,
+            "points": 12.0,
+            "reward_diff_sum": 8.0,
+            "score_rate": 0.6,
+            "ship_diff_sum": 48522.0
+          },
+          "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-antisn-base-off-base-base"
+        },
+        {
+          "balanced_score": 0.7748229166666667,
+          "combined_score": 0.7748229166666667,
+          "fixed_two_player": {
+            "baseline": {
+              "avg_reward_diff": 0.5,
+              "avg_ship_diff": 4688.25,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 6.0,
+              "score_rate": 0.625,
+              "wins": 10.0
+            },
+            "greedy": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 5466.75,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "mtmr": {
+              "avg_reward_diff": 0.75,
+              "avg_ship_diff": 1284.4375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 5.0,
+              "score_rate": 0.6875,
+              "wins": 11.0
+            },
+            "random": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 4458.9375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "turtle": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 5911.4375,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "v16": {
+              "avg_reward_diff": 0.75,
+              "avg_ship_diff": 735.5,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 5.0,
+              "score_rate": 0.6875,
+              "wins": 11.0
+            },
+            "v21": {
+              "avg_reward_diff": 0.0,
+              "avg_ship_diff": -1095.625,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 8.0,
+              "score_rate": 0.5,
+              "wins": 8.0
+            },
+            "v23": {
+              "avg_reward_diff": 0.75,
+              "avg_ship_diff": 1085.625,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 5.0,
+              "score_rate": 0.6875,
+              "wins": 11.0
+            }
+          },
+          "fixed_two_player_score": 0.7734375,
+          "four_player": {
+            "avg_rank": 1.5,
+            "avg_reward": 0.0,
+            "avg_ships": 4346.5,
+            "games": 4.0,
+            "rank_sum": 6.0,
+            "reward_sum": 0.0,
+            "score": 0.8833333333333333,
+            "ship_sum": 17386.0,
+            "top2": 4.0,
+            "top2_rate": 1.0,
+            "wins": 2.0
+          },
+          "generation": 1,
+          "genome": {
+            "concentration_profile": "base",
+            "conversion_profile": "base",
+            "duel_attack_order": "v23",
+            "duel_filter": "v23",
+            "duel_launch_cap": "relaxed",
+            "duel_opening": "v23",
+            "followup_profile": "high",
+            "mode_profile": "static",
+            "pressure_profile": "off",
+            "style_profile": "aggressive",
+            "swarm_profile": "loose",
+            "threat_profile": "v23",
+            "transition_profile": "base",
+            "value_profile": "hostile"
+          },
+          "mutant_pool": {
+            "avg_reward_diff": 0.3333333333333333,
+            "avg_ship_diff": 727.4166666666666,
+            "games": 12.0,
+            "score_rate": 0.5833333333333334,
+            "series": {
+              "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+                "avg_reward_diff": 0.0,
+                "avg_ship_diff": 968.0,
+                "draws": 0.0,
+                "games": 4.0,
+                "losses": 2.0,
+                "score_rate": 0.5,
+                "wins": 2.0
+              },
+              "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+                "avg_reward_diff": 1.0,
+                "avg_ship_diff": 936.75,
+                "draws": 0.0,
+                "games": 4.0,
+                "losses": 1.0,
+                "score_rate": 0.75,
+                "wins": 3.0
+              },
+              "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+                "avg_reward_diff": 0.0,
+                "avg_ship_diff": 277.5,
+                "draws": 0.0,
+                "games": 4.0,
+                "losses": 2.0,
+                "score_rate": 0.5,
+                "wins": 2.0
+              }
+            }
+          },
+          "objective_2p": 0.6860416666666667,
+          "record_type": "complete",
+          "self_play": {
+            "avg_reward_diff": 0.6,
+            "avg_ship_diff": 1684.3,
+            "games": 20.0,
+            "points": 13.0,
+            "reward_diff_sum": 12.0,
+            "score_rate": 0.65,
+            "ship_diff_sum": 33686.0
+          },
+          "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-v23-base-off-loose-base"
+        },
+        {
+          "balanced_score": 0.7577395833333334,
+          "combined_score": 0.7577395833333334,
+          "fixed_two_player": {
+            "baseline": {
+              "avg_reward_diff": 0.75,
+              "avg_ship_diff": 1955.875,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 5.0,
+              "score_rate": 0.6875,
+              "wins": 11.0
+            },
+            "greedy": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 6595.125,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "mtmr": {
+              "avg_reward_diff": 0.25,
+              "avg_ship_diff": 330.6875,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 7.0,
+              "score_rate": 0.5625,
+              "wins": 9.0
+            },
+            "random": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 6391.5,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "turtle": {
+              "avg_reward_diff": 2.0,
+              "avg_ship_diff": 6242.0625,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 0.0,
+              "score_rate": 1.0,
+              "wins": 16.0
+            },
+            "v16": {
+              "avg_reward_diff": 1.0,
+              "avg_ship_diff": 5514.25,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 4.0,
+              "score_rate": 0.75,
+              "wins": 12.0
+            },
+            "v21": {
+              "avg_reward_diff": 0.0,
+              "avg_ship_diff": 896.125,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 8.0,
+              "score_rate": 0.5,
+              "wins": 8.0
+            },
+            "v23": {
+              "avg_reward_diff": 0.75,
+              "avg_ship_diff": 2425.0625,
+              "draws": 0.0,
+              "games": 16.0,
+              "losses": 5.0,
+              "score_rate": 0.6875,
+              "wins": 11.0
+            }
+          },
+          "fixed_two_player_score": 0.7734375,
+          "four_player": {
+            "avg_rank": 1.75,
+            "avg_reward": -0.5,
+            "avg_ships": 4594.25,
+            "games": 4.0,
+            "rank_sum": 7.0,
+            "reward_sum": -2.0,
+            "score": 0.825,
+            "ship_sum": 18377.0,
+            "top2": 4.0,
+            "top2_rate": 1.0,
+            "wins": 1.0
+          },
+          "generation": 1,
+          "genome": {
+            "concentration_profile": "base",
+            "conversion_profile": "base",
+            "duel_attack_order": "v23",
+            "duel_filter": "v23",
+            "duel_launch_cap": "v23",
+            "duel_opening": "v23",
+            "followup_profile": "high",
+            "mode_profile": "static",
+            "pressure_profile": "off",
+            "style_profile": "aggressive",
+            "swarm_profile": "base",
+            "threat_profile": "v23",
+            "transition_profile": "base",
+            "value_profile": "hostile"
+          },
+          "mutant_pool": {
+            "avg_reward_diff": 0.6666666666666666,
+            "avg_ship_diff": -612.0833333333334,
+            "games": 12.0,
+            "score_rate": 0.6666666666666666,
+            "series": {
+              "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+                "avg_reward_diff": 1.0,
+                "avg_ship_diff": 1486.5,
+                "draws": 0.0,
+                "games": 4.0,
+                "losses": 1.0,
+                "score_rate": 0.75,
+                "wins": 3.0
+              },
+              "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+                "avg_reward_diff": 0.0,
+                "avg_ship_diff": -3643.5,
+                "draws": 0.0,
+                "games": 4.0,
+                "losses": 2.0,
+                "score_rate": 0.5,
+                "wins": 2.0
+              },
+              "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+                "avg_reward_diff": 1.0,
+                "avg_ship_diff": 320.75,
+                "draws": 0.0,
+                "games": 4.0,
+                "losses": 1.0,
+                "score_rate": 0.75,
+                "wins": 3.0
+              }
+            }
+          },
+          "objective_2p": 0.7027083333333334,
+          "record_type": "complete",
+          "self_play": {
+            "avg_reward_diff": 0.6,
+            "avg_ship_diff": 1477.75,
+            "games": 20.0,
+            "points": 13.0,
+            "reward_diff_sum": 12.0,
+            "score_rate": 0.65,
+            "ship_diff_sum": 29555.0
+          },
+          "slug": "aggres-v23-v23-v23-v23-hostil-high-static-base-v23-base-off-base-base"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "champion_mutants": 3,
+    "four_player_opponents": [
+      "v23",
+      "greedy",
+      "turtle"
+    ],
+    "games_per_seat": 8,
+    "generations": 2,
+    "mutant_games_per_seat": 2,
+    "population": 6,
+    "records_completed": 12,
+    "resume": false,
+    "seed": 7,
+    "self_play_games_per_seat": 2,
+    "skip_four_player": false,
+    "two_player_opponents": [
+      "baseline",
+      "v21",
+      "v23",
+      "v16",
+      "mtmr",
+      "greedy",
+      "turtle",
+      "random"
+    ]
+  },
+  "pareto_front": [
+    {
+      "balanced_score": 0.7774687500000002,
+      "combined_score": 0.7774687500000002,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 1.0,
+          "avg_ship_diff": 4922.625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 4.0,
+          "score_rate": 0.75,
+          "wins": 12.0
+        },
+        "greedy": {
+          "avg_reward_diff": 1.75,
+          "avg_ship_diff": 6520.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 1.0,
+          "score_rate": 0.9375,
+          "wins": 15.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 3140.8125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 2289.3125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 7324.875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": -0.25,
+          "avg_ship_diff": -589.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 9.0,
+          "score_rate": 0.4375,
+          "wins": 7.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 2256.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 2976.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        }
+      },
+      "fixed_two_player_score": 0.7578125,
+      "four_player": {
+        "avg_rank": 1.25,
+        "avg_reward": 0.5,
+        "avg_ships": 3468.75,
+        "games": 4.0,
+        "rank_sum": 5.0,
+        "reward_sum": 2.0,
+        "score": 0.9416666666666667,
+        "ship_sum": 13875.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 3.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "relaxed",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "base",
+        "threat_profile": "anti_snowball",
+        "transition_profile": "base",
+        "value_profile": "hostile"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.0,
+        "avg_ship_diff": -160.58333333333334,
+        "games": 12.0,
+        "score_rate": 0.5,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -804.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": -1.0,
+            "avg_ship_diff": -2545.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 3.0,
+            "score_rate": 0.25,
+            "wins": 1.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 2868.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          }
+        }
+      },
+      "objective_2p": 0.6431250000000001,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.4,
+        "avg_ship_diff": 2426.1,
+        "games": 20.0,
+        "points": 12.0,
+        "reward_diff_sum": 8.0,
+        "score_rate": 0.6,
+        "ship_diff_sum": 48522.0
+      },
+      "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-antisn-base-off-base-base"
+    },
+    {
+      "balanced_score": 0.7748229166666667,
+      "combined_score": 0.7748229166666667,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 4688.25,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "greedy": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 5466.75,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 1284.4375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 4458.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 5911.4375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 735.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": -1095.625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 8.0,
+          "score_rate": 0.5,
+          "wins": 8.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 1085.625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        }
+      },
+      "fixed_two_player_score": 0.7734375,
+      "four_player": {
+        "avg_rank": 1.5,
+        "avg_reward": 0.0,
+        "avg_ships": 4346.5,
+        "games": 4.0,
+        "rank_sum": 6.0,
+        "reward_sum": 0.0,
+        "score": 0.8833333333333333,
+        "ship_sum": 17386.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 2.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "relaxed",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "loose",
+        "threat_profile": "v23",
+        "transition_profile": "base",
+        "value_profile": "hostile"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.3333333333333333,
+        "avg_ship_diff": 727.4166666666666,
+        "games": 12.0,
+        "score_rate": 0.5833333333333334,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": 968.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 936.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": 277.5,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          }
+        }
+      },
+      "objective_2p": 0.6860416666666667,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.6,
+        "avg_ship_diff": 1684.3,
+        "games": 20.0,
+        "points": 13.0,
+        "reward_diff_sum": 12.0,
+        "score_rate": 0.65,
+        "ship_diff_sum": 33686.0
+      },
+      "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-v23-base-off-loose-base"
+    },
+    {
+      "balanced_score": 0.7577395833333334,
+      "combined_score": 0.7577395833333334,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 1955.875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "greedy": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 6595.125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.25,
+          "avg_ship_diff": 330.6875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 7.0,
+          "score_rate": 0.5625,
+          "wins": 9.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 6391.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 6242.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": 1.0,
+          "avg_ship_diff": 5514.25,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 4.0,
+          "score_rate": 0.75,
+          "wins": 12.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": 896.125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 8.0,
+          "score_rate": 0.5,
+          "wins": 8.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 2425.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        }
+      },
+      "fixed_two_player_score": 0.7734375,
+      "four_player": {
+        "avg_rank": 1.75,
+        "avg_reward": -0.5,
+        "avg_ships": 4594.25,
+        "games": 4.0,
+        "rank_sum": 7.0,
+        "reward_sum": -2.0,
+        "score": 0.825,
+        "ship_sum": 18377.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 1.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "v23",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "base",
+        "threat_profile": "v23",
+        "transition_profile": "base",
+        "value_profile": "hostile"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.6666666666666666,
+        "avg_ship_diff": -612.0833333333334,
+        "games": 12.0,
+        "score_rate": 0.6666666666666666,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 1486.5,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -3643.5,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 320.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          }
+        }
+      },
+      "objective_2p": 0.7027083333333334,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.6,
+        "avg_ship_diff": 1477.75,
+        "games": 20.0,
+        "points": 13.0,
+        "reward_diff_sum": 12.0,
+        "score_rate": 0.65,
+        "ship_diff_sum": 29555.0
+      },
+      "slug": "aggres-v23-v23-v23-v23-hostil-high-static-base-v23-base-off-base-base"
+    }
+  ],
+  "top_balanced": [
+    {
+      "balanced_score": 0.7774687500000002,
+      "combined_score": 0.7774687500000002,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 1.0,
+          "avg_ship_diff": 4922.625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 4.0,
+          "score_rate": 0.75,
+          "wins": 12.0
+        },
+        "greedy": {
+          "avg_reward_diff": 1.75,
+          "avg_ship_diff": 6520.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 1.0,
+          "score_rate": 0.9375,
+          "wins": 15.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 3140.8125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 2289.3125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 7324.875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": -0.25,
+          "avg_ship_diff": -589.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 9.0,
+          "score_rate": 0.4375,
+          "wins": 7.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 2256.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 2976.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        }
+      },
+      "fixed_two_player_score": 0.7578125,
+      "four_player": {
+        "avg_rank": 1.25,
+        "avg_reward": 0.5,
+        "avg_ships": 3468.75,
+        "games": 4.0,
+        "rank_sum": 5.0,
+        "reward_sum": 2.0,
+        "score": 0.9416666666666667,
+        "ship_sum": 13875.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 3.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "relaxed",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "base",
+        "threat_profile": "anti_snowball",
+        "transition_profile": "base",
+        "value_profile": "hostile"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.0,
+        "avg_ship_diff": -160.58333333333334,
+        "games": 12.0,
+        "score_rate": 0.5,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -804.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": -1.0,
+            "avg_ship_diff": -2545.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 3.0,
+            "score_rate": 0.25,
+            "wins": 1.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 2868.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          }
+        }
+      },
+      "objective_2p": 0.6431250000000001,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.4,
+        "avg_ship_diff": 2426.1,
+        "games": 20.0,
+        "points": 12.0,
+        "reward_diff_sum": 8.0,
+        "score_rate": 0.6,
+        "ship_diff_sum": 48522.0
+      },
+      "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-antisn-base-off-base-base"
+    },
+    {
+      "balanced_score": 0.7748229166666667,
+      "combined_score": 0.7748229166666667,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 4688.25,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "greedy": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 5466.75,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 1284.4375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 4458.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 5911.4375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 735.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": -1095.625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 8.0,
+          "score_rate": 0.5,
+          "wins": 8.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 1085.625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        }
+      },
+      "fixed_two_player_score": 0.7734375,
+      "four_player": {
+        "avg_rank": 1.5,
+        "avg_reward": 0.0,
+        "avg_ships": 4346.5,
+        "games": 4.0,
+        "rank_sum": 6.0,
+        "reward_sum": 0.0,
+        "score": 0.8833333333333333,
+        "ship_sum": 17386.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 2.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "relaxed",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "loose",
+        "threat_profile": "v23",
+        "transition_profile": "base",
+        "value_profile": "hostile"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.3333333333333333,
+        "avg_ship_diff": 727.4166666666666,
+        "games": 12.0,
+        "score_rate": 0.5833333333333334,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": 968.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 936.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": 277.5,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          }
+        }
+      },
+      "objective_2p": 0.6860416666666667,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.6,
+        "avg_ship_diff": 1684.3,
+        "games": 20.0,
+        "points": 13.0,
+        "reward_diff_sum": 12.0,
+        "score_rate": 0.65,
+        "ship_diff_sum": 33686.0
+      },
+      "slug": "aggres-v23-v23-v23-relaxe-hostil-high-static-base-v23-base-off-loose-base"
+    },
+    {
+      "balanced_score": 0.7732291666666667,
+      "combined_score": 0.7732291666666667,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 1.0,
+          "avg_ship_diff": 3805.875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 4.0,
+          "score_rate": 0.75,
+          "wins": 12.0
+        },
+        "greedy": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 5131.0,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 2469.3125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 3073.875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 4702.125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": 1.0,
+          "avg_ship_diff": 2461.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 4.0,
+          "score_rate": 0.75,
+          "wins": 12.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 1780.125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 1105.4375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        }
+      },
+      "fixed_two_player_score": 0.796875,
+      "four_player": {
+        "avg_rank": 1.25,
+        "avg_reward": 0.5,
+        "avg_ships": 14872.5,
+        "games": 4.0,
+        "rank_sum": 5.0,
+        "reward_sum": 2.0,
+        "score": 0.9416666666666667,
+        "ship_sum": 59490.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 3.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "guarded",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "baseline_rotating",
+        "duel_launch_cap": "relaxed",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "loose",
+        "threat_profile": "v23",
+        "transition_profile": "base",
+        "value_profile": "balanced"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.3333333333333333,
+        "avg_ship_diff": 160.66666666666666,
+        "games": 12.0,
+        "score_rate": 0.5833333333333334,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 2.0,
+            "avg_ship_diff": 4773.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 0.0,
+            "score_rate": 1.0,
+            "wins": 4.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": -1.0,
+            "avg_ship_diff": -4102.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 3.0,
+            "score_rate": 0.25,
+            "wins": 1.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -189.0,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          }
+        }
+      },
+      "objective_2p": 0.6354166666666667,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.0,
+        "avg_ship_diff": 191.0,
+        "games": 20.0,
+        "points": 10.0,
+        "reward_diff_sum": 0.0,
+        "score_rate": 0.5,
+        "ship_diff_sum": 3820.0
+      },
+      "slug": "aggres-v23-baseli-v23-relaxe-balanc-high-static-base-v23-base-off-loose-guarde"
+    },
+    {
+      "balanced_score": 0.7577395833333334,
+      "combined_score": 0.7577395833333334,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 1955.875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        },
+        "greedy": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 6595.125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.25,
+          "avg_ship_diff": 330.6875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 7.0,
+          "score_rate": 0.5625,
+          "wins": 9.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 6391.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 6242.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": 1.0,
+          "avg_ship_diff": 5514.25,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 4.0,
+          "score_rate": 0.75,
+          "wins": 12.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": 896.125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 8.0,
+          "score_rate": 0.5,
+          "wins": 8.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.75,
+          "avg_ship_diff": 2425.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 5.0,
+          "score_rate": 0.6875,
+          "wins": 11.0
+        }
+      },
+      "fixed_two_player_score": 0.7734375,
+      "four_player": {
+        "avg_rank": 1.75,
+        "avg_reward": -0.5,
+        "avg_ships": 4594.25,
+        "games": 4.0,
+        "rank_sum": 7.0,
+        "reward_sum": -2.0,
+        "score": 0.825,
+        "ship_sum": 18377.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 1.0
+      },
+      "generation": 1,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "v23",
+        "duel_opening": "v23",
+        "followup_profile": "high",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "aggressive",
+        "swarm_profile": "base",
+        "threat_profile": "v23",
+        "transition_profile": "base",
+        "value_profile": "hostile"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.6666666666666666,
+        "avg_ship_diff": -612.0833333333334,
+        "games": 12.0,
+        "score_rate": 0.6666666666666666,
+        "series": {
+          "mutant-g0-2p-balanc-v23-baseli-v23-v23-balanc-low-dynami-base-leader-protec-guarde-base-guarde": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 1486.5,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          },
+          "mutant-g0-4p-aggres-v23-baseli-v23-relaxe-hostil-base-dynami-base-v23-base-guarde-loose-base": {
+            "avg_reward_diff": 0.0,
+            "avg_ship_diff": -3643.5,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 2.0,
+            "score_rate": 0.5,
+            "wins": 2.0
+          },
+          "mutant-g0-balanced-aggres-v23-v23-v23-mtmr-hostil-high-static-base-leader-base-guarde-tight-base": {
+            "avg_reward_diff": 1.0,
+            "avg_ship_diff": 320.75,
+            "draws": 0.0,
+            "games": 4.0,
+            "losses": 1.0,
+            "score_rate": 0.75,
+            "wins": 3.0
+          }
+        }
+      },
+      "objective_2p": 0.7027083333333334,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.6,
+        "avg_ship_diff": 1477.75,
+        "games": 20.0,
+        "points": 13.0,
+        "reward_diff_sum": 12.0,
+        "score_rate": 0.65,
+        "ship_diff_sum": 29555.0
+      },
+      "slug": "aggres-v23-v23-v23-v23-hostil-high-static-base-v23-base-off-base-base"
+    },
+    {
+      "balanced_score": 0.74765625,
+      "combined_score": 0.74765625,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": 0.0,
+          "avg_ship_diff": 2735.6875,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 8.0,
+          "score_rate": 0.5,
+          "wins": 8.0
+        },
+        "greedy": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 5750.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "mtmr": {
+          "avg_reward_diff": -0.5,
+          "avg_ship_diff": 135.75,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 10.0,
+          "score_rate": 0.375,
+          "wins": 6.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 2637.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 11892.25,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 1864.3125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 1658.9375,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "v23": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 3840.8125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        }
+      },
+      "fixed_two_player_score": 0.71875,
+      "four_player": {
+        "avg_rank": 1.75,
+        "avg_reward": -0.5,
+        "avg_ships": 10695.0,
+        "games": 4.0,
+        "rank_sum": 7.0,
+        "reward_sum": -2.0,
+        "score": 0.825,
+        "ship_sum": 42780.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 1.0
+      },
+      "generation": 0,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "v23",
+        "duel_opening": "v23",
+        "followup_profile": "base",
+        "mode_profile": "static",
+        "pressure_profile": "off",
+        "style_profile": "balanced",
+        "swarm_profile": "base",
+        "threat_profile": "v23",
+        "transition_profile": "base",
+        "value_profile": "balanced"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.0,
+        "avg_ship_diff": 0.0,
+        "games": 0.0,
+        "score_rate": 0.0,
+        "series": {}
+      },
+      "objective_2p": 0.6843750000000001,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.6,
+        "avg_ship_diff": 1290.15,
+        "games": 20.0,
+        "points": 13.0,
+        "reward_diff_sum": 12.0,
+        "score_rate": 0.65,
+        "ship_diff_sum": 25803.0
+      },
+      "slug": "balanc-v23-v23-v23-v23-balanc-base-static-base-v23-base-off-base-base"
+    },
+    {
+      "balanced_score": 0.68921875,
+      "combined_score": 0.68921875,
+      "fixed_two_player": {
+        "baseline": {
+          "avg_reward_diff": -0.5,
+          "avg_ship_diff": 670.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 10.0,
+          "score_rate": 0.375,
+          "wins": 6.0
+        },
+        "greedy": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 4547.0625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "mtmr": {
+          "avg_reward_diff": 0.25,
+          "avg_ship_diff": 2157.3125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 7.0,
+          "score_rate": 0.5625,
+          "wins": 9.0
+        },
+        "random": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 2750.8125,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "turtle": {
+          "avg_reward_diff": 2.0,
+          "avg_ship_diff": 4675.5625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 0.0,
+          "score_rate": 1.0,
+          "wins": 16.0
+        },
+        "v16": {
+          "avg_reward_diff": -0.5,
+          "avg_ship_diff": -1464.25,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 10.0,
+          "score_rate": 0.375,
+          "wins": 6.0
+        },
+        "v21": {
+          "avg_reward_diff": 0.5,
+          "avg_ship_diff": 1695.5625,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 6.0,
+          "score_rate": 0.625,
+          "wins": 10.0
+        },
+        "v23": {
+          "avg_reward_diff": -0.75,
+          "avg_ship_diff": -819.5,
+          "draws": 0.0,
+          "games": 16.0,
+          "losses": 11.0,
+          "score_rate": 0.3125,
+          "wins": 5.0
+        }
+      },
+      "fixed_two_player_score": 0.65625,
+      "four_player": {
+        "avg_rank": 1.75,
+        "avg_reward": -0.5,
+        "avg_ships": 5330.0,
+        "games": 4.0,
+        "rank_sum": 7.0,
+        "reward_sum": -2.0,
+        "score": 0.825,
+        "ship_sum": 21320.0,
+        "top2": 4.0,
+        "top2_rate": 1.0,
+        "wins": 1.0
+      },
+      "generation": 0,
+      "genome": {
+        "concentration_profile": "base",
+        "conversion_profile": "base",
+        "duel_attack_order": "v23",
+        "duel_filter": "v23",
+        "duel_launch_cap": "v23",
+        "duel_opening": "v23",
+        "followup_profile": "base",
+        "mode_profile": "dynamic",
+        "pressure_profile": "guarded",
+        "style_profile": "balanced",
+        "swarm_profile": "base",
+        "threat_profile": "v23",
+        "transition_profile": "base",
+        "value_profile": "balanced"
+      },
+      "mutant_pool": {
+        "avg_reward_diff": 0.0,
+        "avg_ship_diff": 0.0,
+        "games": 0.0,
+        "score_rate": 0.0,
+        "series": {}
+      },
+      "objective_2p": 0.578125,
+      "record_type": "complete",
+      "self_play": {
+        "avg_reward_diff": 0.0,
+        "avg_ship_diff": 861.15,
+        "games": 20.0,
+        "points": 10.0,
+        "reward_diff_sum": 0.0,
+        "score_rate": 0.5,
+        "ship_diff_sum": 17223.0
+      },
+      "slug": "balanc-v23-v23-v23-v23-balanc-base-dynami-base-v23-base-guarde-base-base"
+    }
+  ]
+}

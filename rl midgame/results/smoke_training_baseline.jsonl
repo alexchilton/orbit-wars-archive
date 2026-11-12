@@ -1,0 +1,1 @@
+{"decisions": 117, "episode": 1, "opponent": "baseline", "reward_signal": 1.0, "ships_a": 15707, "ships_b": 437, "swapped": false, "update": {"avg_abs_weight": 0.012166109979034858, "decisions": 117.0, "reward": 1.0}, "winner": "A"}
