@@ -1,0 +1,59 @@
+Loading environment cabt failed: dlopen(/Users/alexchilton/Library/Python/3.12/lib/python/site-packages/kaggle_environments/envs/cabt/cg/libcg.so, 0x0006): tried: '/Users/alexchilton/Library/Python/3.12/lib/python/site-packages/kaggle_environments/envs/cabt/cg/libcg.so' (slice is not valid mach-o file), '/System/Volumes/Preboot/Cryptexes/OS/Users/alexchilton/Library/Python/3.12/lib/python/site-packages/kaggle_environments/envs/cabt/cg/libcg.so' (no such file), '/Users/alexchilton/Library/Python/3.12/lib/python/site-packages/kaggle_environments/envs/cabt/cg/libcg.so' (slice is not valid mach-o file)
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO: Successfully loaded OpenSpiel environments: 16.
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_backgammon
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_checkers
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_chess
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_connect_four
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_gin_rummy
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_go
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_goofspiel
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_hearts
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_hex
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_matching_pennies_3p
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_othello
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_repeated_game
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_tic_tac_toe
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_universal_poker
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_repeated_poker
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    open_spiel_python_repeated_pokerkit
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO: OpenSpiel games skipped: 1.
+[kaggle_environments.envs.open_spiel_env.open_spiel_env] INFO:    snake
+[generation 0][1/8] balanc-v23-v23-v23-v23-balanc-base-static-base-base-v23-off-base-off-base-base fixed2=0.708 self=0.464 mut=0.000 4p=0.942 bal=0.746
+[generation 0][2/8] aggres-v23-v23-v23-relaxe-hostil-high-static-base-base-v23-off-base-off-loose-base fixed2=0.658 self=0.536 mut=0.000 4p=0.767 bal=0.673
+[generation 0][3/8] conser-v23-v23-v23-v23-econom-base-static-base-base-v23-off-protec-guarde-tight-guarde fixed2=0.608 self=0.393 mut=0.000 4p=0.825 bal=0.647
+[generation 0][4/8] conser-mtmr-baseli-localp-mtmr-econom-base-static-latera-etafoc-v23-off-protec-guarde-base-guarde fixed2=0.733 self=0.536 mut=0.000 4p=0.942 bal=0.773
+[generation 0][5/8] aggres-v23-v23-v23-v23-hostil-high-static-base-base-v23-off-base-off-base-base fixed2=0.658 self=0.643 mut=0.000 4p=0.883 bal=0.755
+[generation 0][6/8] balanc-v23-v23-v23-v23-balanc-base-dynami-base-base-v23-off-base-guarde-base-base fixed2=0.633 self=0.357 mut=0.000 4p=0.767 bal=0.617
+[generation 0][7/8] balanc-v23-v23-v23-v23-hostil-base-static-earlie-base-v23-off-base-off-base-base fixed2=0.683 self=0.464 mut=0.000 4p=0.825 bal=0.687
+[generation 0][8/8] balanc-v23-v23-localp-v23-balanc-base-static-latera-etafoc-v23-off-base-guarde-base-base fixed2=0.700 self=0.607 mut=0.000 4p=0.767 bal=0.704
+[generation 0] champions: balanced=conser-mtmr-baseli-localp-mtmr-econom-base-static-latera-etafoc-v23-off-protec-guarde-base-guarde 2p=balanc-v23-v23-localp-v23-balanc-base-static-latera-etafoc-v23-off-base-guarde-base-base 4p=conser-mtmr-baseli-localp-mtmr-econom-base-static-latera-etafoc-v23-off-protec-guarde-base-guarde pareto=3
+[emit] genome test/generated_stage3/current-balanced.py
+[emit] genome test/generated_stage3/current-two-player.py
+[emit] genome test/generated_stage3/current-pareto-2.py
+[generation 1][1/8] conser-mtmr-baseli-localp-mtmr-econom-base-static-latera-etafoc-v23-off-protec-guarde-base-guarde fixed2=0.733 self=0.393 mut=0.417 4p=0.942 bal=0.717
+[generation 1][2/8] balanc-v23-v23-localp-v23-balanc-base-static-latera-etafoc-v23-off-base-guarde-base-base fixed2=0.700 self=0.429 mut=0.583 4p=0.767 bal=0.657
+[generation 1][3/8] aggres-v23-v23-v23-v23-hostil-high-static-base-base-v23-off-base-off-base-base fixed2=0.658 self=0.607 mut=0.500 4p=0.883 bal=0.731
+[generation 1][4/8] balanc-v23-v23-v23-v23-balanc-base-static-base-base-v23-off-base-off-base-base fixed2=0.708 self=0.500 mut=0.333 4p=0.942 bal=0.726
+[generation 1][5/8] balanc-v23-v23-localp-v23-econom-high-static-latera-base-v23-window-base-guarde-base-base fixed2=0.700 self=0.500 mut=0.500 4p=0.825 bal=0.690
+[generation 1][6/8] balanc-mtmr-baseli-v23-v23-econom-base-static-latera-etafoc-v23-off-protec-guarde-tight-guarde fixed2=0.692 self=0.679 mut=0.583 4p=0.825 bal=0.737
+[generation 1][7/8] aggres-mtmr-baseli-v23-v23-balanc-base-static-latera-etafoc-v23-off-protec-off-base-base fixed2=0.758 self=0.571 mut=0.500 4p=0.825 bal=0.719
+[generation 1][8/8] conser-mtmr-baseli-localp-relaxe-finish-base-static-latera-etafoc-antisn-off-protec-guarde-loose-guarde fixed2=0.725 self=0.321 mut=0.833 4p=0.883 bal=0.719
+[generation 1] champions: balanced=balanc-mtmr-baseli-v23-v23-econom-base-static-latera-etafoc-v23-off-protec-guarde-tight-guarde 2p=balanc-mtmr-baseli-v23-v23-econom-base-static-latera-etafoc-v23-off-protec-guarde-tight-guarde 4p=balanc-v23-v23-v23-v23-balanc-base-static-base-base-v23-off-base-off-base-base pareto=3
+[emit] genome test/generated_stage3/current-balanced.py
+[emit] genome test/generated_stage3/current-two-player.py
+[emit] genome test/generated_stage3/current-pareto-2.py
+[generation 2][1/8] balanc-mtmr-baseli-v23-v23-econom-base-static-latera-etafoc-v23-off-protec-guarde-tight-guarde fixed2=0.692 self=0.464 mut=0.500 4p=0.825 bal=0.681
+[generation 2][2/8] balanc-v23-v23-v23-v23-balanc-base-static-base-base-v23-off-base-off-base-base fixed2=0.708 self=0.500 mut=0.500 4p=0.942 bal=0.745
+[generation 2][3/8] aggres-v23-v23-v23-v23-hostil-high-static-base-base-v23-off-base-off-base-base fixed2=0.658 self=0.464 mut=0.625 4p=0.883 bal=0.713
+[generation 2][4/8] conser-mtmr-baseli-localp-relaxe-finish-base-static-latera-etafoc-antisn-off-protec-guarde-loose-guarde fixed2=0.725 self=0.607 mut=0.562 4p=0.883 bal=0.752
+[generation 2][5/8] aggres-mtmr-baseli-v23-v23-balanc-high-static-latera-etafoc-v23-off-protec-off-loose-guarde fixed2=0.733 self=0.536 mut=0.375 4p=0.767 bal=0.665
+[generation 2][6/8] conser-v23-v23-v23-relaxe-hostil-base-dynami-earlie-base-leader-off-base-off-base-strict fixed2=0.650 self=0.321 mut=0.375 4p=0.883 bal=0.652
+[generation 2][7/8] aggres-v23-v23-v23-v23-balanc-base-static-base-base-v23-off-protec-off-tight-base fixed2=0.683 self=0.571 mut=0.438 4p=0.767 bal=0.669
+[generation 2][8/8] aggres-shun-baseli-v23-mtmr-hostil-base-dynami-latera-etafoc-v23-off-base-off-tight-guarde fixed2=0.700 self=0.536 mut=0.438 4p=0.883 bal=0.717
+[generation 2] champions: balanced=conser-mtmr-baseli-localp-relaxe-finish-base-static-latera-etafoc-antisn-off-protec-guarde-loose-guarde 2p=conser-mtmr-baseli-localp-relaxe-finish-base-static-latera-etafoc-antisn-off-protec-guarde-loose-guarde 4p=balanc-v23-v23-v23-v23-balanc-base-static-base-base-v23-off-base-off-base-base pareto=2
+[emit] genome test/generated_stage3/current-balanced.py
+[emit] genome test/generated_stage3/current-two-player.py
+[emit] genome test/generated_stage3/current-pareto-2.py
+[emit] genome test/generated_stage3/current-balanced.py
+[emit] genome test/generated_stage3/current-two-player.py
+[emit] genome test/generated_stage3/current-pareto-2.py
